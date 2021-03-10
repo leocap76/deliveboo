@@ -1,0 +1,27 @@
+#jumbotron {
+  position: relative;
+  width: 100vw;
+  height: 700px;
+  background-image: url('../img/sfondo-header.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  z-index: -100;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_container {
+  text-align: center;
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 200px;
+  @include search-shadow;
+}

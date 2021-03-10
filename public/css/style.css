@@ -6,16 +6,70 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #f2474d;
 }
 
 header {
-  height: 150px;
+  background-color: #f2474d;
 }
 header .header_container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
+header .header_left {
+  height: 100px;
+}
 header .logo_img {
-  width: 250px;
+  height: 100%;
+}
+header .header_buttons {
+  text-decoration: none;
+  color: #f6bfc2;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+#jumbotron {
+  position: relative;
+  width: 100vw;
+  height: 700px;
+  background-image: url("../img/sfondo-header.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  z-index: -100;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_container {
+  text-align: center;
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 200px;
+}
+.search_container::before, .search_container::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+.search_container::after {
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
 }

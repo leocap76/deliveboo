@@ -1,16 +1,24 @@
-
-
-header{
-  height: 150px;
+header {
+  background-color: $delivebooColor;
 
   .header_container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-  
+  }
+
+  .header_left {
+    height: 100px;
   }
 
   .logo_img {
-    width: 250px;
+    height: 100%;
   } 
-}
 
+  .header_buttons {
+    text-decoration: none;
+    color: $titleColor;
+    font-size: 24px;
+    margin-left: 10px;
+  }
+}

@@ -15,29 +15,55 @@
     <body>
         <!-- header -->
         <header>
-            <div class="container-fluid header_container">
+            <div class="container header_container">
                 <div class="header_left">
                     <img src="{{ asset('img/deliverboomarchio.jpg') }}" alt="deliveboo" class="logo_img">
-
                 </div>
                 
                 <div class="header_right">
                     @if (Route::has('login'))
                         <div class="top-right links">
-                        @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+                            @auth
+                                <a href="{{ url('/home') }}" class="header_buttons">Home</a>
+                            @else
+                                <a href="{{ route('login') }}" class="header_buttons">Accedi</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                        @endauth
-                    </div>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="header_buttons">Registrati</a>
+                                @endif
+                            @endauth
+                        </div>
                     @endif
                 </div>
              </div>
         </header>
+
+        <main>
+            <section id="jumbotron">
+                <div class="container">
+                    <div class="search_container">
+                        <h4>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</h4>
+                        <input type="text" placeholder="Inserisci categoria" class="search_input">
+                        <button>Cerca</button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                
+            </section>
+
+            
+            
+            
+                
+                
+            
+        </main>
+
+        <footer>
+
+        </footer>
     
     </body>
 </html>

@@ -17,8 +17,11 @@ header {
 
   .header_buttons {
     text-decoration: none;
-    color: $titleColor;
+    color: white;
     font-size: 24px;
-    margin-left: 10px;
+    margin-left: 20px;
+    padding: 5px 20px;
+    background-color:#43d73e;
+    border-radius: 50px;
   }
 }

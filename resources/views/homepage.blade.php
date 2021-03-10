@@ -17,7 +17,9 @@
         <header>
             <div class="container header_container">
                 <div class="header_left">
-                    <img src="{{ asset('img/deliverboomarchio.jpg') }}" alt="deliveboo" class="logo_img">
+                    <a href="#">
+                      <img src="{{ asset('img/deliverboomarchio.jpg') }}" alt="deliveboo" class="logo_img">
+                    </a>        
                 </div>
                 
                 <div class="header_right">

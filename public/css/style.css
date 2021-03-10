@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f2474d;
+}
+
+header {
+  height: 150px;
+}
+header .header_container {
+  display: flex;
+  justify-content: space-between;
+}
+header .logo_img {
+  width: 250px;
+}

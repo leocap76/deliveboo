@@ -24,8 +24,7 @@
 
         {{-- loading screen --}}
         <section id="loading_screen">
-            <img src="img/deliverbooML.jpg" alt="">
-            <p>Caricamento in corso</p>
+            <img src="img/deliverbooML.jpg" alt="Deliveboo">
         </section>
         {{-- /loading screen --}}
 
@@ -122,19 +121,22 @@
             {{-- !section categoria restaurants --}}
             
             {{-- section come usare deliveboo --}}
-            <section id="tutorial_card_container">
+            <section id="tutorial_card_section">
                 <div class="container">
-                    <div class="tutorial_card">
-                        <h3>Ordina il tuo piatto preferito</h3>
-                        <img src="https://via.placeholder.com/300x300" alt="">
-                    </div>
-                    <div class="tutorial_card">
-                        <h3>Monitora la consegna in tempo reale</h3>
-                        <img src="https://via.placeholder.com/300x300" alt="">
-                    </div>
-                    <div class="tutorial_card">
-                        <h3>Buon appetito!</h3>
-                        <img src="https://via.placeholder.com/300x300" alt="">
+                    <h2>Come funziona Deliveboo</h2>
+                    <div class="tutorial_cards_container">
+                        <div class="tutorial_card">
+                            <h3>Ordina il tuo piatto preferito</h3>
+                            <img src="https://via.placeholder.com/300x300" alt="">
+                        </div>
+                        <div class="tutorial_card">
+                            <h3>Monitora la consegna in tempo reale</h3>
+                            <img src="https://via.placeholder.com/300x300" alt="">
+                        </div>
+                        <div class="tutorial_card">
+                            <h3>Buon appetito!</h3>
+                            <img src="https://via.placeholder.com/300x300" alt="">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -145,7 +147,7 @@
 
             <!--  footer -->
         <footer>
-            <div class="container homepage_footer">
+            <div class="container">
                 {{-- footer top --}}
                 <div class="footer_top">
                     <div class="items">

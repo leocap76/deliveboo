@@ -91,9 +91,9 @@
 //  class category restaurants
 #restaurants_homepage{
   width: 100%;
-  height: 600px;
+  // height: 600px;
   background-color: salmon;
-  overflow-y: auto;
+  // overflow-y: auto;
 
   .container{
     display: flex;
@@ -102,10 +102,10 @@
     flex-wrap: wrap;
     
     .restaurants_homepage_card{
-      width: calc(100% / 3 - 30px);
+      width: calc(100% / 3 - 15px);
       height: 400px;
       background-color: seagreen;
-      margin: 15px;
+      margin: 15px 0;
     }
   }
 }

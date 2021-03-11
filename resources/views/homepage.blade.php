@@ -24,6 +24,7 @@
 
         {{-- loading screen --}}
         <section id="loading_screen">
+            <img src="img/deliverbooML.jpg" alt="">
             <p>Caricamento in corso</p>
         </section>
         {{-- /loading screen --}}
@@ -120,8 +121,24 @@
 
             {{-- !section categoria restaurants --}}
             
-            
-                
+            {{-- section come usare deliveboo --}}
+            <section id="tutorial_card_container">
+                <div class="container">
+                    <div class="tutorial_card">
+                        <h3>Ordina il tuo piatto preferito</h3>
+                        <img src="https://via.placeholder.com/300x300" alt="">
+                    </div>
+                    <div class="tutorial_card">
+                        <h3>Monitora la consegna in tempo reale</h3>
+                        <img src="https://via.placeholder.com/300x300" alt="">
+                    </div>
+                    <div class="tutorial_card">
+                        <h3>Buon appetito!</h3>
+                        <img src="https://via.placeholder.com/300x300" alt="">
+                    </div>
+                </div>
+            </section>
+            {{-- /section come usare deliveboo --}}    
                 
             
         </main>

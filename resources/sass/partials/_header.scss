@@ -17,11 +17,11 @@ header {
 
   .header_buttons {
     text-decoration: none;
-    color: white;
-    font-size: 24px;
+    color: $delivebooColor;
+    font-size: 19px;
     margin-left: 20px;
     padding: 5px 20px;
-    background-color:#43d73e;
+    background-color:white;
     border-radius: 50px;
   }
 }

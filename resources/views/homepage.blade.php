@@ -86,7 +86,35 @@
                 </div>
             </section>
 
-            
+            {{-- section categoria restaurants --}}
+
+            <section id="restaurants_homepage">
+                <div class="container">
+                    <div class="restaurants_homepage_card">
+                        
+                    </div>
+                    <div class="restaurants_homepage_card">
+                        
+                    </div>
+                    <div class="restaurants_homepage_card">
+                        
+                    </div>
+                    <div class="restaurants_homepage_card">
+                        
+                    </div>
+                    <div class="restaurants_homepage_card">
+                        
+                    </div>
+                    <div class="restaurants_homepage_card">
+                        
+                    </div>
+                    <div class="restaurants_homepage_card">
+                        
+                    </div>
+                </div>
+            </section>
+
+            {{-- !section categoria restaurants --}}
             
             
                 

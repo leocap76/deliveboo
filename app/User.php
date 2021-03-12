@@ -41,4 +41,9 @@ class User extends Authenticatable
     public function infoRestaurant(){
         return $this->hasOne('App\InfoRestaurant');
     }
+
+    // info plates
+    public function plates(){
+        return $this->hasMany('App\Plate');
+    }
 }

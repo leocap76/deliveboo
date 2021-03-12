@@ -46,4 +46,9 @@ class User extends Authenticatable
     public function plates(){
         return $this->hasMany('App\Plate');
     }
+
+    // categories
+    public function categories(){
+        return $this->belognsToMany('App\Category');
+    }
 }

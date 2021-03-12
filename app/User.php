@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // info restaurants
+    public function infoRestaurant(){
+        return $this->hasOne('App\InfoRestaurant');
+    }
 }

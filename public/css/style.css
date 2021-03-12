@@ -115,7 +115,7 @@ footer .footer_bottom .footer_bottom_right ul li a .fab {
   background: linear-gradient(0deg, #fff, #ddd);
   border-radius: 50%;
   line-height: calc(30px - 12px);
-  font-size: 18px;
+  font-size: 10px;
   color: #262626;
   transition: 0.5s;
 }

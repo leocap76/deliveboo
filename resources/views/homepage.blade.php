@@ -127,15 +127,15 @@
                     <div class="tutorial_cards_container">
                         <div class="tutorial_card">
                             <h3>Ordina il tuo piatto preferito</h3>
-                            <img src="https://via.placeholder.com/300x300" alt="">
+                            <img src="img/ordinaonline.png" alt="">
                         </div>
                         <div class="tutorial_card">
                             <h3>Monitora la consegna in tempo reale</h3>
-                            <img src="https://via.placeholder.com/300x300" alt="">
+                            <img src="img/ciclista.png" alt="">
                         </div>
                         <div class="tutorial_card">
                             <h3>Buon appetito!</h3>
-                            <img src="https://via.placeholder.com/300x300" alt="">
+                            <img src="img/buonappetito.png" alt="">
                         </div>
                     </div>
                 </div>

@@ -133,18 +133,30 @@
     justify-content: space-between;
     align-items: center;
     .tutorial_card{
-      position: relative;
-      width: calc(100% / 3 - 15px);
-      img{
-        width: 100%;
-        overflow: hidden;
-        border-radius: 5px;
-      } 
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      width: calc(100vw / 3 - 15px);
+      height: calc(100vw / 3 - 15px);
+      
+      background-repeat: no-repeat;
+      background-size: contain;
+      &:not(:nth-last-child(3)) {
+        margin-left: 15px;
+      }
+      &:nth-child(1) {
+        background-image: url('../img/ordinaonline.png');
+      }
+      &:nth-child(2) {
+        background-image: url('../img/ciclista.png');
+      }
+      &:nth-child(3) {
+        background-image: url('../img/buonappetito.png');
+      }
+
       h3{
         display: inline-block;
-        position: absolute;
         text-align: center;
-        top: 30px;
         color:$delivebooColor;
         font-weight: bold;
       }

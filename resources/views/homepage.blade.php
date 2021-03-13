@@ -126,15 +126,18 @@
                     <h2>Come funziona Deliveboo</h2>
                     <div class="tutorial_cards_container">
                         <div class="tutorial_card">
-                            <h3>Ordina il tuo piatto preferito</h3>
+                            {{-- <h3>Ordina il tuo piatto preferito</h3> --}}
+                            <img src="{{ asset('img/ordinaonline6000.png') }}" alt="">
                            
                         </div>
                         <div class="tutorial_card">
-                            <h3>Monitora la consegna in tempo reale</h3>
+                            {{-- <h3>Monitora la consegna in tempo reale</h3> --}}
+                            <img src="{{ asset('img/ciclista6000.png') }}" alt="">
                             
                         </div>
                         <div class="tutorial_card">
-                            <h3>Buon appetito!</h3>
+                            {{-- <h3>Buon appetito!</h3> --}}
+                            <img src="{{ asset('img/buonappetito6000.png') }}" alt="">
                             
                         </div>
                     </div>

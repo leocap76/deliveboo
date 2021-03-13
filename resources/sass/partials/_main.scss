@@ -135,31 +135,38 @@
     .tutorial_card{
       display: flex;
       justify-content: center;
-      padding: 15px;
+      // margin: 15px;
+      border-radius: 5px;
       width: calc(100vw / 3 - 15px);
-      height: calc(100vw / 3 - 15px);
+      &:nth-child(2){
+        margin: 30px;
+      }
+      img{
+        max-width: 100%;
+      }
+      // height: calc(100vw / 3 - 15px);
       
-      background-repeat: no-repeat;
-      background-size: contain;
-      &:not(:nth-last-child(3)) {
-        margin-left: 15px;
-      }
-      &:nth-child(1) {
-        background-image: url('../img/ordinaonline.png');
-      }
-      &:nth-child(2) {
-        background-image: url('../img/ciclista.png');
-      }
-      &:nth-child(3) {
-        background-image: url('../img/buonappetito.png');
-      }
+      // background-repeat: no-repeat;
+      // background-size: contain;
+      // &:not(:nth-last-child(3)) {
+      //   margin-left: 15px;
+      // }
+      // &:nth-child(1) {
+      //   background-image: url('../img/ordinaonline.png');
+      // }
+      // &:nth-child(2) {
+      //   background-image: url('../img/ciclista.png');
+      // }
+      // &:nth-child(3) {
+      //   background-image: url('../img/buonappetito.png');
+      // }
 
-      h3{
-        display: inline-block;
-        text-align: center;
-        color:$delivebooColor;
-        font-weight: bold;
-      }
+      // h3{
+      //   display: inline-block;
+      //   text-align: center;
+      //   color:$delivebooColor;
+      //   font-weight: bold;
+      // }
     }
   }
 }

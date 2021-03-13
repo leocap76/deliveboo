@@ -203,29 +203,14 @@ header .header_buttons {
 #tutorial_card_section .tutorial_cards_container .tutorial_card {
   display: flex;
   justify-content: center;
-  padding: 15px;
+  border-radius: 5px;
   width: calc(100vw / 3 - 15px);
-  height: calc(100vw / 3 - 15px);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-#tutorial_card_section .tutorial_cards_container .tutorial_card:not(:nth-last-child(3)) {
-  margin-left: 15px;
-}
-#tutorial_card_section .tutorial_cards_container .tutorial_card:nth-child(1) {
-  background-image: url("../img/ordinaonline.png");
 }
 #tutorial_card_section .tutorial_cards_container .tutorial_card:nth-child(2) {
-  background-image: url("../img/ciclista.png");
+  margin: 30px;
 }
-#tutorial_card_section .tutorial_cards_container .tutorial_card:nth-child(3) {
-  background-image: url("../img/buonappetito.png");
-}
-#tutorial_card_section .tutorial_cards_container .tutorial_card h3 {
-  display: inline-block;
-  text-align: center;
-  color: #f2474d;
-  font-weight: bold;
+#tutorial_card_section .tutorial_cards_container .tutorial_card img {
+  max-width: 100%;
 }
 
 footer {

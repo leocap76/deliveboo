@@ -58,8 +58,9 @@
         <main>
             <section id="jumbotron">
                 <div class="container">
+                    <h1>I piatti che ami, a domicilio.</h1>
                     <div class="search_container">
-                        <h4>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</h4>
+                        <p>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
                         <input type="text" placeholder="Inserisci categoria" class="input_search">
                         <button class="button_search">Cerca</button>
                         <p>Lorem ipsum dolor sit amet</p>
@@ -68,25 +69,29 @@
             </section>
 
             <section id="categories">
-                <h2>Categorie</h2>
-                <div class="cards container-fluid">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
-                            <div class="swiper-slide">Slide 5</div>
-                            <div class="swiper-slide">Slide 6</div>
-                            <div class="swiper-slide">Slide 7</div>
-                            <div class="swiper-slide">Slide 8</div>
-                            <div class="swiper-slide">Slide 9</div>
-                            <div class="swiper-slide">Slide 10</div>
+                <div class="container">
+                    <h2>La selezione di Deliveboo</h2>
+
+                    <div class="cards">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                                <div class="swiper-slide">Slide 10</div>
+                            </div>
+                            <!-- arrow -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                         </div>
-                        <!-- arrow -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
                     </div>
+
                 </div>
             </section>
 
@@ -94,7 +99,7 @@
 
             <section id="restaurants_homepage">
                 <div class="container">
-                    <h2>I tuoi ristoranti preferiti, direttamente a casa tua.</h2>
+                    <h2>I tuoi ristoranti preferiti, direttamente a casa tua</h2>
 
                     <div class="restaurants_homepage_container">
 

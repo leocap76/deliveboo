@@ -94,27 +94,84 @@
 
             <section id="restaurants_homepage">
                 <div class="container">
-                    <div class="restaurants_homepage_card">
-                        
+                    <h2>I tuoi ristoranti preferiti, direttamente a casa tua.</h2>
+
+                    <div class="restaurants_homepage_container">
+
+                        <a class="restaurants_homepage_card" href="#">
+                            <div class="top_restaurants_homepage_card">
+                                <img src="https://dummyimage.com/600x200/000/fff" alt="restaurant">
+                            </div>
+
+                            <div class="middle_restaurants_homepage_card">
+                                <h4>Nome ristorante</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nisi provident ipsum hic inventore quaerat rem eos atque odio, aliquam nostrum maiores voluptatibus a reiciendis sit neque ea. Dolore, doloribus?</p>
+                                
+                            </div>
+
+                            <div class="bottom_restaurants_homepage_card">
+                                <span class="badge badge-primary">Italiano</span>
+                                <span class="badge badge-primary">Pizza</span>
+                                <span class="badge badge-primary">Buono</span>
+                            </div>
+                        </a>
+
+                        <a class="restaurants_homepage_card" href="#">
+                            <div class="top_restaurants_homepage_card">
+                                <img src="https://dummyimage.com/600x200/000/fff" alt="restaurant">
+                            </div>
+
+                            <div class="middle_restaurants_homepage_card">
+                                <h4>Nome ristorante</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nisi provident ipsum hic inventore quaerat rem eos atque odio, aliquam nostrum maiores voluptatibus a reiciendis sit neque ea. Dolore, doloribus?</p>
+                                
+                            </div>
+
+                            <div class="bottom_restaurants_homepage_card">
+                                <span class="badge badge-primary">Italiano</span>
+                                <span class="badge badge-primary">Pizza</span>
+                                <span class="badge badge-primary">Buono</span>
+                            </div>
+                        </a>
+
+                        <a class="restaurants_homepage_card" href="#">
+                            <div class="top_restaurants_homepage_card">
+                                <img src="https://dummyimage.com/600x200/000/fff" alt="restaurant">
+                            </div>
+
+                            <div class="middle_restaurants_homepage_card">
+                                <h4>Nome ristorante</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nisi provident ipsum hic inventore quaerat rem eos atque odio, aliquam nostrum maiores voluptatibus a reiciendis sit neque ea. Dolore, doloribus?</p>
+                                
+                            </div>
+
+                            <div class="bottom_restaurants_homepage_card">
+                                <span class="badge badge-primary">Italiano</span>
+                                <span class="badge badge-primary">Pizza</span>
+                                <span class="badge badge-primary">Buono</span>
+                            </div>
+                        </a>
+
+                        <a class="restaurants_homepage_card" href="#">
+                            <div class="top_restaurants_homepage_card">
+                                <img src="https://dummyimage.com/600x200/000/fff" alt="restaurant">
+                            </div>
+
+                            <div class="middle_restaurants_homepage_card">
+                                <h4>Nome ristorante</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nisi provident ipsum hic inventore quaerat rem eos atque odio, aliquam nostrum maiores voluptatibus a reiciendis sit neque ea. Dolore, doloribus?</p>
+                                
+                            </div>
+
+                            <div class="bottom_restaurants_homepage_card">
+                                <span class="badge badge-primary">Italiano</span>
+                                <span class="badge badge-primary">Pizza</span>
+                                <span class="badge badge-primary">Buono</span>
+                            </div>
+                        </a>
+
                     </div>
-                    <div class="restaurants_homepage_card">
-                        
-                    </div>
-                    <div class="restaurants_homepage_card">
-                        
-                    </div>
-                    <div class="restaurants_homepage_card">
-                        
-                    </div>
-                    <div class="restaurants_homepage_card">
-                        
-                    </div>
-                    <div class="restaurants_homepage_card">
-                        
-                    </div>
-                    <div class="restaurants_homepage_card">
-                        
-                    </div>
+                    
                 </div>
             </section>
 

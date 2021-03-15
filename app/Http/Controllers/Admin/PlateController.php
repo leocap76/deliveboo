@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
-use App\Category;
+use Illuminate\Support\Facades\Auth;
+use App\Plate;
 
-class UserController extends Controller
+class PlateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $categories = Category::all();
-
-        return view('admin.users.index', compact('users', 'categories'));
+        $plates = Plate::where('user_id', Auth::id())->get();
+        return view('admin.plates.index', compact('plates'));
     }
 
     /**
@@ -29,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.plates.create');
     }
 
     /**
@@ -40,7 +38,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['user_id'] = Auth::id();
+        $plate = new Plate();
+
+        $plate->fill($data);
+        $plate->save();
+
+        return redirect()->route('admin.plates.index')
+            ->with('message', 'Piatto creato correttamente');
     }
 
     /**
@@ -49,9 +56,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Plate $plate)
     {
-        //
+        return view('admin.plates.show', compact('plate'));
     }
 
     /**
@@ -60,9 +67,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        //
+        return view('admin.plates.edit', compact('plate'));
     }
 
     /**
@@ -72,9 +79,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
-        //
+        $data = $request->all();
+        $plate->update($data);
+
+        return redirect()->route('admin.plates.index')
+            ->with('message', 'Piatto modificato correttamente');
     }
 
     /**
@@ -83,8 +94,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Plate $plate)
     {
-        //
+        $plate->delete();
+
+        return redirect()->route('admin.plates.index')
+            ->with('message', 'Piatto cancellato correttamente');
     }
 }

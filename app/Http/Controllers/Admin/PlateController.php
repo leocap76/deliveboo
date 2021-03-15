@@ -11,6 +11,13 @@ use App\Plate;
 
 class PlateController extends Controller
 {
+    private $dataValidate = [
+        'name' => 'required|max:255',
+        'description' => 'required',
+        'ingredients' => 'required',
+        'price' => 'required',
+        'img_path' => 'required|mimes:jpeg,png,jpg,gif,svg|image'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -40,11 +47,19 @@ class PlateController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            $this->dataValidate
+        );
+
         $data = $request->all();
 
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
+
         $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
+        
+
+
         $plate = new Plate();
 
         $plate->fill($data);
@@ -86,7 +101,13 @@ class PlateController extends Controller
      */
     public function update(Request $request, Plate $plate)
     {
+        $request->validate(
+            $this->dataValidate
+        );
+
         $data = $request->all();
+        $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
+
         $plate->update($data);
 
         return redirect()->route('admin.plates.index')

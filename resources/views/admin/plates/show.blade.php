@@ -12,10 +12,7 @@
       <div class="container">      
       
         <p>{{ $plate->name }}</p>
-        <img src="{{ file_exists(public_path().$plate->img_path)
-        ? 'true' : 'false' }}" alt="{{ $plate->name }}" style="width: 200px;">
-
-        {{-- Gestire immagini if/else --}}
+        <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}" style="width: 200px;">
 
         <div>
           <a href="{{ route('admin.plates.edit', $plate->id) }}">modifica</a>

@@ -8,15 +8,17 @@ class Plate extends Model
 {
     protected $fillable = [
         "user_id",
-        "plate_name",
-        "plate_description",
-        "plate_ingredients",
-        "plate_price",
-        "plate_vegan",
-        "plate_vegetarian",
-        "plate_spicy",
-        "plate_glutenfree",
-        "plate_available"
+        "name",
+        "slug",
+        "description",
+        "ingredients",
+        "price",
+        "img_path",
+        "vegan",
+        "vegetarian",
+        "spicy",
+        "glutenfree",
+        "available"
     ];
 
     public function user(){

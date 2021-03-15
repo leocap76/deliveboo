@@ -10,54 +10,59 @@
 <body>
 
   <div class="container">
-    <form action="{{ route('admin.plates.update', $plate->id) }}" method="post">
+    <form action="{{ route('admin.plates.update', $plate->id) }}" method="post" enctype="multipart/form-data">
       @csrf
       @method('PUT')
   
       <div class="form-group">
-        <label for="plate_name">Nome</label>
-        <input type="text" class="form-control" id="plate_name" name="plate_name" placeholder="Nome del piatto" value="{{ $plate->plate_name }}">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nome del piatto" value="{{ $plate->name }}">
       </div>
   
       <div class="form-group">
-        <label for="plate_description">Descrizione</label>
-        <textarea name="plate_description" id="plate_description" rows="4" class="form-control" placeholder="Descrizione del piatto">{{ $plate->plate_description }}</textarea>
+        <label for="description">Descrizione</label>
+        <textarea name="description" id="description" rows="4" class="form-control" placeholder="Descrizione del piatto">{{ $plate->description }}</textarea>
       </div>
   
       <div class="form-group">
-        <label for="plate_ingredients">Ingredienti</label>
-        <textarea name="plate_ingredients" id="plate_ingredients" rows="4" class="form-control" placeholder="Ingredienti del piatto">{{ $plate->plate_ingredients }}</textarea>
+        <label for="ingredients">Ingredienti</label>
+        <textarea name="ingredients" id="ingredients" rows="4" class="form-control" placeholder="Ingredienti del piatto">{{ $plate->ingredients }}</textarea>
       </div>
   
       <div class="form-group">
-        <label for="plate_price">Prezzo</label>
+        <label for="price">Prezzo</label>
         <input type="number" step="0.01"
-        class="form-control" id="plate_price" name="plate_price" placeholder="Prezzo del piatto" value="{{ $plate->plate_price }}">
+        class="form-control" id="price" name="price" placeholder="Prezzo del piatto" value="{{ $plate->price }}">
+      </div>
+
+      <div class="form-group">
+        <label for="img_path">Immagine</label>
+        <input type="file" id="img_path" name="img_path" accept="image/*">
       </div>
   
       <div class="form-group">
-        <label for="plate_vegan">Vegano</label>
-        <input type="checkbox" id="plate_vegan" name="plate_vegan" value="1" @if($plate->plate_vegan == 1) checked @endif>
+        <label for="vegan">Vegano</label>
+        <input type="checkbox" id="vegan" name="vegan" value="1" @if($plate->vegan == 1) checked @endif>
       </div>
   
       <div class="form-group">
-        <label for="plate_vegetarian">Vegetariano</label>
-        <input type="checkbox" id="plate_vegetarian" name="plate_vegetarian" value="1" @if($plate->plate_vegetarian == 1) checked @endif>
+        <label for="vegetarian">Vegetariano</label>
+        <input type="checkbox" id="vegetarian" name="vegetarian" value="1" @if($plate->vegetarian == 1) checked @endif>
       </div>
   
       <div class="form-group">
-        <label for="plate_spicy">Piccante</label>
-        <input type="checkbox" id="plate_spicy" name="plate_spicy" value="1" @if($plate->plate_spicy == 1) checked @endif>
+        <label for="spicy">Piccante</label>
+        <input type="checkbox" id="spicy" name="spicy" value="1" @if($plate->spicy == 1) checked @endif>
       </div>
   
       <div class="form-group">
-        <label for="plate_glutenfree">Gluten free</label>
-        <input type="checkbox" id="plate_glutenfree" name="plate_glutenfree" value="1" @if($plate->plate_glutenfree == 1) checked @endif>
+        <label for="glutenfree">Gluten free</label>
+        <input type="checkbox" id="glutenfree" name="glutenfree" value="1" @if($plate->glutenfree == 1) checked @endif>
       </div>
   
       <div class="form-group">
-        <label for="plate_available">Disponibile</label>
-        <input type="checkbox" id="plate_available" name="plate_available" value="1" @if($plate->plate_available == 1) checked @endif>
+        <label for="available">Disponibile</label>
+        <input type="checkbox" id="available" name="available" value="1" @if($plate->available == 1) checked @endif>
       </div>
   
       <button type="submit" class="btn btn-success">Modifica piatto</button>

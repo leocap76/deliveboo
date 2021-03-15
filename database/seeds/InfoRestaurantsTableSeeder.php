@@ -22,7 +22,7 @@ class InfoRestaurantsTableSeeder extends Seeder
             $infoRestaurant = new InfoRestaurant();
 
             $infoRestaurant->user_id = $user->id;
-            $infoRestaurants[$key]['restaurant_slug'] = Str::slug($infoRestaurants[$key]['restaurant_name']);
+            $infoRestaurants[$key]['slug'] = Str::slug($infoRestaurants[$key]['name']);
             $infoRestaurant->fill($infoRestaurants[$key]);
 
             $infoRestaurant->save();

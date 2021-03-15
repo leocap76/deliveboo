@@ -11,7 +11,11 @@
 
       <div class="container">      
       
-        <p>{{ $plate->plate_name }}</p>
+        <p>{{ $plate->name }}</p>
+        <img src="{{ file_exists(public_path().$plate->img_path)
+        ? 'true' : 'false' }}" alt="{{ $plate->name }}" style="width: 200px;">
+
+        {{-- Gestire immagini if/else --}}
 
         <div>
           <a href="{{ route('admin.plates.edit', $plate->id) }}">modifica</a>

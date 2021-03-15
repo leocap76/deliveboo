@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use App\Plate;
 
 class PlateController extends Controller
@@ -41,6 +43,8 @@ class PlateController extends Controller
         $data = $request->all();
 
         $data['user_id'] = Auth::id();
+        $data['slug'] = Str::slug($data['name']);
+        $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
         $plate = new Plate();
 
         $plate->fill($data);
@@ -56,8 +60,9 @@ class PlateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Plate $plate)
+    public function show($slug)
     {
+        $plate = Plate::where('slug', $slug)->first();
         return view('admin.plates.show', compact('plate'));
     }
 

@@ -8,10 +8,10 @@ class Category extends Model
 {
 
     protected $fillable = [
-        "category_name",
-        "category_color",
-        "category_description",
-        "category_img_path"
+        "name",
+        "color",
+        "description",
+        "img_path"
     ];
 
     public $timestamps = false;

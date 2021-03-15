@@ -20,8 +20,8 @@
   
   
         @foreach ($plates as $plate)
-            <p>{{ $plate->plate_name }}</p>
-            <a href="{{ route('admin.plates.show', $plate->id) }}">info</a>
+            <p>{{ $plate->name }}</p>
+            <a href="{{ route('admin.plates.show', $plate->slug) }}">info</a>
             <a href="{{ route('admin.plates.edit', $plate->id) }}">modifica</a>
             <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="post">
                 @csrf

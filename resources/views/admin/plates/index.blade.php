@@ -32,6 +32,7 @@
 
         <div>
           <a href="{{ route('admin.plates.create') }}" class="btn btn-primary">crea</a>
+          <a href="{{ route('admin.users.index') }}">Info ristorante/utente</a>
         </div>
 
       </div>

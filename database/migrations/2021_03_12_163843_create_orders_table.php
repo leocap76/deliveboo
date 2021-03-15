@@ -15,12 +15,12 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->float('order_price', 6,2);
-            $table->text('order_comment');
-            $table->time('order_time');
-            $table->string('order_address');
-            $table->string('customer_name', 50);
-            $table->string('customer_email', 60);            
+            $table->float('price', 6,2);
+            $table->text('comment');
+            $table->time('time');
+            $table->string('address');
+            $table->string('name', 50);
+            $table->string('email', 60);            
             $table->timestamps();
         });
     }

@@ -16,14 +16,14 @@ class CreateInfoRestaurantsTable extends Migration
         Schema::create('info_restaurants', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('restaurant_name');
-            $table->string('restaurant_slug');
+            $table->string('name');
+            $table->string('slug');
             $table->string('address');
-            $table->text('restaurant_description');
-            $table->text('restaurant_img_path');
+            $table->text('description');
+            $table->text('img_path');
             $table->string('PIVA', 11);
-            $table->time('restaurant_opening_time');
-            $table->time('restaurant_closing_time');
+            $table->time('opening_time');
+            $table->time('closing_time');
             $table->timestamps();
 
             $table->foreign('user_id')

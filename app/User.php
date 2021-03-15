@@ -49,6 +49,6 @@ class User extends Authenticatable
 
     // categories
     public function categories(){
-        return $this->belognsToMany('App\Category');
+        return $this->belongsToMany('App\Category');
     }
 }

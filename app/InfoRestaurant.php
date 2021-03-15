@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class InfoRestaurant extends Model
 {
     protected $fillable = [
-        'restaurant_name',
-        'restaurant_slug',
+        'name',
+        'slug',
         'address',
-        'restaurant_description',
-        'restaurant_img_path',
-        'restaurant_opening_time',
-        'restaurant_closing_time'
+        'description',
+        'img_path',
+        'opening_time',
+        'closing_time'
     ];
 
     public function user(){

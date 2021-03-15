@@ -17,15 +17,17 @@ class CreatePlatesTable extends Migration
         Schema::create('plates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('plate_name');
-            $table->text('plate_description');
-            $table->text('plate_ingredients');
-            $table->float('plate_price', 5, 2);
-            $table->boolean('plate_vegan')->default(false);
-            $table->boolean('plate_vegetarian')->default(false);
-            $table->boolean('plate_spicy')->default(false);
-            $table->boolean('plate_glutenfree')->default(false);
-            $table->boolean('plate_available')->default(true);
+            $table->string('name');
+            $table->string('slug');
+            $table->text('description');
+            $table->text('ingredients');
+            $table->float('price', 5, 2);
+            $table->text('img_path');
+            $table->boolean('vegan')->default(false);
+            $table->boolean('vegetarian')->default(false);
+            $table->boolean('spicy')->default(false);
+            $table->boolean('glutenfree')->default(false);
+            $table->boolean('available')->default(false);
             $table->timestamps();
 
             $table->foreign('user_id')

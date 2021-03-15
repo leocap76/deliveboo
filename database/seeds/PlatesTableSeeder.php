@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Plate;
 use App\User;
+use Illuminate\Support\Str;
 
 class PlatesTableSeeder extends Seeder
 {
@@ -21,6 +22,7 @@ class PlatesTableSeeder extends Seeder
             $db = new Plate();
             
             $db->user_id = $user->id;
+            $plates[$key]['slug'] = Str::slug($plates[$key]['name']);
             $db->fill($plates[$key]);
             $db->save();
         }

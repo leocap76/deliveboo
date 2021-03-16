@@ -20,7 +20,8 @@ class UserController extends Controller
         'img_path' => 'required|mimes:jpeg,png,jpg,gif,svg|image',
         'PIVA' => 'required|max:11|min:11',
         'opening_time' => 'required|max:8',
-        'closing_time' => 'required|max:8'
+        'closing_time' => 'required|max:8',
+        'category_id' => 'required'
     ];
     /**
      * Display a listing of the resource.
@@ -63,6 +64,13 @@ class UserController extends Controller
         $restaurant = new InfoRestaurant();
         $restaurant->fill($data)->save();
 
+        $user = User::where('id', $data['user_id'])->first();
+
+        if (!empty($data["category_id"])) {
+            $user->categories()->attach($data["category_id"]);
+        }
+
+
         return redirect()->route('admin.users.index')
             ->with('message', 'Ristorante aggiunto correttamente');
     }
@@ -88,11 +96,11 @@ class UserController extends Controller
     {
         $infoRestaurant = InfoRestaurant::where('user_id', $id)->first();
 
-        $categories_array = Category::all();
+        $categories = Category::all();
 
         $user = User::where('id', $id)->first();
 
-        return view('admin.users.edit', compact('infoRestaurant', 'categories_array', 'user'));
+        return view('admin.users.edit', compact('infoRestaurant', 'categories', 'user'));
     }
 
     /**

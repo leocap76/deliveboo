@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.css" integrity="sha512-p209YNS54RKxuGVBVhL+pZPTioVDcYPZPYYlKWS9qVvQwrlzxBxkR8/48SCP58ieEuBosYiPUS970ixAfI/w/A==" crossorigin="anonymous" />
-   <!-- Scripts -->
   <script src="{{ asset('js/select2.js') }}" defer></script>
 
   <title>Document</title>
@@ -66,8 +64,8 @@
 
 
       <div class="form-group">
-        <label for="categories">Categorie</label>
-        <select class="form-control" name="categories[]" id="categories" multiple >
+        <label for="category_id">Categorie</label>
+        <select class="form-control" name="category_id[]" id="category_id" multiple >
             @foreach ($categories as $category)          
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach

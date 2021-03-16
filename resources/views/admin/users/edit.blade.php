@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <script src="{{ asset('js/select2.js') }}" defer></script>
   <title>Document</title>
 </head>
 <body>
@@ -62,14 +63,10 @@
 
       <div class="form-group">
           <label for="category_id">Categoria</label>
-          <select class="form-control" name="category_id[]" id="category_id">
+          <select class="form-control" name="category_id[]" id="category_id" multiple>
               <option value="">Scegli la categoria</option>
-              @foreach ($categories_array as $category)
-                  <option value="{{ $category->getAttributes()['id'] }}"
-                    @if ($user->categories == null)
-                      @if ($category->getAttributes()['id'] == $user->categories['id']) selected @endif
-                    @endif  
-                      >{{ $category->getAttributes()['name'] }}</option>
+              @foreach ($categories as $category)
+                <option value="{{ $category->id }}" @if ($user->categories->contains($category->id)) selected @endif>{{ $category->name }}</option>
               @endforeach
           </select>
       </div>

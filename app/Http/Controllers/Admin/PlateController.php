@@ -108,6 +108,26 @@ class PlateController extends Controller
         $data = $request->all();
         $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
 
+        if(empty($data['vegan'])){
+            $data['vegan'] = 0;
+         };
+
+         if(empty($data['vegetarian'])){
+            $data['vegetarian'] = 0;
+        };
+
+        if(empty($data['spicy'])){
+            $data['spicy'] = 0;
+        };
+
+        if(empty($data['glutenfree'])){
+            $data['glutenfree'] = 0;
+        };
+
+        if(empty($data['available'])){
+            $data['available'] = 0;
+        };
+
         $plate->update($data);
 
         return redirect()->route('admin.plates.index')

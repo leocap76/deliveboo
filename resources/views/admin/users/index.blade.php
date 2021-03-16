@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+        <title>Benvenuto - {{ $user->name }}</title>
+    </head>
+    <body>
+        <main class="container">
+
+            @if (\Session::has('message'))
+                <div class="alert alert-success">
+                    <ul>
+                        <li>{!! \Session::get('message') !!}</li>
+                    </ul>
+                </div>
+            @endif
+
+            <h2>Informazioni utente</h2>
+            <p>Nome utente: {{ $user->name }}</p>
+            <p>Email: {{ $user->email }}</p>
+
+            <h2>Informazioni Ristorante</h2>
+            <p>Nome ristorante: {{ $user->infoRestaurant->name }}</p>
+            <p>Indirizzo ristorante: {{ $user->infoRestaurant->address }}</p>
+            <p>Descrizione ristorante: {{ $user->infoRestaurant->description }}</p>
+            <p>Immagine ristorante: </p>
+            <img src="{{ ( str_contains($user->infoRestaurant->img_path, 'images/') ) ? asset('storage/' . $user->infoRestaurant->img_path) : $user->infoRestaurant->img_path }}" alt="{{ $user->infoRestaurant->name }}" style="width: 200px;">
+            <p>Partita IVA: {{ $user->infoRestaurant->PIVA }}</p>
+            <p>Orario apertura: {{ $user->infoRestaurant->opening_time }}</p>
+            <p>Orario Chiusura: {{ $user->infoRestaurant->closing_time }}</p>
+            @foreach ($user->categories as $category)
+                <p class="badge" style="background-color: {{ $category->color }}">{{ $category->name }}</p>
+            @endforeach
+
+            <div>
+                <a href="{{ route('admin.users.edit', $user->id) }}">Modifica il ristorante</a>
+                <a href="{{ route('admin.plates.index') }}">Aggiungi/Modifica Piatti</a>
+            </div>
+        </main>
+        
+    </body>
+</html>

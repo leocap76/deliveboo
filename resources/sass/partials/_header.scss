@@ -1,0 +1,26 @@
+header {
+  background-color: $delivebooColor;
+
+  .header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header_left {
+    height: 100px;
+  }
+
+  .logo_img {
+    height: 100%;
+  } 
+
+  .header_buttons {
+    color: $delivebooColor;
+    font-size: 19px;
+    margin-left: 20px;
+    padding: 5px 20px;
+    background-color:white;
+    border-radius: 50px;
+  }
+}

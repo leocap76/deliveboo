@@ -1,0 +1,342 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+body h1 {
+  font-size: 46px;
+}
+body h2 {
+  font-size: 40px;
+}
+body a,
+body a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background-color: #f2474d;
+}
+header .header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header_left {
+  height: 100px;
+}
+header .logo_img {
+  height: 100%;
+}
+header .header_buttons {
+  color: #f2474d;
+  font-size: 19px;
+  margin-left: 20px;
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+#loading_screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f2474d;
+  z-index: 2;
+}
+#loading_screen img {
+  width: 40%;
+}
+
+.fadeout_loading {
+  opacity: 1;
+  -webkit-animation: fade 0.1s linear forwards;
+          animation: fade 0.1s linear forwards;
+  pointer-events: none;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#jumbotron {
+  position: relative;
+  height: 650px;
+  background-image: url("../img/sfondo-header.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+#jumbotron .container {
+  height: 100%;
+  padding-top: 50px;
+}
+#jumbotron .container .search_container {
+  position: relative;
+  width: 600px;
+  background-color: white;
+  padding: 40px 20px;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+#jumbotron .container .search_container::before, #jumbotron .container .search_container::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+#jumbotron .container .search_container::after {
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+#jumbotron .container .search_container .input_search,
+#jumbotron .container .search_container .button_search {
+  padding: 10px;
+}
+
+#categories {
+  padding: 40px 0;
+}
+#categories h2 {
+  padding: 20px 0;
+}
+#categories .cards {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+#categories .cards .swiper-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 314px;
+  position: relative;
+  z-index: 1;
+}
+#categories .cards .swiper-slide {
+  height: 300px;
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;
+}
+#categories .cards .swiper-slide::before, #categories .cards .swiper-slide::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+#categories .cards .swiper-slide::after {
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+#categories .cards .swiper-button-next,
+#categories .cards .swiper-button-prev {
+  top: 48%;
+  color: #f2474d;
+}
+
+#restaurants_homepage {
+  width: 100%;
+  background-color: #D83F45;
+  padding: 40px 0;
+}
+#restaurants_homepage .restaurants_homepage_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
+  position: relative;
+  width: calc(100% / 3 - 15px);
+  margin: 15px 0;
+}
+#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card {
+  height: 200px;
+}
+#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+}
+#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card {
+  padding-bottom: 30px;
+}
+#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card h4 {
+  margin-top: 10px;
+}
+#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#tutorial_card_section {
+  padding: 40px 0;
+}
+#tutorial_card_section .tutorial_cards_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#tutorial_card_section .tutorial_cards_container .tutorial_card {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  width: calc(100vw / 3 - 15px);
+}
+#tutorial_card_section .tutorial_cards_container .tutorial_card:nth-child(2) {
+  margin: 20px;
+}
+#tutorial_card_section .tutorial_cards_container .tutorial_card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #26272b;
+  color: #737373;
+}
+footer .footer_top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 2px solid #737373;
+}
+footer .footer_top .items:nth-child(2) {
+  width: 350px;
+}
+footer .footer_top h4 {
+  font-weight: bold;
+  border-bottom: 2px solid #737373;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+footer .footer_top p {
+  max-width: 75%;
+}
+footer .footer_top ul {
+  list-style: none;
+}
+footer .footer_top ul li {
+  text-decoration: none;
+}
+footer .footer_top ul li a {
+  color: #737373;
+}
+footer .footer_top ul li a:hover {
+  text-decoration: none;
+  color: #fdfeff;
+}
+footer .footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+footer .footer_bottom .footer_bottom_left {
+  width: 50%;
+}
+footer .footer_bottom .footer_bottom_right {
+  text-align: right;
+}
+footer .footer_bottom .footer_bottom_right ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+footer .footer_bottom .footer_bottom_right ul li {
+  list-style: none;
+}
+footer .footer_bottom .footer_bottom_right ul li a {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: block;
+  text-align: center;
+  margin: 0 10px;
+  border-radius: 50%;
+  padding: 6px;
+  box-sizing: border-box;
+  text-decoration: none;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(0deg, #ddd, #fff);
+  transition: 0.5s;
+}
+footer .footer_bottom .footer_bottom_right ul li a:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+footer .footer_bottom .footer_bottom_right ul li a .fab {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(0deg, #fff, #ddd);
+  border-radius: 50%;
+  line-height: calc(30px - 12px);
+  font-size: 10px;
+  color: #262626;
+  transition: 0.5s;
+}
+footer .footer_bottom .footer_bottom_right ul li:nth-child(1) a:hover .fab {
+  color: #3b5998;
+}
+footer .footer_bottom .footer_bottom_right ul li:nth-child(2) a:hover .fab {
+  color: #00aced;
+}
+footer .footer_bottom .footer_bottom_right ul li:nth-child(3) a:hover .fab {
+  color: #dd4b39;
+}
+footer .footer_bottom .footer_bottom_right ul li:nth-child(4) a:hover .fab {
+  color: #007bb6;
+}
+footer .footer_bottom .footer_bottom_right ul li:nth-child(5) a:hover .fab {
+  color: #e4405f;
+}

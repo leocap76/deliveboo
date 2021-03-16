@@ -33,9 +33,14 @@
             <p>Partita IVA: {{ $user->infoRestaurant->PIVA }}</p>
             <p>Orario apertura: {{ $user->infoRestaurant->opening_time }}</p>
             <p>Orario Chiusura: {{ $user->infoRestaurant->closing_time }}</p>
+            @foreach ($user->categories as $category)
+                <p class="badge" style="background-color: {{ $category->color }}">{{ $category->name }}</p>
+            @endforeach
 
-            <a href="{{ route('admin.users.edit', $user->id) }}">Modifica il ristorante</a>
-            <a href="{{ route('admin.plates.index') }}">Aggiungi/Modifica Piatti</a>
+            <div>
+                <a href="{{ route('admin.users.edit', $user->id) }}">Modifica il ristorante</a>
+                <a href="{{ route('admin.plates.index') }}">Aggiungi/Modifica Piatti</a>
+            </div>
         </main>
         
     </body>

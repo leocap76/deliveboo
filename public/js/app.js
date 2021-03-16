@@ -1856,7 +1856,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__.default({
   },
   created: function created() {
     var self = this;
-    axios.get('http://127.0.0.1:8003/api/categories').then(function (response) {
+    axios.get('http://127.0.0.1:8000/api/categories').then(function (response) {
       console.log(response.data);
       self.categories = response.data;
     });

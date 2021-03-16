@@ -6,10 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
         <title>Benvenuto - {{ $user->name }}</title>
     </head>
     <body>
+
+        @include('partials.header')
+
         <main class="container">
 
             @if (\Session::has('message'))

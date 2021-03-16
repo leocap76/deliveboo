@@ -29,31 +29,8 @@
         {{-- /loading screen --}}
 
         <!-- header -->
-        <header>
-            <div class="container header_container">
-                <div class="header_left">
-                    <a href="#">
-                      <img src="{{ asset('img/deliverboomarchio.jpg') }}" alt="deliveboo" class="logo_img">
-                    </a>        
-                </div>
-                
-                <div class="header_right">
-                    @if (Route::has('login'))
-                        <div class="top-right links">
-                            @auth
-                                <a href="{{ url('/home') }}" class="header_buttons">Home</a>
-                            @else
-                                <a href="{{ route('login') }}" class="header_buttons">Accedi</a>
 
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="header_buttons">Registrati</a>
-                                @endif
-                            @endauth
-                        </div>
-                    @endif
-                </div>
-             </div>
-        </header>
+        @include('partials.header')
 
         <main id="app">
             <section id="jumbotron">
@@ -75,9 +52,7 @@
                     <div class="cards">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                @foreach ($categories as $category)
-                                    <div class="swiper-slide" > {{ $category->name }} </div>  
-                                @endforeach
+                                <div v-for="category in categories" class="swiper-slide" :style="'background-image: url(' + category.img_path + '); border: 5px solid ' + category.color + ';'"> <span>@{{ category.name }}</span> </div>  
                             </div>
                             <!-- arrow -->
                             <div class="swiper-button-next"></div>
@@ -258,26 +233,10 @@
 
         {{-- slider cdn --}}
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-        {{-- <script src="{{ asset('js/slider.js') }}"></script> --}}
         {{-- /slider cdn --}}
         <script src="{{ asset('js/loading.js') }}"></script>
-
         <script src="{{ asset('js/app.js') }}"></script>
 
-        {{-- <script src="https://unpkg.com/vue-slick-carousel"></script>
-
-        <script>
-            import VueSlickCarousel from 'vue-slick-carousel'
-            import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-            // optional style for arrows & dots
-            import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-           
-            export default {
-              name: 'MyComponent',
-              components: { VueSlickCarousel },
-            }
-        </script> --}}
         
 
     </body>

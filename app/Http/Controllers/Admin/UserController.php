@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\InfoRestaurant;
+use App\Category;
 
 class UserController extends Controller
 {
@@ -40,7 +41,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        $categories = Category::all();
+        return view('admin.users.create', compact('categories'));
     }
 
     /**
@@ -86,7 +88,11 @@ class UserController extends Controller
     {
         $infoRestaurant = InfoRestaurant::where('user_id', $id)->first();
 
-        return view('admin.users.edit', compact('infoRestaurant'));
+        $categories_array = Category::all();
+
+        $user = User::where('id', $id)->first();
+
+        return view('admin.users.edit', compact('infoRestaurant', 'categories_array', 'user'));
     }
 
     /**
@@ -111,7 +117,18 @@ class UserController extends Controller
 
         $restaurant = InfoRestaurant::findOrFail($id);
         
+        $user = User::where('id', $data['user_id'])->first();
+
         $restaurant->update($data);
+
+        // dd($data['category_id']);
+
+        if (empty($data['category_id'])) {
+            $user->categories()->detach();
+        } else {
+            $user->categories()->sync($data['category_id']);
+        }
+
 
         return redirect()->route('admin.users.index')
             ->with('message', 'Ristorante modificato correttamente');

@@ -59,6 +59,20 @@
         <label for="closing_time">Orario chiusura del ristorante</label>
         <input type="text" class="form-control" id="closing_time" name="closing_time" placeholder="Orario di Chiusura (HH:MM:SS)" value="{{ $infoRestaurant->closing_time }}">
       </div>
+
+      <div class="form-group">
+          <label for="category_id">Categoria</label>
+          <select class="form-control" name="category_id[]" id="category_id">
+              <option value="">Scegli la categoria</option>
+              @foreach ($categories_array as $category)
+                  <option value="{{ $category->getAttributes()['id'] }}"
+                    @if ($user->categories == null)
+                      @if ($category->getAttributes()['id'] == $user->categories['id']) selected @endif
+                    @endif  
+                      >{{ $category->getAttributes()['name'] }}</option>
+              @endforeach
+          </select>
+      </div>
   
       <button type="submit" class="btn btn-success">Modifica Ristorante</button>
   

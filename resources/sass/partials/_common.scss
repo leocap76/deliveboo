@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+:focus {
+    outline: none;
+}
+
 body { 
     // font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-family: 'Oswald', sans-serif;
@@ -22,7 +26,6 @@ body {
         color: inherit;
     }
 }
-
 
 
 

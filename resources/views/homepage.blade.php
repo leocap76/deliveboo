@@ -37,10 +37,12 @@
                 <div class="container">
                     <h1>I piatti che ami, a domicilio.</h1>
                     <div class="search_container">
-                        <p>Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
-                        <input type="text" placeholder="Inserisci categoria" class="input_search">
-                        <button class="button_search">Cerca</button>
-                        <p>Lorem ipsum dolor sit amet</p>
+                        <p>Inserisci il nome del tuo ristorante preferito!</p>
+                        <div class="search_input_container">
+                            <input type="text" placeholder="Inserisci il nome del ristorante" class="input_search">
+                            <button class="button_search">Cerca</button>
+                        </div>
+                        <p>#acasatuacondeliveboo</p>
                     </div>
                 </div>
             </section>

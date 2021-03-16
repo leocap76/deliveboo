@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+:focus {
+  outline: none;
+}
+
 body {
   font-family: "Oswald", sans-serif;
 }
@@ -122,9 +126,36 @@ header .header_buttons {
   right: 10px;
   left: auto;
 }
-#jumbotron .container .search_container .input_search,
-#jumbotron .container .search_container .button_search {
+#jumbotron .container .search_container .search_input_container {
+  position: relative;
+}
+#jumbotron .container .search_container .search_input_container .input_search,
+#jumbotron .container .search_container .search_input_container .button_search {
   padding: 10px;
+  border: none;
+}
+#jumbotron .container .search_container .search_input_container .input_search {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-left: -5px;
+  padding-right: 55px;
+  background-color: #ddd;
+  border-radius: 50px;
+}
+#jumbotron .container .search_container .search_input_container .input_search:focus {
+  background-color: #ececec;
+}
+#jumbotron .container .search_container .search_input_container .button_search {
+  position: absolute;
+  right: 0;
+  border-radius: 5px 50px 50px 5px;
+  background-color: #f2474d;
+  transition: all 0.2s;
+  color: white;
+}
+#jumbotron .container .search_container .search_input_container .button_search:hover {
+  background-color: #f45f64;
+  color: black;
 }
 
 #categories {

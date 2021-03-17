@@ -155,8 +155,30 @@
 //  class category restaurants
 #restaurants_homepage{
   width: 100%;
+  max-height: 0px;
   background-color: #D83F45;
   padding: $vericalPaddingSections;
+  overflow: hidden;
+  transition: max-height 1s;
+  &.visible_restaurants {
+    max-height: 1000px;
+  }
+
+  .container {
+    position: relative;
+    .section-closer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 40px;
+      cursor: pointer;
+      color: lighten(#212529, 80%);
+      transition: all 0.3s;
+      &:hover {
+        color: #212529;
+      }
+    }
+  }
 
   .restaurants_homepage_container{
     display: flex;

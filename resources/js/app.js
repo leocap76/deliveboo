@@ -6,25 +6,34 @@ var app = new Vue(
   {
       el: '#app',
       data: {
-          categories: [],
+          restaurants: [],
+          restaurantIsVisible: false,
+
       },
       created: function() {
-          var self = this;
-          axios   
-              .get('http://127.0.0.1:8000/api/categories')
-              .then( function(response) {
-                //   console.log(response.data);
-                  self.categories = response.data;
-              });
             },
             methods: {
                 getRestaurants: function(id) {
                     axios
                     .get(`http://127.0.0.1:8000/api/restaurants/${id}`)
-                    .then( function(response) {
-                        console.log(response.data);
+                    .then( (response) => {
+                        this.restaurants = response.data;
+
+                        this.restaurantIsVisible = true;
                     });
-               }
+               },
+               switchSection: function() {
+                   if (this.restaurantIsVisible) {
+                    this.restaurantIsVisible = false;
+                   } else {
+                    this.restaurantIsVisible = true;
+                   }
+
+                   setTimeout(() => {
+                       this.restaurants = [];
+                   }, 1000);
+
+               },
       }
   }
 );

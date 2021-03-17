@@ -1852,20 +1852,31 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
   data: {
-    categories: []
+    restaurants: [],
+    restaurantIsVisible: false
   },
-  created: function created() {
-    var self = this;
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/categories').then(function (response) {
-      //   console.log(response.data);
-      self.categories = response.data;
-    });
-  },
+  created: function created() {},
   methods: {
     getRestaurants: function getRestaurants(id) {
+      var _this = this;
+
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/restaurants/".concat(id)).then(function (response) {
-        console.log(response.data);
+        _this.restaurants = response.data;
+        _this.restaurantIsVisible = true;
       });
+    },
+    switchSection: function switchSection() {
+      var _this2 = this;
+
+      if (this.restaurantIsVisible) {
+        this.restaurantIsVisible = false;
+      } else {
+        this.restaurantIsVisible = true;
+      }
+
+      setTimeout(function () {
+        _this2.restaurants = [];
+      }, 1000);
     }
   }
 });

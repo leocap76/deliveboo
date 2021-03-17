@@ -55,7 +55,7 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 @foreach ($categories as $category)
-                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}')" @click="getRestaurants({{ $category->id }})"> <span>{{ $category->name }}</span> </div>
+                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 5px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }})"> <span>{{ $category->name }}</span> </div>
                                 @endforeach
                             </div>
                             <!-- arrow -->
@@ -69,83 +69,30 @@
 
             {{-- section categoria restaurants --}}
 
-            <section id="restaurants_homepage">
+            <section v-if="restaurants.length > 0" :class="restaurantIsVisible ? 'visible_restaurants' : ''" id="restaurants_homepage">
                 <div class="container">
+
+                    <i class="fas fa-times section-closer" @click="switchSection()"></i>
                     <h2>I tuoi ristoranti preferiti, direttamente a casa tua</h2>
 
                     <div class="restaurants_homepage_container">
 
-                        <a class="restaurants_homepage_card" href="#">
+                        <a v-for="restaurant in restaurants" class="restaurants_homepage_card" href="#">
                             <div class="top_restaurants_homepage_card">
-                                <img src="https://dummyimage.com/600x200/000/fff" alt="restaurant">
+                                <img :src="'storage/' + restaurant.info_restaurant.img_path" :alt="restaurant.info_restaurant.name">
                             </div>
 
                             <div class="middle_restaurants_homepage_card">
-                                <h4>Nome ristorante</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nisi provident ipsum hic inventore quaerat rem eos atque odio, aliquam nostrum maiores voluptatibus a reiciendis sit neque ea. Dolore, doloribus?</p>
+                                <h4>@{{ restaurant.info_restaurant.name }}</h4>
+                                <p>@{{ restaurant.info_restaurant.description }}</p>
                                 
                             </div>
 
                             <div class="bottom_restaurants_homepage_card">
-                                <span class="badge badge-primary">Italiano</span>
-                                <span class="badge badge-primary">Pizza</span>
-                                <span class="badge badge-primary">Buono</span>
+                                <span v-for="restaurant_category in restaurant.categories" class="badge" :style="'background-color: ' + restaurant_category.color">@{{ restaurant_category.name }}</span>
                             </div>
                         </a>
 
-                        <a class="restaurants_homepage_card" href="#">
-                            <div class="top_restaurants_homepage_card">
-                                <img src="https://dummyimage.com/600x200/000/fff" alt="restaurant">
-                            </div>
-
-                            <div class="middle_restaurants_homepage_card">
-                                <h4>Nome ristorante</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nisi provident ipsum hic inventore quaerat rem eos atque odio, aliquam nostrum maiores voluptatibus a reiciendis sit neque ea. Dolore, doloribus?</p>
-                                
-                            </div>
-
-                            <div class="bottom_restaurants_homepage_card">
-                                <span class="badge badge-primary">Italiano</span>
-                                <span class="badge badge-primary">Pizza</span>
-                                <span class="badge badge-primary">Buono</span>
-                            </div>
-                        </a>
-
-                        <a class="restaurants_homepage_card" href="#">
-                            <div class="top_restaurants_homepage_card">
-                                <img src="https://dummyimage.com/600x200/000/fff" alt="restaurant">
-                            </div>
-
-                            <div class="middle_restaurants_homepage_card">
-                                <h4>Nome ristorante</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nisi provident ipsum hic inventore quaerat rem eos atque odio, aliquam nostrum maiores voluptatibus a reiciendis sit neque ea. Dolore, doloribus?</p>
-                                
-                            </div>
-
-                            <div class="bottom_restaurants_homepage_card">
-                                <span class="badge badge-primary">Italiano</span>
-                                <span class="badge badge-primary">Pizza</span>
-                                <span class="badge badge-primary">Buono</span>
-                            </div>
-                        </a>
-
-                        <a class="restaurants_homepage_card" href="#">
-                            <div class="top_restaurants_homepage_card">
-                                <img src="https://dummyimage.com/600x200/000/fff" alt="restaurant">
-                            </div>
-
-                            <div class="middle_restaurants_homepage_card">
-                                <h4>Nome ristorante</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nisi provident ipsum hic inventore quaerat rem eos atque odio, aliquam nostrum maiores voluptatibus a reiciendis sit neque ea. Dolore, doloribus?</p>
-                                
-                            </div>
-
-                            <div class="bottom_restaurants_homepage_card">
-                                <span class="badge badge-primary">Italiano</span>
-                                <span class="badge badge-primary">Pizza</span>
-                                <span class="badge badge-primary">Buono</span>
-                            </div>
-                        </a>
 
                     </div>
                     

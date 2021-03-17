@@ -69,7 +69,7 @@
 
             {{-- section categoria restaurants --}}
 
-            <section v-if="restaurants.length > 0" :class="restaurantIsVisible ? 'visible_restaurants' : ''" id="restaurants_homepage">
+            <section :class="restaurantIsVisible ? 'visible_restaurants' : ''" id="restaurants_homepage">
                 <div class="container">
 
                     <i class="fas fa-times section-closer" @click="switchSection()"></i>

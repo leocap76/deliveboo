@@ -240,14 +240,15 @@ header .header_buttons {
 
 #restaurants_homepage {
   width: 100%;
-  max-height: 0px;
+  max-height: 0;
   background-color: #D83F45;
-  padding: 40px 0;
   overflow: hidden;
-  transition: max-height 1s;
+  padding: 0;
+  transition: all 1s;
 }
 #restaurants_homepage.visible_restaurants {
-  max-height: 1000px;
+  max-height: 3000px;
+  padding: 40px 0;
 }
 #restaurants_homepage .container {
   position: relative;

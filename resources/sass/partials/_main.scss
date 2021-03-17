@@ -81,7 +81,7 @@
 }
 
 #categories {
-  padding: $vericalPaddingSections;
+  padding: $verticalPaddingSections;
   h2 {
     padding: 20px 0;
     // text-align: center;
@@ -155,13 +155,14 @@
 //  class category restaurants
 #restaurants_homepage{
   width: 100%;
-  max-height: 0px;
+  max-height: 0;
   background-color: #D83F45;
-  padding: $vericalPaddingSections;
   overflow: hidden;
-  transition: max-height 1s;
+  padding: 0;
+  transition: all 1s;
   &.visible_restaurants {
-    max-height: 1000px;
+    max-height: 3000px;
+    padding: $verticalPaddingSections;
   }
 
   .container {
@@ -218,7 +219,7 @@
 
 // tutorial
 #tutorial_card_section{ 
-  padding: $vericalPaddingSections;
+  padding: $verticalPaddingSections;
   .tutorial_cards_container{
     display: flex;
     justify-content: space-between;

@@ -46,7 +46,7 @@
             "name" => "Bevande",
             "color" => "blue",
             "description" => "Rinfrescanti bevande pronte per te",
-            "img_path" => "alcol-bevande.jpg"
+            "img_path" => "bevanda.jpg"
         ]
     ]
 ?>

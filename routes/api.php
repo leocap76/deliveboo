@@ -21,9 +21,7 @@ Route::namespace('Api')->group(function () {
     // Controllers Within The "App\Http\Controllers\Api" Namespace
     Route::get('/categories', 'RestaurantController@categories');
 
-    // Route::get('/books/{id}', 'BookController@show');
-
-    // Route::get('/cheaper-than/{max}', 'BookController@price');
+    Route::get('/restaurants/{id}', 'RestaurantController@restaurants');
 
 });
 

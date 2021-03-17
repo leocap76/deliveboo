@@ -1,6 +1,5 @@
-const { default: axios } = require('axios');
-
 require('./bootstrap');
+import axios from 'axios';
 import Vue from 'vue';
 
 var app = new Vue(
@@ -14,12 +13,18 @@ var app = new Vue(
           axios   
               .get('http://127.0.0.1:8000/api/categories')
               .then( function(response) {
-                  console.log(response.data);
+                //   console.log(response.data);
                   self.categories = response.data;
               });
       },
-      // methods: {
-          
-      // }
+      methods: {
+          getRestaurants: function(id) {
+            axios
+            .get('http://127.0.0.1:8000/api/restaurants/' + id)
+            .then( function(response) {
+                console.log(response.data);
+            });
+          }
+      }
   }
 );

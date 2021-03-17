@@ -54,7 +54,7 @@
                     <div class="cards">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div v-for="category in categories" class="swiper-slide" :style="'background-image: url(' + category.img_path + '); border: 5px solid ' + category.color + ';'"> <span>@{{ category.name }}</span> </div>  
+                                <div v-for="(category, index) in categories" class="swiper-slide" :style="'background-image: url( img/' + category.img_path + '); border: 5px solid ' + category.color + ';'" @click="getRestaurants(index + 1)"> <span>@{{ category.name }}</span> </div>  
                             </div>
                             <!-- arrow -->
                             <div class="swiper-button-next"></div>
@@ -233,11 +233,11 @@
             </div>
         </footer> 
 
+        <script src="{{ asset('js/app.js') }}"></script>
         {{-- slider cdn --}}
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         {{-- /slider cdn --}}
         <script src="{{ asset('js/loading.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
 
         
 

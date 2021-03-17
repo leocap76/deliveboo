@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            InfoRestaurantsTableSeeder::class,
+            // InfoRestaurantsTableSeeder::class,
             PlatesTableSeeder::class,
             CategoriesTableSeeder::class
         ]);

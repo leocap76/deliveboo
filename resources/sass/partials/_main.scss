@@ -183,26 +183,25 @@
 
   .restaurants_homepage_container{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     
     .restaurants_homepage_card{
       position: relative;
-      width: calc(100% / 3 - 15px);
-      margin: 15px 0;
-      // border-radius: 5px;
+      width: calc(100% / 3 - 30px);
+      margin: 20px 15px;
 
       .top_restaurants_homepage_card {
         height: 200px;
         img {
-          max-width: 100%;
+          width: 100%;
           height: 100%;
+          object-fit: cover;
           border-radius: 5px 5px 0 0;
         }
       }
 
       .middle_restaurants_homepage_card {
-        padding-bottom: 30px;
+        padding-bottom: 20px;
         h4 {
           margin-top: 10px;
         }
@@ -212,6 +211,9 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        span {
+          margin-right: 5px;
+        }
       }
     }
   }

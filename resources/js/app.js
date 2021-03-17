@@ -24,9 +24,9 @@ var app = new Vue(
                },
                switchSection: function() {
                    if (this.restaurantIsVisible) {
-                    this.restaurantIsVisible = false;
+                        this.restaurantIsVisible = false;
                    } else {
-                    this.restaurantIsVisible = true;
+                        this.restaurantIsVisible = true;
                    }
 
                    setTimeout(() => {

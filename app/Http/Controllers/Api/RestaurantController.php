@@ -17,26 +17,20 @@ class RestaurantController extends Controller
     }
 
     public function restaurants($id) {
-        $restaurants = User::all();
-        $restaurant_all = [];
-        
-        foreach ($restaurants as $key => $restaurant) {
+        $restaurants = User::with('infoRestaurant','categories')->get();
 
+        $restaurant_all = [];
+
+        foreach($restaurants as $restaurant) {
+            
             foreach($restaurant->categories as $category) {
-                if ($category->id == $id) {
-                    $restaurant_categories = [];
-                    $restaurant_info = [];
-                    
-                    $restaurant_categories[] = $restaurant->categories;
-    
-                    $restaurant_info[] = $restaurant->infoRestaurant;
-    
-                    $restaurant_all[$key] = array_merge($restaurant_categories, $restaurant_info);
-                };
+                // dd($category->getOriginal());
+                if ($category->getOriginal()['pivot_category_id'] == $id) {
+                    $restaurant_all[] = $restaurant;
+                }
             }
 
-        };
-
+        }
 
         return response()->json($restaurant_all);
     }

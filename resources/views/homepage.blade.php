@@ -54,7 +54,9 @@
                     <div class="cards">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div v-for="(category, index) in categories" class="swiper-slide" :style="'background-image: url( img/' + category.img_path + '); border: 5px solid ' + category.color + ';'" @click="getRestaurants(index + 1)"> <span>@{{ category.name }}</span> </div>  
+                                @foreach ($categories as $category)
+                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}')" @click="getRestaurants({{ $category->id }})"> <span>{{ $category->name }}</span> </div>
+                                @endforeach
                             </div>
                             <!-- arrow -->
                             <div class="swiper-button-next"></div>

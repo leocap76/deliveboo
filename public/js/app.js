@@ -1863,7 +1863,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   },
   methods: {
     getRestaurants: function getRestaurants(id) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/restaurants/' + id).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/restaurants/".concat(id)).then(function (response) {
         console.log(response.data);
       });
     }

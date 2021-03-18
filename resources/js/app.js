@@ -17,6 +17,7 @@ var app = new Vue(
                     axios
                     .get(`http://127.0.0.1:8000/api/restaurants/${id}`)
                     .then( (response) => {
+                        console.log("va")
                         this.restaurants = response.data;
 
                         this.restaurantIsVisible = true;

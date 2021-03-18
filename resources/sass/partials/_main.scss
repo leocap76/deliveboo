@@ -106,7 +106,6 @@
       text-align: center;
       border-radius: 50%;
       font-size: 18px;
-      @include search-shadow;
       overflow: hidden;
 
       /* Center slide text vertically */
@@ -146,7 +145,6 @@
     }
     .swiper-button-next,
     .swiper-button-prev {
-      top: 48%;
       color: $delivebooColor;
     }
   }

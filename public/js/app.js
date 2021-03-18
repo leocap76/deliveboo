@@ -1861,6 +1861,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/restaurants/".concat(id)).then(function (response) {
+        console.log("va");
         _this.restaurants = response.data;
         _this.restaurantIsVisible = true;
       });

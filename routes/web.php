@@ -33,3 +33,5 @@ Route::prefix('dashboard')
         Route::resource('plates', 'PlateController');
 
     });
+
+Route::get('restaurant/{slug}', 'RestaurantController@restaurant')->name('shop.restaurant');

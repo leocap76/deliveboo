@@ -112,18 +112,36 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(
-            $this->dataValidate
-        );
+
+        $restaurant = InfoRestaurant::findOrFail($id);
 
         $data = $request->all();
 
+        if(empty($data['img_path'])) {
+            $data['img_path'] = $restaurant->img_path;
+
+            $request->validate(
+                [
+                    'name' => 'required|max:255',
+                    'address' => 'required|max:255',
+                    'description' => 'required|max:1000',
+                    'PIVA' => 'required|max:11|min:11',
+                    'opening_time' => 'required|max:8',
+                    'closing_time' => 'required|max:8',
+                    'category_id' => 'required'
+                ]
+            );
+
+        } else {
+            $request->validate(
+                $this->dataValidate
+            );
+
+            $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
+        };
+
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['name']);
-
-        $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
-
-        $restaurant = InfoRestaurant::findOrFail($id);
         
         $user = User::where('id', $data['user_id'])->first();
 

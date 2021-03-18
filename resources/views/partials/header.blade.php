@@ -11,7 +11,11 @@
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            <a href="{{ route('admin.users.index') }}" class="header_buttons">Pannello di controllo</a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <a href="{{ route('admin.users.index') }}" class="header_buttons">Pannello di controllo</a>
+                                <button type="submit" class="header_buttons">Logout</button>
+                            </form>
                         @else
                             <a href="{{ route('login') }}" class="header_buttons">Accedi</a>
 

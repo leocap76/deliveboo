@@ -22,5 +22,9 @@ header {
     padding: 5px 20px;
     background-color:white;
     border-radius: 50px;
+    border: none;
+    &:hover {
+      color: black;
+    }
   }
 }

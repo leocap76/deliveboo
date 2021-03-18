@@ -27,28 +27,31 @@
   
       <div class="form-group">
         <label for="name">Nome</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Nome del piatto" value="{{ $plate->name }}">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nome del piatto" value="{{ $plate->name }}" required maxlength="100">
       </div>
   
       <div class="form-group">
         <label for="description">Descrizione</label>
-        <textarea name="description" id="description" rows="4" class="form-control" placeholder="Descrizione del piatto">{{ $plate->description }}</textarea>
+        <textarea name="description" id="description" rows="4" class="form-control" placeholder="Descrizione del piatto" required>{{ $plate->description }}</textarea>
       </div>
   
       <div class="form-group">
         <label for="ingredients">Ingredienti</label>
-        <textarea name="ingredients" id="ingredients" rows="4" class="form-control" placeholder="Ingredienti del piatto">{{ $plate->ingredients }}</textarea>
+        <textarea name="ingredients" id="ingredients" rows="4" class="form-control" placeholder="Ingredienti del piatto" required>{{ $plate->ingredients }}</textarea>
       </div>
   
       <div class="form-group">
         <label for="price">Prezzo</label>
         <input type="number" step="0.01"
-        class="form-control" id="price" name="price" placeholder="Prezzo del piatto" value="{{ $plate->price }}">
+        class="form-control" id="price" name="price" placeholder="Prezzo del piatto" value="{{ $plate->price }}" required min="0.01">
       </div>
 
       <div class="form-group">
         <label for="img_path">Immagine</label>
         <input type="file" id="img_path" name="img_path" accept="image/*">
+        <div>
+            <img src="{{ asset('storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
+        </div>
       </div>
   
       <div class="form-group">
@@ -76,6 +79,7 @@
         <input type="checkbox" id="available" name="available" value="1" @if($plate->available == 1) checked @endif>
       </div>
   
+
       <button type="submit" class="btn btn-success">Modifica piatto</button>
   
     </form>

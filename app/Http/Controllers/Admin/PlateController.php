@@ -15,7 +15,7 @@ class PlateController extends Controller
         'name' => 'required|max:255',
         'description' => 'required',
         'ingredients' => 'required',
-        'price' => 'required',
+        'price' => 'required|numeric|min:0.01',
         'img_path' => 'required|mimes:jpeg,png,jpg,gif,svg|image'
     ];
     /**
@@ -101,12 +101,28 @@ class PlateController extends Controller
      */
     public function update(Request $request, Plate $plate)
     {
-        $request->validate(
-            $this->dataValidate
-        );
-
         $data = $request->all();
-        $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
+
+        
+        if(empty($data['img_path'])) {
+            $data['img_path'] = $plate->img_path;
+
+            $request->validate(
+                [
+                    'name' => 'required|max:255',
+                    'description' => 'required',
+                    'ingredients' => 'required',
+                    'price' => 'required|numeric|min:0.01'
+                ]
+            );
+
+        } else {
+            $request->validate(
+                $this->dataValidate
+            );
+
+            $data['img_path'] = Storage::disk('public')->put('images', $data['img_path']);
+        }
 
         if(empty($data['vegan'])){
             $data['vegan'] = 0;

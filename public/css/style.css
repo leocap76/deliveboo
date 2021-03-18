@@ -45,6 +45,10 @@ header .header_buttons {
   padding: 5px 20px;
   background-color: white;
   border-radius: 50px;
+  border: none;
+}
+header .header_buttons:hover {
+  color: black;
 }
 
 #loading_screen {

@@ -30,19 +30,19 @@
               <h2>{{ $plate->name }}</h2>
               <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}" style="width: 200px;" class="mb-3">
               <div>
-                <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="post">
+                <form action="{{ route('dashboard.plates.destroy', $plate->id) }}" method="post">
                     @csrf
                     @method('DELETE')
-                    <a href="{{ route('admin.plates.show', $plate->slug) }}" class="btn btn-secondary mb-3">info</a>
-                    <a href="{{ route('admin.plates.edit', $plate->id) }}" class="btn btn-secondary mb-3">modifica</a>
+                    <a href="{{ route('dashboard.plates.show', $plate->slug) }}" class="btn btn-secondary mb-3">info</a>
+                    <a href="{{ route('dashboard.plates.edit', $plate->id) }}" class="btn btn-secondary mb-3">modifica</a>
                     <button type="submit" class="btn btn-danger mb-3">Cancella</button>
                 </form>
               </div>
           @endforeach
   
           <div>
-            <a href="{{ route('admin.plates.create') }}" class="btn btn-primary mb-3">crea</a>
-            <a href="{{ route('admin.users.index') }}" class="btn btn-primary mb-3">Info ristorante/utente</a>
+            <a href="{{ route('dashboard.plates.create') }}" class="btn btn-primary mb-3">crea</a>
+            <a href="{{ route('dashboard.users.index') }}" class="btn btn-primary mb-3">Info ristorante/utente</a>
           </div>
   
         </div>

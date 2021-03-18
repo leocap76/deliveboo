@@ -187,8 +187,8 @@
         {{-- slider cdn --}}
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         {{-- /slider cdn --}}
-        <script src="{{ asset('js/loading.js') }}"></script>
 
+        <script src="{{ asset('js/loading.js') }}"></script>
         
 
     </body>

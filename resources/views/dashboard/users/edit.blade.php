@@ -30,7 +30,7 @@
         </div>
       @endif
   
-      <form action="{{ route('admin.users.update', $infoRestaurant->id) }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route('dashboard.users.update', $infoRestaurant->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
     
@@ -83,7 +83,7 @@
         </div>
     
         <button type="submit" class="btn btn-success">Modifica Ristorante</button>
-        <a href="{{ route('admin.users.index') }}" class="btn btn-success">Torna indietro</a>
+        <a href="{{ route('dashboard.users.index') }}" class="btn btn-success">Torna indietro</a>
     
       </form>
     </div>

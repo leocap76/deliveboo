@@ -32,7 +32,7 @@ class UserController extends Controller
     {
         $user = User::where('id', Auth::id())->first();
 
-        return view('admin.users.index', compact('user'));
+        return view('dashboard.users.index', compact('user'));
     }
 
     /**
@@ -43,7 +43,7 @@ class UserController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.users.create', compact('categories'));
+        return view('dashboard.users.create', compact('categories'));
     }
 
     /**
@@ -71,7 +71,7 @@ class UserController extends Controller
         }
 
 
-        return redirect()->route('admin.users.index')
+        return redirect()->route('dashboard.users.index')
             ->with('message', 'Ristorante aggiunto correttamente');
     }
 
@@ -100,7 +100,7 @@ class UserController extends Controller
 
         $user = User::where('id', $id)->first();
 
-        return view('admin.users.edit', compact('infoRestaurant', 'categories', 'user'));
+        return view('dashboard.users.edit', compact('infoRestaurant', 'categories', 'user'));
     }
 
     /**
@@ -156,7 +156,7 @@ class UserController extends Controller
         }
 
 
-        return redirect()->route('admin.users.index')
+        return redirect()->route('dashboard.users.index')
             ->with('message', 'Ristorante modificato correttamente');
     }
 

@@ -27,7 +27,7 @@
         </div>
       @endif
   
-      <form action="{{ route('admin.plates.store') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route('dashboard.plates.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
     

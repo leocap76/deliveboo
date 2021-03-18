@@ -44,8 +44,8 @@
         @endif
 
         <div>
-          <a href="{{ route('admin.plates.edit', $plate->id) }}" class="btn btn-primary">modifica</a>
-          <a href="{{ route('admin.plates.index') }}" class="btn btn-primary">torna indietro</a>
+          <a href="{{ route('dashboard.plates.edit', $plate->id) }}" class="btn btn-primary">modifica</a>
+          <a href="{{ route('dashboard.plates.index') }}" class="btn btn-primary">torna indietro</a>
         </div>
 
       </div>

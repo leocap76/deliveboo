@@ -168,7 +168,7 @@
     .section-closer {
       position: absolute;
       top: 0;
-      right: 0;
+      right: 15px;
       font-size: 40px;
       cursor: pointer;
       color: lighten(#212529, 80%);
@@ -185,8 +185,13 @@
     
     .restaurants_homepage_card{
       position: relative;
-      width: calc(100% / 3 - 30px);
-      margin: 20px 15px;
+      width: calc(100% / 3 - 15px);
+      margin: 15px 0;
+
+      &:nth-of-type(3n + 2) {
+        margin-left: 22.5px;
+        margin-right: 22.5px;
+      }
 
       .top_restaurants_homepage_card {
         height: 200px;

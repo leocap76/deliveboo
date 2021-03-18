@@ -26,7 +26,7 @@ class PlateController extends Controller
     public function index()
     {
         $plates = Plate::where('user_id', Auth::id())->get();
-        return view('admin.plates.index', compact('plates'));
+        return view('dashboard.plates.index', compact('plates'));
     }
 
     /**
@@ -36,7 +36,7 @@ class PlateController extends Controller
      */
     public function create()
     {
-        return view('admin.plates.create');
+        return view('dashboard.plates.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class PlateController extends Controller
         $plate->fill($data);
         $plate->save();
 
-        return redirect()->route('admin.plates.index')
+        return redirect()->route('dashboard.plates.index')
             ->with('message', 'Piatto creato correttamente');
     }
 
@@ -78,7 +78,7 @@ class PlateController extends Controller
     public function show($slug)
     {
         $plate = Plate::where('slug', $slug)->first();
-        return view('admin.plates.show', compact('plate'));
+        return view('dashboard.plates.show', compact('plate'));
     }
 
     /**
@@ -89,7 +89,7 @@ class PlateController extends Controller
      */
     public function edit(Plate $plate)
     {
-        return view('admin.plates.edit', compact('plate'));
+        return view('dashboard.plates.edit', compact('plate'));
     }
 
     /**
@@ -146,7 +146,7 @@ class PlateController extends Controller
 
         $plate->update($data);
 
-        return redirect()->route('admin.plates.index')
+        return redirect()->route('dashboard.plates.index')
             ->with('message', 'Piatto modificato correttamente');
     }
 
@@ -160,7 +160,7 @@ class PlateController extends Controller
     {
         $plate->delete();
 
-        return redirect()->route('admin.plates.index')
+        return redirect()->route('dashboard.plates.index')
             ->with('message', 'Piatto cancellato correttamente');
     }
 }

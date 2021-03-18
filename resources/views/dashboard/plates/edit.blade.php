@@ -29,7 +29,7 @@
         </div>
       @endif
   
-      <form action="{{ route('admin.plates.update', $plate->id) }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route('dashboard.plates.update', $plate->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
     
@@ -89,7 +89,7 @@
     
   
         <button type="submit" class="btn btn-success">Modifica piatto</button>
-        <a href="{{ route('admin.plates.index') }}" class="btn btn-success">Torna indietro</a>
+        <a href="{{ route('dashboard.plates.index') }}" class="btn btn-success">Torna indietro</a>
     
       </form>
     </div>

@@ -31,7 +31,7 @@
         </div>
       @endif
   
-      <form action="{{ route('admin.users.store') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route('dashboard.users.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
     

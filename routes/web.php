@@ -23,10 +23,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('admin')
+Route::prefix('dashboard')
     ->namespace('Admin')
     ->middleware('auth')
-    ->name('admin.')
+    ->name('dashboard.')
     ->group( function () {
 
         Route::resource('users', 'UserController');

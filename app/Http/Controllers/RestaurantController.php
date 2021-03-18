@@ -12,10 +12,14 @@ class RestaurantController extends Controller
 {
     public function restaurant($slug) {
 
-        $restaurant = User::with('categories', 'infoRestaurant', 'plates')->where('slug', $restaurant->infoRestaurant->slug)->get();
+        $infoRestaurant = InfoRestaurant::where('slug', $slug)->first();
 
-        dd($restaurant);
+        $restaurant = $infoRestaurant->user;
 
-        return view('shop.restaurant');
+        $categories = $restaurant->categories;
+
+        $plates = $restaurant->plates;
+
+        return view('shop.restaurant', compact('infoRestaurant','restaurant','categories','plates'));
     }
 }

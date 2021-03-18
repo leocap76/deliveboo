@@ -159,7 +159,7 @@
   padding: 0;
   transition: all 1s;
   &.visible_restaurants {
-    max-height: 3000px;
+    max-height: 9000px;
     padding: $verticalPaddingSections;
   }
 
@@ -262,6 +262,18 @@
       //   color:$delivebooColor;
       //   font-weight: bold;
       // }
+    }
+  }
+}
+
+.dashboard {
+  main {
+    padding: 50px 0 50px 0;
+    img {
+      max-width: 300px;
+    }
+    p {
+      font-size: 16px;
     }
   }
 }

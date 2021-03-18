@@ -49,13 +49,13 @@
 
             <section id="categories">
                 <div class="container">
-                    <h2>La selezione di Deliveboo</h2>
+                    <h2>Clicca su una categoria per vederne i ristoranti di deliveboo</h2>
 
                     <div class="cards">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 @foreach ($categories as $category)
-                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 5px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }})"> <span>{{ $category->name }}</span> </div>
+                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 5px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }}, '{{ $category->name}}')"> <span>{{ $category->name }}</span> </div>
                                 @endforeach
                             </div>
                             <!-- arrow -->
@@ -74,6 +74,7 @@
 
                     <i class="fas fa-times section-closer" @click="switchSection()"></i>
                     <h2>I tuoi ristoranti preferiti, direttamente a casa tua</h2>
+                    <h4>Abbiamo trovato @{{ restaurants.length }} @{{ restaurants.length != 1 ? 'ristoranti' : 'ristorante' }} nella categoria: @{{ category }}</h4>
 
                     <div class="restaurants_homepage_container">
 

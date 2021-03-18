@@ -232,7 +232,7 @@ header .header_buttons:hover {
   transition: all 1s;
 }
 #restaurants_homepage.visible_restaurants {
-  max-height: 3000px;
+  max-height: 9000px;
   padding: 40px 0;
 }
 #restaurants_homepage .container {
@@ -304,6 +304,16 @@ header .header_buttons:hover {
 #tutorial_card_section .tutorial_cards_container .tutorial_card img {
   max-width: 100%;
   border-radius: 5px;
+}
+
+.dashboard main {
+  padding: 50px 0 50px 0;
+}
+.dashboard main img {
+  max-width: 300px;
+}
+.dashboard main p {
+  font-size: 16px;
 }
 
 footer {

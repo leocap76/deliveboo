@@ -8,16 +8,17 @@ var app = new Vue(
       data: {
           restaurants: [],
           restaurantIsVisible: false,
+          category: ""
 
       },
       created: function() {
             },
             methods: {
-                getRestaurants: function(id) {
+                getRestaurants: function(id, name) {
+                    this.category = name.toUpperCase();
                     axios
                     .get(`http://127.0.0.1:8000/api/restaurants/${id}`)
                     .then( (response) => {
-                        console.log("va")
                         this.restaurants = response.data;
 
                         this.restaurantIsVisible = true;

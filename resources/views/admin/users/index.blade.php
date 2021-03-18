@@ -10,7 +10,7 @@
 
         <title>Benvenuto - {{ $user->name }}</title>
     </head>
-    <body>
+    <body class="dashboard">
 
         @include('partials.header')
 
@@ -42,8 +42,8 @@
             @endforeach
 
             <div>
-                <a href="{{ route('admin.users.edit', $user->id) }}">Modifica il ristorante</a>
-                <a href="{{ route('admin.plates.index') }}">Aggiungi/Modifica Piatti</a>
+                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary mb-3">Modifica il ristorante</a>
+                <a href="{{ route('admin.plates.index') }}" class="btn btn-primary mb-3">Aggiungi/Modifica Piatti</a>
             </div>
         </main>
         

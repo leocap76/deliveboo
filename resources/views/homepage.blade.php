@@ -77,8 +77,7 @@
                     <h4>Abbiamo trovato @{{ restaurants.length }} @{{ restaurants.length != 1 ? 'ristoranti' : 'ristorante' }} nella categoria: @{{ category }}</h4>
 
                     <div class="restaurants_homepage_container">
-
-                        <a v-for="restaurant in restaurants" class="restaurants_homepage_card" href="#">
+                        <a v-for="restaurant in restaurants" class="restaurants_homepage_card" :href="'{{ url('restaurant') }}' + '/' + restaurant.info_restaurant.slug">
                             <div class="top_restaurants_homepage_card">
                                 <img :src="'storage/' + restaurant.info_restaurant.img_path" :alt="restaurant.info_restaurant.name">
                             </div>
@@ -93,7 +92,6 @@
                                 <span v-for="restaurant_category in restaurant.categories" class="badge" :style="'background-color: ' + restaurant_category.color">@{{ restaurant_category.name }}</span>
                             </div>
                         </a>
-
 
                     </div>
                     

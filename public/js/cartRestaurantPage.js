@@ -14146,7 +14146,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         this.tot_price += price;
       }
 
-      console.log(isNew);
+      var li = document.getElementById('item_plate');
+      li.classList.remove('animazione');
+      setTimeout(function () {
+        li.classList.add('animazione');
+      }, 100);
     }
   }
 });

@@ -10,7 +10,7 @@ var app = new Vue(
     },    
     methods: {
       push_plate: function(name,price){
-        var isNew = true;
+        let isNew = true;
         this.tot_price = 0;
 
         this.cart_plates.forEach((item) => {

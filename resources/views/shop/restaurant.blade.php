@@ -19,7 +19,7 @@
     @include('partials.header')
     {{-- !header --}}
 
-    <main>
+    <main id="app">
       <section class="container" id="shop_restaurant">
         <div class="shop_restaurant_top">
           <div class="left">
@@ -35,113 +35,9 @@
 
         <div class="shop_restaurant_bottom">
           <div class="plates_container">
+
             @foreach ($plates as $plate)
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div>
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div>
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div>
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
-              <div class="shop_card_plates">
+              <div class="shop_card_plates" @click="push_plate('{{ $plate->name }}', {{ $plate->price }})" >
                 <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
                 <h3>{{ $plate->name }}</h3>
                 <p> {{ $plate->ingredients }}</p>
@@ -153,7 +49,8 @@
         {{-- carrello --}}
           <div class="shop_cart">
             <h3>Il tuo carrello</h3>
-            <h4>Prezzo totale:</h4>
+            <h4>Prezzo totale: @{{ tot_price }}€</h4>
+            
           </div>
           {{-- carrello --}}
         </div>
@@ -164,5 +61,8 @@
     {{-- footer --}}
     @include('partials.footer')
     {{-- !footer --}}
+
+    <script src="{{ asset('js/cartRestaurantPage.js') }}"></script>
   </body>
+
 </html>

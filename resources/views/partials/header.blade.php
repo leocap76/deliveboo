@@ -1,7 +1,7 @@
 <header>
     <div class="container header_container">
         <div class="header_left">
-            <a href="#">
+            <a href="{{ url('/') }}">
               <img src="{{ asset('img/deliverboomarchio.jpg') }}" alt="deliveboo" class="logo_img">
             </a>        
         </div>

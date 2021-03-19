@@ -381,6 +381,9 @@ header .header_buttons:hover {
   border-radius: 5px;
   background-color: #eee;
 }
+.restaurant_page main .shop_restaurant_bottom .shop_cart ul {
+  list-style: none;
+}
 
 footer {
   background-color: #26272b;

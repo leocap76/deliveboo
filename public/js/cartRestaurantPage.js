@@ -14125,35 +14125,28 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     push_plate: function push_plate(name, price) {
       var _this = this;
 
+      var isNew = true;
       this.tot_price = 0;
+      this.cart_plates.forEach(function (item) {
+        if (item.name == name) {
+          item.amount++;
+          item.price = price * item.amount;
+          isNew = false;
+        }
 
-      if (this.cart_plates.length == 0) {
+        _this.tot_price += item.price;
+      });
+
+      if (isNew) {
         this.cart_plates.push({
           'name': name,
           'price': price,
           'amount': 1
         });
         this.tot_price += price;
-      } else {
-        this.cart_plates.forEach(function (item) {
-          if (item.name == name) {
-            item.amount++;
-            item.price = price * item.amount;
-          } else {
-            _this.cart_plates.push({
-              'name': name,
-              'price': price,
-              'amount': 1
-            });
-
-            _this.tot_price += price;
-          }
-
-          _this.tot_price += item.price;
-        });
       }
 
-      console.log(this.cart_plates);
+      console.log(isNew);
     }
   }
 });

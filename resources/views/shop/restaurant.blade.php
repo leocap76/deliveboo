@@ -38,7 +38,7 @@
 
             @foreach ($plates as $plate)
               <div class="shop_card_plates" @click="push_plate('{{ $plate->name }}', {{ $plate->price }})" >
-                <img src="{{ asset( 'storage/' . $plate->img_path) }}" alt="{{ $plate->name }}">
+                <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
                 <h3>{{ $plate->name }}</h3>
                 <p> {{ $plate->ingredients }}</p>
                 <h5> {{ $plate->price }}€</h5>
@@ -50,7 +50,10 @@
           <div class="shop_cart">
             <h3>Il tuo carrello</h3>
             <h4>Prezzo totale: @{{ tot_price }}€</h4>
-            
+            <h4 v-if="cart_plates.length > 0">Piatti ordinati: </h4>
+            <ul>
+              <li v-for="item in cart_plates">@{{ item.name }} x@{{ item.amount }} Prezzo: @{{ item.price }}€</li>
+            </ul>
           </div>
           {{-- carrello --}}
         </div>

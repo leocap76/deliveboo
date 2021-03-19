@@ -320,6 +320,9 @@ header .header_buttons:hover {
   font-size: 16px;
 }
 
+.restaurant_page main {
+  min-height: calc(100vh - 392px);
+}
 .restaurant_page main .shop_restaurant_top {
   display: flex;
   justify-content: space-between;
@@ -373,7 +376,6 @@ header .header_buttons:hover {
   position: sticky;
   top: 0;
   width: 30%;
-  height: 200px;
   padding: 15px;
   margin: 0 0 0 10px;
   border-radius: 5px;

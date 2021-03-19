@@ -20,18 +20,20 @@ class UsersTableSeeder extends Seeder
         foreach ($users as $firstKey => $user) {
             $newUser = new User();
 
-            foreach ($categories as $key => $category) {
-                $newCategory = new $newUser->categories(); 
-
-                $newCategory->category_id = $key + 1;
-                $newCategory->user_id = $firstKey + 1;
-
-                $newCategory->save();
-            }
-
             $user['password'] = Hash::make($user['password']);
             $newUser->fill($user);
             $newUser->save();
         }
+
+        $arrUsers = User::all();
+
+         foreach($arrUsers as $singleUser) {
+            $newArr = [];
+
+            foreach ($categories as $key => $category) {
+                $newArr['id'] = [$key + 1];
+                $singleUser->categories()->attach($newArr['id']);
+            }
+         }
     }
 }

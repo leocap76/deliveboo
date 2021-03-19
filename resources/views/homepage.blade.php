@@ -55,7 +55,7 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 @foreach ($categories as $category)
-                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 5px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }}, '{{ $category->name}}')"> <span>{{ $category->name }}</span> </div>
+                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 5px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }}, '{{ $category->name}}', '{{ $category->color}}')"> <span>{{ $category->name }}</span> </div>
                                 @endforeach
                             </div>
                             <!-- arrow -->
@@ -69,7 +69,7 @@
 
             {{-- section categoria restaurants --}}
 
-            <section :class="restaurantIsVisible ? 'visible_restaurants' : ''" id="restaurants_homepage">
+            <section :class="restaurantIsVisible ? 'visible_restaurants' : ''" id="restaurants_homepage" :style="'background-color: ' + categoryColor">
                 <div class="container">
 
                     <i class="fas fa-times section-closer" @click="switchSection()"></i>
@@ -79,7 +79,7 @@
                     <div class="restaurants_homepage_container">
                         <a v-for="restaurant in restaurants" class="restaurants_homepage_card" :href="'{{ url('restaurant') }}' + '/' + restaurant.info_restaurant.slug">
                             <div class="top_restaurants_homepage_card">
-                                <img :src="'storage/' + restaurant.info_restaurant.img_path" :alt="restaurant.info_restaurant.name">
+                                <img :src="(restaurant.info_restaurant.img_path.includes('images/')) ? 'storage/' + restaurant.info_restaurant.img_path : restaurant.info_restaurant.img_path" :alt="restaurant.info_restaurant.name">
                             </div>
 
                             <div class="middle_restaurants_homepage_card">

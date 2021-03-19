@@ -1854,14 +1854,16 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   data: {
     restaurants: [],
     restaurantIsVisible: false,
-    category: ""
+    category: "",
+    categoryColor: ""
   },
   created: function created() {},
   methods: {
-    getRestaurants: function getRestaurants(id, name) {
+    getRestaurants: function getRestaurants(id, name, color) {
       var _this = this;
 
       this.category = name.toUpperCase();
+      this.categoryColor = color;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/restaurants/".concat(id)).then(function (response) {
         _this.restaurants = response.data;
         _this.restaurantIsVisible = true;

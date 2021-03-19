@@ -49,7 +49,7 @@
         {{-- carrello --}}
           <div class="shop_cart">
             <h3>Il tuo carrello</h3>
-            <h4 id="item_plate">Prezzo totale: @{{ tot_price }}€</h4>
+            <h4>Prezzo totale: <span id="item_plate">@{{ tot_price }}€</span></h4>
             <h4 v-if="cart_plates.length > 0" >Piatti ordinati: </h4>
             <ul>
               <li v-for="item in cart_plates">@{{ item.name }} x@{{ item.amount }} Prezzo: @{{ item.price }}€</li>

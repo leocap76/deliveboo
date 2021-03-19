@@ -154,7 +154,6 @@
 #restaurants_homepage{
   width: 100%;
   max-height: 0;
-  background-color: #D83F45;
   overflow: hidden;
   padding: 0;
   transition: all 1s;
@@ -204,7 +203,7 @@
       }
 
       .middle_restaurants_homepage_card {
-        padding-bottom: 20px;
+        padding-bottom: 30px;
         h4 {
           margin-top: 10px;
         }
@@ -244,29 +243,6 @@
         max-width: 100%;
         border-radius: 5px;
       }
-      // height: calc(100vw / 3 - 15px);
-      
-      // background-repeat: no-repeat;
-      // background-size: contain;
-      // &:not(:nth-last-child(3)) {
-      //   margin-left: 15px;
-      // }
-      // &:nth-child(1) {
-      //   background-image: url('../img/ordinaonline.png');
-      // }
-      // &:nth-child(2) {
-      //   background-image: url('../img/ciclista.png');
-      // }
-      // &:nth-child(3) {
-      //   background-image: url('../img/buonappetito.png');
-      // }
-
-      // h3{
-      //   display: inline-block;
-      //   text-align: center;
-      //   color:$delivebooColor;
-      //   font-weight: bold;
-      // }
     }
   }
 }
@@ -347,6 +323,9 @@
         background-color: #eee;
         ul {
           list-style: none;
+        }
+        #item_plate {
+          display: inline-block;
         }
       }
     }

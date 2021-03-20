@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap);
 * {
   box-sizing: border-box;
   padding: 0;
@@ -22,13 +23,16 @@
 }
 
 body {
-  font-family: "Oswald", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 body h1 {
   font-size: 46px;
 }
 body h2 {
   font-size: 40px;
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: "Oswald", sans-serif;
 }
 body a,
 body a:hover {
@@ -43,14 +47,16 @@ header .header_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-header .header_left {
   height: 100px;
 }
-header .logo_img {
+header .header_container .header_left {
+  height: 100%;
+}
+header .header_container .header_left .logo_img {
   height: 100%;
 }
 header .header_buttons {
+  display: inline-block;
   color: #f2474d;
   font-size: 19px;
   margin-left: 20px;
@@ -337,69 +343,82 @@ header .header_buttons:hover {
 
 .restaurant_page main {
   min-height: calc(100vh - 392px);
+  background-color: #eee;
 }
-.restaurant_page main .shop_restaurant_top {
+.restaurant_page main #shop_restaurant_top {
+  border-bottom: 1px solid white;
+  box-shadow: 0px 8px 10px -12px #888888;
+  background-color: white;
+  padding: 40px 0;
+}
+.restaurant_page main #shop_restaurant_top .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px 0;
-  border-bottom: 1px solid white;
-  box-shadow: 0px 8px 10px -12px #888888;
 }
-.restaurant_page main .shop_restaurant_top .left {
+.restaurant_page main #shop_restaurant_top .container .left {
   width: 70%;
 }
-.restaurant_page main .shop_restaurant_top .right {
+.restaurant_page main #shop_restaurant_top .container .left p {
+  margin: 0;
+  color: #828585;
+}
+.restaurant_page main #shop_restaurant_top .container .left .shop_restaurant_address {
+  margin-bottom: 10px;
+}
+.restaurant_page main #shop_restaurant_top .container .right {
   width: 30%;
   text-align: right;
 }
-.restaurant_page main .shop_restaurant_top .right img {
+.restaurant_page main #shop_restaurant_top .container .right img {
   width: 100%;
   border-radius: 5px;
 }
-.restaurant_page main .shop_restaurant_bottom {
+.restaurant_page main #shop_restaurant_bottom {
+  padding: 40px 0;
+}
+.restaurant_page main #shop_restaurant_bottom .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px 0;
 }
-.restaurant_page main .shop_restaurant_bottom .plates_container {
+.restaurant_page main #shop_restaurant_bottom .container .plates_container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
   width: 70%;
 }
-.restaurant_page main .shop_restaurant_bottom .plates_container .shop_card_plates {
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates {
   height: 150px;
   width: calc(100% / 2 - 5px);
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #eee;
+  background-color: white;
   border-radius: 5px;
   cursor: pointer;
 }
-.restaurant_page main .shop_restaurant_bottom .plates_container .shop_card_plates img {
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates img {
   height: 130px;
   float: right;
   border-radius: 5px;
 }
-.restaurant_page main .shop_restaurant_bottom .plates_container .shop_card_plates p {
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates p {
   color: #f2474d;
 }
-.restaurant_page main .shop_restaurant_bottom .shop_cart {
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart {
   position: sticky;
   top: 0;
   width: 30%;
   padding: 15px;
   margin: 0 0 0 10px;
   border-radius: 5px;
-  background-color: #eee;
+  background-color: white;
 }
-.restaurant_page main .shop_restaurant_bottom .shop_cart ul {
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart ul {
   list-style: none;
 }
-.restaurant_page main .shop_restaurant_bottom .shop_cart #item_plate {
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #item_plate {
   display: inline-block;
 }
 

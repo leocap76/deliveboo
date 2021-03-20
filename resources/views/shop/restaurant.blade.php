@@ -20,20 +20,30 @@
     {{-- !header --}}
 
     <main id="app">
-      <section class="container" id="shop_restaurant">
-        <div class="shop_restaurant_top">
+
+      <section id="shop_restaurant_top">
+        <div class="container">
           <div class="left">
-            <h1>{{ $infoRestaurant->name }}</h1>
-            <small>indirizzo: {{ $infoRestaurant->address }}</small>
-            <h4>Descrizione:</h4>
+            <h2>{{ $infoRestaurant->name }}</h2>
+
+            <p>
+              @foreach ($categories as $category)
+                  <span>{{ $category->name }} -</span>
+              @endforeach
+              <span>Aperti fino alle: {{ substr($infoRestaurant->closing_time, -8, 5) }}</span>
+            </p>
+            <p class="shop_restaurant_address">{{ $infoRestaurant->address }}</p>
             <p> {{ $infoRestaurant->description }}</p>
           </div>
           <div class="right">
             <img src="{{ ( str_contains($infoRestaurant->img_path, 'images/') ) ? asset('storage/' . $infoRestaurant->img_path) : $infoRestaurant->img_path }}" alt="{{ $infoRestaurant->name }}">
           </div>
         </div>
+      </section>
 
-        <div class="shop_restaurant_bottom">
+      <section id="shop_restaurant_bottom">
+
+        <div class="container">
           <div class="plates_container">
 
             @foreach ($plates as $plate)
@@ -46,7 +56,7 @@
               </div> 
             @endforeach
           </div>
-        {{-- carrello --}}
+          {{-- carrello --}}
           <div class="shop_cart"  v-if="cart_plates.length > 0" >
             <h3>Il tuo carrello</h3>
             <h4>Piatti ordinati: </h4>
@@ -73,10 +83,12 @@
             <h6> Prezzo di spedizione @{{ delivery.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</h6>
             <h4>Prezzo totale: <span id="item_plate" class="price_animation">@{{ tot_price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</span></h4>
           </div>
-          {{-- carrello --}}
         </div>
+
         
+        {{-- carrello --}}
       </section>
+        
     </main>
 
     {{-- footer --}}

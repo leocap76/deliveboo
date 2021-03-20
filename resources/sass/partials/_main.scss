@@ -262,75 +262,104 @@
 // pagina del ristorante
 
 .restaurant_page{
+
   main {
     min-height: calc(100vh - 392px);
-    .shop_restaurant_top{
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: $verticalPaddingSections;
+    background-color: #eee;
+    
+    #shop_restaurant_top{
       border-bottom: 1px solid white;
       box-shadow: 0px 8px 10px -12px #888888;
-      .left{
-        width: 70%;
-      }
-      .right{
-        width: 30%;
-        text-align: right;
-        img{
-          width: 100%;
-          border-radius: 5px;
-        }
-      }
-    }
-    .shop_restaurant_bottom{
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      background-color: white;
       padding: $verticalPaddingSections;
-      .plates_container{
+
+      .container {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        flex-wrap: wrap;
-        width: 70%;
+        // padding: $verticalPaddingSections;
+        
+        .left{
+          width: 70%;
 
-        .shop_card_plates{
-          height: 150px;
-          width: calc(100% / 2 - 5px);
-          padding: 10px;
-          margin-bottom: 10px;
-          background-color: #eee;
-          border-radius: 5px;
-          cursor: pointer;
-          img{
-            height: 130px;
-            float: right;
-            border-radius: 5px;
+          p {
+            margin: 0;
+            color: $shopRestaurantSmallText;
           }
-          p{
-            color:$delivebooColor;
+
+          .shop_restaurant_address {
+            margin-bottom: 10px;
+          }
+        }
+
+        .right{
+          width: 30%;
+          text-align: right;
+
+          img{
+            width: 100%;
+            border-radius: 5px;
           }
         }
       }
-      .shop_cart{
-        position: sticky;
-        top: 0;
-        width: 30%;
-        padding: 15px;
-        margin: 0 0 0 10px;
-        border-radius: 5px;
-        background-color: #eee;
-        ul {
-          list-style: none;
+    } 
+
+    #shop_restaurant_bottom{
+      padding: $verticalPaddingSections;
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .plates_container{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          width: 70%;
+
+          .shop_card_plates{
+            height: 150px;
+            width: calc(100% / 2 - 5px);
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+
+            img{
+              height: 130px;
+              float: right;
+              border-radius: 5px;
+            }
+
+            p{
+              color:$delivebooColor;
+            }
+          }
         }
-        #item_plate {
-          display: inline-block;
+
+        .shop_cart{
+          position: sticky;
+          top: 0;
+          width: 30%;
+          padding: 15px;
+          margin: 0 0 0 10px;
+          border-radius: 5px;
+          background-color: white;
+
+          ul {
+            list-style: none;
+          }
+
+          #item_plate {
+            display: inline-block;
+          }
         }
       }
     }
-  } 
-  
+  }  
 }
 
 .price_animation {

@@ -21,9 +21,8 @@
 
 // !scrollbar
 
-body { 
-    // font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-family: 'Oswald', sans-serif;
+body {
+    font-family: $smallTextFont;
 
     h1 {
         font-size: 46px;
@@ -31,6 +30,10 @@ body {
 
     h2 {
         font-size: 40px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $titlesFont;
     }
 
     a, 

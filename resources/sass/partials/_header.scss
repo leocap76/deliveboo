@@ -5,17 +5,21 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .header_left {
     height: 100px;
+
+    .header_left {
+      height: 100%;
+  
+      .logo_img {
+        height: 100%;
+      }
+    }
   }
 
-  .logo_img {
-    height: 100%;
-  } 
+  
 
   .header_buttons {
+    display: inline-block;
     color: $delivebooColor;
     font-size: 19px;
     margin-left: 20px;

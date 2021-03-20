@@ -14119,14 +14119,18 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
   data: {
     cart_plates: [],
-    tot_price: 0
+    tot_price: 0,
+    delivery: 2.50
+  },
+  mounted: function mounted() {
+    this.tot_price = this.delivery;
   },
   methods: {
     push_plate: function push_plate(name, price) {
       var _this = this;
 
       var isNew = true;
-      this.tot_price = 0;
+      this.tot_price = this.delivery;
       this.cart_plates.forEach(function (item) {
         if (item.name == name) {
           item.amount++;
@@ -14166,6 +14170,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       if (this.cart_plates[index].amount == 0) {
         this.cart_plates.splice(index, 1);
       }
+    },
+    plate_plus: function plate_plus(index) {
+      this.cart_plates[index].amount++;
+      this.cart_plates[index].price += this.cart_plates[index].original_price;
+      this.tot_price += this.cart_plates[index].original_price;
     }
   }
 });

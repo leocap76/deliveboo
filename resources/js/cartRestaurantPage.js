@@ -6,12 +6,19 @@ var app = new Vue(
     el: '#app',
     data: {
       cart_plates: [],
-      tot_price: 0
-    },    
+      tot_price: 0,
+      delivery: 2.50,
+    },   
+
+    mounted: function(){
+      this.tot_price = this.delivery;
+    },
+
     methods: {
       push_plate: function(name,price){
         let isNew = true;
-        this.tot_price = 0;
+        this.tot_price = this.delivery;
+        
 
         this.cart_plates.forEach((item) => {
 
@@ -49,6 +56,12 @@ var app = new Vue(
         if (this.cart_plates[index].amount == 0) {
           this.cart_plates.splice(index,1);
         }
+      },
+      plate_plus: function(index){
+        this.cart_plates[index].amount++;
+        this.cart_plates[index].price += this.cart_plates[index].original_price;
+        this.tot_price += this.cart_plates[index].original_price;
+        
       }
 
     }

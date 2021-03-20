@@ -47,10 +47,9 @@
             @endforeach
           </div>
         {{-- carrello --}}
-          <div class="shop_cart">
+          <div class="shop_cart"  v-if="cart_plates.length > 0" >
             <h3>Il tuo carrello</h3>
-            <h4>Prezzo totale: <span id="item_plate">@{{ tot_price.toFixed(2) }}€</span></h4>
-            <h4 v-if="cart_plates.length > 0" >Piatti ordinati: </h4>
+            <h4>Piatti ordinati: </h4>
             <ul>
               <li v-for="(item,index) in cart_plates" >
                 <div class="cart_item_left">
@@ -65,9 +64,14 @@
                   <span>
                     <i class="fas fa-trash" @click="plate_remove(index)"></i>
                   </span>
+                  <span>
+                    <i class="fas fa-plus-circle" @click="plate_plus(index)"></i>
+                  </span>
                 </div>
               </li>
             </ul>
+            <h6> Prezzo di spedizione @{{ delivery.toFixed(2) }}€</h6>
+            <h4>Prezzo totale: <span id="item_plate">@{{ tot_price.toFixed(2) }}€</span></h4>
           </div>
           {{-- carrello --}}
         </div>

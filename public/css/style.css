@@ -9,6 +9,18 @@
   outline: none;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  margin-right: 2px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f2474d;
+}
+
 body {
   font-family: "Oswald", sans-serif;
 }
@@ -391,7 +403,7 @@ header .header_buttons:hover {
   display: inline-block;
 }
 
-.animazione {
+.price_animation {
   -webkit-animation-name: zoom;
           animation-name: zoom;
   -webkit-animation-duration: 0.2s;

@@ -14152,11 +14152,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         this.tot_price += price;
       }
 
-      var li = document.getElementById('item_plate');
-      li.classList.remove('animazione');
-      setTimeout(function () {
-        li.classList.add('animazione');
-      }, 100);
+      if (this.cart_plates.length > 1) {
+        var li = document.getElementById('item_plate');
+        li.classList.remove('price_animation');
+        setTimeout(function () {
+          li.classList.add('price_animation');
+        }, 100);
+      }
     },
     plate_remove: function plate_remove(index) {
       this.tot_price -= this.cart_plates[index].price;

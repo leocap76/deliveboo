@@ -54,7 +54,7 @@
               <li v-for="(item,index) in cart_plates" >
                 <div class="cart_item_left">
                   <span>
-                    @{{ item.name }} x@{{ item.amount }} Prezzo: @{{ item.price.toFixed(2) }}€
+                    @{{ item.name }} x@{{ item.amount }} Prezzo: @{{ item.price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€
                   </span>
                 </div>
                 <div class="cart_item_right">
@@ -70,8 +70,8 @@
                 </div>
               </li>
             </ul>
-            <h6> Prezzo di spedizione @{{ delivery.toFixed(2) }}€</h6>
-            <h4>Prezzo totale: <span id="item_plate">@{{ tot_price.toFixed(2) }}€</span></h4>
+            <h6> Prezzo di spedizione @{{ delivery.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</h6>
+            <h4>Prezzo totale: <span id="item_plate" class="price_animation">@{{ tot_price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</span></h4>
           </div>
           {{-- carrello --}}
         </div>

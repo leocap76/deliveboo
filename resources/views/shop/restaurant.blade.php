@@ -41,7 +41,7 @@
                 <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
                 <h3>{{ $plate->name }}</h3>
                 <p> {{ $plate->ingredients }}</p>
-                <h5> {{ $plate->price }}€</h5>
+                <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
                 {{-- <p> {{ $plate->description }}</p> --}}
               </div> 
             @endforeach
@@ -49,10 +49,24 @@
         {{-- carrello --}}
           <div class="shop_cart">
             <h3>Il tuo carrello</h3>
-            <h4>Prezzo totale: <span id="item_plate">@{{ tot_price }}€</span></h4>
+            <h4>Prezzo totale: <span id="item_plate">@{{ tot_price.toFixed(2) }}€</span></h4>
             <h4 v-if="cart_plates.length > 0" >Piatti ordinati: </h4>
             <ul>
-              <li v-for="item in cart_plates">@{{ item.name }} x@{{ item.amount }} Prezzo: @{{ item.price }}€</li>
+              <li v-for="(item,index) in cart_plates" >
+                <div class="cart_item_left">
+                  <span>
+                    @{{ item.name }} x@{{ item.amount }} Prezzo: @{{ item.price.toFixed(2) }}€
+                  </span>
+                </div>
+                <div class="cart_item_right">
+                  <span>
+                    <i class="fas fa-minus-circle" @click="plate_minus(index)"></i>
+                  </span>
+                  <span>
+                    <i class="fas fa-trash" @click="plate_remove(index)"></i>
+                  </span>
+                </div>
+              </li>
             </ul>
           </div>
           {{-- carrello --}}

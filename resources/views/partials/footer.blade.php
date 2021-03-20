@@ -4,7 +4,7 @@
       <div class="footer_top">
           <div class="items">
               <h4>ABOUT US</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas hic asperiores iusto blanditiis beatae magni illum? Aperiam placeat,</p>
+              <p>Deliveboo è stata sviluppata dal Team-7 della classe#22 di <strong><a href="https://www.boolean.careers/" target="_blank">Boolean</a></strong>.</p>
           </div>
           <div class="items">
               <h4>TEAM</h4>

@@ -35,6 +35,15 @@ var app = new Vue(
         li.classList.remove('animazione');
 
         setTimeout(function(){ li.classList.add('animazione'); }, 100);
+      },
+
+      plate_remove: function(index){
+        this.tot_price -= this.cart_plates[index].price;
+        this.cart_plates.splice(index,1);
+      },
+      plate_minus: function(index){
+        this.cart_plates[index].amount--;
+        this.tot_price -= this.cart_plates[index].price;
       }
     }
   });

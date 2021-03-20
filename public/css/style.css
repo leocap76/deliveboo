@@ -46,9 +46,13 @@ header .header_buttons {
   background-color: white;
   border-radius: 5px;
   border: none;
+  box-shadow: 0px 8px 10px -6px #a75a5a;
 }
 header .header_buttons:hover {
-  color: black;
+  color: white;
+  background-color: #ff5c5c;
+  border: 1px solid white;
+  box-shadow: none;
 }
 
 #loading_screen {
@@ -485,7 +489,7 @@ footer .footer_bottom .footer_bottom_right ul li a {
   padding: 6px;
   box-sizing: border-box;
   text-decoration: none;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 15px rgba(7, 7, 7, 0.267);
   background: linear-gradient(0deg, #ddd, #fff);
   transition: 0.5s;
 }

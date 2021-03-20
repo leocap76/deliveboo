@@ -17,6 +17,7 @@ var app = new Vue(
 
           if (item.name == name) {
             item.amount++;
+            item.original_price = price;
             item.price = price * item.amount;
             isNew = false;
           }
@@ -26,7 +27,7 @@ var app = new Vue(
 
         if(isNew) {
 
-          this.cart_plates.push({ 'name': name, 'price': price, 'amount' : 1}); 
+          this.cart_plates.push({ 'name': name, 'price': price, 'original_price': price, 'amount' : 1}); 
           this.tot_price += price;
           
         }
@@ -43,7 +44,12 @@ var app = new Vue(
       },
       plate_minus: function(index){
         this.cart_plates[index].amount--;
-        this.tot_price -= this.cart_plates[index].price;
+        this.cart_plates[index].price -= this.cart_plates[index].original_price;
+        this.tot_price -= this.cart_plates[index].original_price;
+        if (this.cart_plates[index].amount == 0) {
+          this.cart_plates.splice(index,1);
+        }
       }
+
     }
   });

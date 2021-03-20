@@ -421,6 +421,25 @@ header .header_buttons:hover {
     transform: scale(1);
   }
 }
+.plates_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 0;
+  border-bottom: 1px solid white;
+  box-shadow: 0px 8px 10px -12px #888888;
+}
+
+.plates_bottom_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.plates_bottom_buttons a {
+  margin: 10px;
+}
+
 footer {
   background-color: #26272b;
   color: #737373;

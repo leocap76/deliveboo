@@ -8,6 +8,13 @@ var app = new Vue(
       cart_plates: [],
       tot_price: 0,
       delivery: 2.50,
+      plate: {
+          "name": "",
+          "price": 0,
+          "description": "",
+          "ingredients": "",
+          "img": ""
+        }
     },   
 
     mounted: function(){
@@ -16,8 +23,26 @@ var app = new Vue(
     },
 
     methods: {
+      close_box: function() {
+        var box = document.getElementById('box');
+        box.style.display = 'none';
+      },
+      open_box: function (name,price,description,ingredients,img){
+        var box = document.getElementById('box');
+        box.style.display = 'inline-block';
+
+        this.plate.name = name;
+        this.plate.price = price;
+        this.plate.description = description;
+        this.plate.ingredients = ingredients;
+        this.plate.img = img;
+      },
       push_plate: function(name,price){
+        var box = document.getElementById('box');
+        box.style.display = 'none';
+        
         let isNew = true;
+
         this.tot_price = this.delivery;
         
 

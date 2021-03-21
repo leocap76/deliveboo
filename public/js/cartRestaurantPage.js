@@ -14120,15 +14120,37 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   data: {
     cart_plates: [],
     tot_price: 0,
-    delivery: 2.50
+    delivery: 2.50,
+    plate: {
+      "name": "",
+      "price": 0,
+      "description": "",
+      "ingredients": "",
+      "img": ""
+    }
   },
   mounted: function mounted() {// this.tot_price = this.delivery;
     // console.log(this.tot_price);
   },
   methods: {
+    close_box: function close_box() {
+      var box = document.getElementById('box');
+      box.style.display = 'none';
+    },
+    open_box: function open_box(name, price, description, ingredients, img) {
+      var box = document.getElementById('box');
+      box.style.display = 'inline-block';
+      this.plate.name = name;
+      this.plate.price = price;
+      this.plate.description = description;
+      this.plate.ingredients = ingredients;
+      this.plate.img = img;
+    },
     push_plate: function push_plate(name, price) {
       var _this = this;
 
+      var box = document.getElementById('box');
+      box.style.display = 'none';
       var isNew = true;
       this.tot_price = this.delivery;
       this.cart_plates.forEach(function (item) {

@@ -495,29 +495,46 @@ header .header_buttons:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 1;
 }
 .restaurant_page .shop_box_container .shop_restaurant_box {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
-  background-color: #0EC5BF;
-  padding: 15px;
+  width: 40%;
+  padding: 2px;
   border-radius: 5px;
+  background-color: white;
 }
-.restaurant_page .shop_box_container .shop_restaurant_box img {
+.restaurant_page .shop_box_container .shop_restaurant_box .top {
+  background-color: #f2474d;
+  padding: 13px;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 2px;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .top h2 {
+  color: #f6bfc2;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .bottom {
+  padding: 15px;
+  background-color: #ddd;
+  border-radius: 0 0 5px 5px;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .bottom img {
   width: 100px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
-.restaurant_page .shop_box_container .shop_restaurant_box .button_shop {
+.restaurant_page .shop_box_container .shop_restaurant_box .bottom .button_shop {
   padding: 15px;
   border-radius: 5px;
   border: none;
   outline: none;
-}
-.restaurant_page .shop_box_container .shop_restaurant_box .button_shop i {
-  color: seagreen;
+  background-color: #0EC5BF;
+  color: white;
 }
 
 .price_animation {

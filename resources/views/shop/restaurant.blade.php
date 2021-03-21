@@ -21,6 +21,36 @@
 
     <main id="app">
 
+      {{-- Box al click sul piatto --}}
+      <div class="shop_box_container" id="box">
+
+        <div class="shop_restaurant_box">
+
+          <div class="top">
+            <h2>@{{ plate.name }}</h2>
+          </div>
+
+          <div class="bottom">
+
+            <img :src="(plate.img.includes('images/')) ? 'storage/' + plate.img : plate.img" :alt="plate.name">
+  
+            <h3>Ingredienti: </h3>
+            <p>@{{ plate.ingredients }}</p>
+    
+            <h3>Descrizione: </h3>
+            <p>@{{ plate.description }}€</p>
+
+            <h3>Prezzo: </h3>
+            <p>@{{ plate.price }}€</p>
+            <button class="button_shop" @click="push_plate(plate.name, plate.price)">Aggiungi alla cassa <i class="fas fa-cart-plus"></i></button>
+            <button class="button_shop" @click="close_box()">Chiudi</button>
+          </div>
+
+        </div>
+
+      </div>
+      {{-- /Box al click sul piatto --}}
+
       <section id="shop_restaurant_top">
         <div class="container">
           <div class="left">
@@ -46,7 +76,7 @@
         <div class="container">
           <div class="plates_container">
             @foreach ($plates as $plate)
-              <div class="shop_card_plates" @click="push_plate('{{ $plate->name }}', {{ $plate->price }})" >
+              <div class="shop_card_plates" @click="open_box('{{ $plate->name }}', {{ $plate->price }}, '{{ $plate->description }}', '{{ $plate->ingredients }}', '{{ $plate->img_path }}' )" >
                 <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
                 <h3 class="ellipsis">{{ $plate->name }}</h3>
                 <p class="ellipsis"> {{ $plate->ingredients }}</p>
@@ -110,19 +140,6 @@
     {{-- footer --}}
     @include('partials.footer')
     {{-- !footer --}}
-
-    {{-- Box al click sul piatto --}}
-    <div class="shop_box_container">
-      <div class="shop_restaurant_box">
-        <h2>{{ $plate->name }}</h2>
-        <p>{{ $plate->ingredients }}</p>
-        <p>{{ $plate->description }}</p>
-        <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
-        <button class="button_shop">Aggiungi alla cassa <i class="fas fa-cart-plus"></i></button>
-      </div>
-    </div>
-      
-    {{-- /Box al click sul piatto --}}
 
     <script src="{{ asset('js/cartRestaurantPage.js') }}"></script>
   </body>

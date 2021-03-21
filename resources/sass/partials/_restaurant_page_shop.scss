@@ -191,26 +191,43 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.4);
+      display: none;
+      z-index: 1;
       .shop_restaurant_box {
         position: absolute;
-        top: 30%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 80%;
-        background-color: #0EC5BF;
-        padding: 15px;
+        width: 40%;
+        padding: 2px;
         border-radius: 5px;
-        img {
-          width: 100px;
+        background-color: white;
+        .top {
+          background-color: $delivebooColor;
+          padding: 13px;
+          border-radius: 5px 5px 0 0;
+          margin-bottom: 2px;
+          h2 {
+            color: $titleColor;
+          }
         }
-        .button_shop {
+        .bottom {
           padding: 15px;
-          border-radius: 5px;
-          border: none;
-          outline: none;
-          i {
-            color: seagreen;
+          background-color: #ddd;
+          border-radius: 0 0 5px 5px;
+          img {
+            width: 100px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+          }
+          .button_shop {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: #0EC5BF;
+            color: white;
           }
         }
       }

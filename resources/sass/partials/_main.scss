@@ -293,7 +293,7 @@
         }
 
         .right{
-          width: 30%;
+          width: 29%;
           text-align: right;
 
           img{
@@ -340,21 +340,103 @@
           }
         }
 
+        //carrello
         .shop_cart{
           position: sticky;
           top: 0;
-          width: 30%;
+          width: 29%;
+          min-height: 150px;
           padding: 15px;
-          margin: 0 0 0 10px;
           border-radius: 5px;
           background-color: white;
 
-          ul {
-            list-style: none;
+          //tasto del carrello quando è vuoto
+          .shop_cart_empty_button {
+            cursor: not-allowed; 
+            
+            .shop_cart_button {
+              display: inline-block;
+              color: white;
+              width: 100%;
+              background-color: #E2E5E5; //colore del tasto non usabile
+              font-size: 16px;
+              text-align: center;
+              padding: 10px;
+              border-radius: 5px;
+              pointer-events: none;
+            }
           }
 
-          #item_plate {
-            display: inline-block;
+          .shop_cart_empty_content {
+            text-align: center;
+            font-size: 16px;
+            color: #E2E5E5;
+            padding-top: 30px;
+          }
+
+          #shop_cart_top {
+            border-bottom: 1px solid #E0E8E8;
+
+            .shop_cart_button {
+              display: inline-block;
+              color: white;
+              width: 100%;
+              background-color: #0EC5BF; //colore del tasto
+              font-size: 16px;
+              text-align: center;
+              padding: 10px;
+              border-radius: 5px;
+  
+              &:hover {
+                color: white;
+                background-color: darken(#0EC5BF, 5%);
+              }
+            }
+  
+            ul {
+              list-style: none;
+  
+              div {
+                margin-top: 15px;
+              }
+              .cart_left_div {
+                float: left;
+                padding-right: 5px;
+  
+                .fas {
+                  color: #0EC5BF;
+                }
+                span {
+                  padding: 0 5px;
+                }
+              }
+              .cart_middle_div{
+                display: inline-block;
+                max-width: 60%;
+                padding-left: 10px;
+              }
+              .cart_right_div {
+                float: right;
+              }
+            }
+          }
+
+          #shop_cart_bottom {
+            padding-top: 15px;
+
+            #shop_cart_bottom_delivery{
+              display: flex;
+              justify-content: space-between;
+            }
+            #shop_cart_bottom_total{
+              display: flex;
+              justify-content: space-between;
+              font-size: 16px;
+
+              #item_plate {
+                display: inline-block;
+              }
+            }
           }
         }
       }

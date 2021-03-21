@@ -45,7 +45,6 @@
 
         <div class="container">
           <div class="plates_container">
-
             @foreach ($plates as $plate)
               <div class="shop_card_plates" @click="push_plate('{{ $plate->name }}', {{ $plate->price }})" >
                 <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
@@ -58,30 +57,47 @@
           </div>
           {{-- carrello --}}
           <div class="shop_cart"  v-if="cart_plates.length > 0" >
-            <h3>Il tuo carrello</h3>
-            <h4>Piatti ordinati: </h4>
-            <ul>
-              <li v-for="(item,index) in cart_plates" >
-                <div class="cart_item_left">
-                  <span>
-                    @{{ item.name }} x@{{ item.amount }} Prezzo: @{{ item.price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€
-                  </span>
-                </div>
-                <div class="cart_item_right">
-                  <span>
-                    <i class="fas fa-minus-circle" @click="plate_minus(index)"></i>
-                  </span>
-                  <span>
-                    <i class="fas fa-trash" @click="plate_remove(index)"></i>
-                  </span>
-                  <span>
-                    <i class="fas fa-plus-circle" @click="plate_plus(index)"></i>
-                  </span>
-                </div>
-              </li>
-            </ul>
-            <h6> Prezzo di spedizione @{{ delivery.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</h6>
-            <h4>Prezzo totale: <span id="item_plate" class="price_animation">@{{ tot_price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</span></h4>
+
+            <div id="shop_cart_top">
+              <a href="#" class="shop_cart_button">Vai alla cassa</a>
+              <ul>
+                <li v-for="(item,index) in cart_plates" class="clearfix">
+
+                  <div class="cart_left_div">
+                    <i class="fas fa-minus-circle" @click="plate_minus(index)"></i> <span>@{{ item.amount }}</span> <i class="fas fa-plus-circle" @click="plate_plus(index)"></i>
+                  </div>
+
+                  {{-- <i class="fas fa-trash" @click="plate_remove(index)"></i> --}}
+
+                  <div class="cart_middle_div">
+                    @{{ item.name }}
+                  </div>
+
+                  <div class="cart_right_div">
+                    @{{ item.price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€
+                  </div>
+                  
+                </li>
+              </ul>
+            </div>
+
+            <div id="shop_cart_bottom">
+              <div id="shop_cart_bottom_delivery">
+                <div>Spese di consegna</div>
+                <div>@{{ delivery.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</div>
+              </div>
+
+              <div id="shop_cart_bottom_total">
+                <div>Totale</div>
+                <div id="item_plate">@{{ tot_price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="shop_cart" v-else>
+            <div class="shop_cart_empty_button"><a href="#" class="shop_cart_button">Vai alla cassa</a></div>
+            <div class="shop_cart_empty_content">Il tuo carrello è vuoto</div>
           </div>
         </div>
 

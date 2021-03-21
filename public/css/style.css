@@ -39,6 +39,11 @@ body a:hover {
   text-decoration: none;
   color: inherit;
 }
+body .clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 header {
   background-color: #f2474d;
@@ -63,7 +68,7 @@ header .header_buttons {
   padding: 5px 20px;
   background-color: white;
   border-radius: 5px;
-  border: none;
+  border: 1px solid white;
   box-shadow: 0px 8px 10px -6px #a75a5a;
 }
 header .header_buttons:hover {
@@ -367,7 +372,7 @@ header .header_buttons:hover {
   margin-bottom: 10px;
 }
 .restaurant_page main #shop_restaurant_top .container .right {
-  width: 30%;
+  width: 29%;
   text-align: right;
 }
 .restaurant_page main #shop_restaurant_top .container .right img {
@@ -409,16 +414,86 @@ header .header_buttons:hover {
 .restaurant_page main #shop_restaurant_bottom .container .shop_cart {
   position: sticky;
   top: 0;
-  width: 30%;
+  width: 29%;
+  min-height: 150px;
   padding: 15px;
-  margin: 0 0 0 10px;
   border-radius: 5px;
   background-color: white;
 }
-.restaurant_page main #shop_restaurant_bottom .container .shop_cart ul {
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart .shop_cart_empty_button {
+  cursor: not-allowed;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart .shop_cart_empty_button .shop_cart_button {
+  display: inline-block;
+  color: white;
+  width: 100%;
+  background-color: #E2E5E5;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart .shop_cart_empty_content {
+  text-align: center;
+  font-size: 16px;
+  color: #E2E5E5;
+  padding-top: 30px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top {
+  border-bottom: 1px solid #E0E8E8;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top .shop_cart_button {
+  display: inline-block;
+  color: white;
+  width: 100%;
+  background-color: #0EC5BF;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top .shop_cart_button:hover {
+  color: white;
+  background-color: #0cada8;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul {
   list-style: none;
 }
-.restaurant_page main #shop_restaurant_bottom .container .shop_cart #item_plate {
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul div {
+  margin-top: 15px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_left_div {
+  float: left;
+  padding-right: 5px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_left_div .fas {
+  color: #0EC5BF;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_left_div span {
+  padding: 0 5px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_middle_div {
+  display: inline-block;
+  max-width: 60%;
+  padding-left: 10px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_right_div {
+  float: right;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom {
+  padding-top: 15px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom #shop_cart_bottom_delivery {
+  display: flex;
+  justify-content: space-between;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom #shop_cart_bottom_total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom #shop_cart_bottom_total #item_plate {
   display: inline-block;
 }
 

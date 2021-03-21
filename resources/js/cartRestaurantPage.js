@@ -11,7 +11,8 @@ var app = new Vue(
     },   
 
     mounted: function(){
-      this.tot_price = this.delivery;
+      // this.tot_price = this.delivery;
+      // console.log(this.tot_price);
     },
 
     methods: {

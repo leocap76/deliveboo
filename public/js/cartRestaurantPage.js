@@ -14122,8 +14122,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     tot_price: 0,
     delivery: 2.50
   },
-  mounted: function mounted() {
-    this.tot_price = this.delivery;
+  mounted: function mounted() {// this.tot_price = this.delivery;
+    // console.log(this.tot_price);
   },
   methods: {
     push_plate: function push_plate(name, price) {

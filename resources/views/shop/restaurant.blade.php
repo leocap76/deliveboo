@@ -76,13 +76,23 @@
         <div class="container">
           <div class="plates_container">
             @foreach ($plates as $plate)
-              <div class="shop_card_plates" @click="open_box('{{ $plate->name }}', {{ $plate->price }}, '{{ $plate->description }}', '{{ $plate->ingredients }}', '{{ $plate->img_path }}' )" >
-                <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
-                <h3 class="ellipsis">{{ $plate->name }}</h3>
-                <p class="ellipsis"> {{ $plate->ingredients }}</p>
-                <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
-                {{-- <p> {{ $plate->description }}</p> --}}
-              </div> 
+              @if ($plate->available == 1)
+                <div class="shop_card_plates" @click="open_box('{{ $plate->name }}', {{ $plate->price }}, '{{ $plate->description }}', '{{ $plate->ingredients }}', '{{ $plate->img_path }}' )" >
+                  <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
+                  <h3 class="ellipsis">{{ $plate->name }}</h3>
+                  <p class="ellipsis"> {{ $plate->ingredients }}</p>
+                  <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
+                  {{-- <p> {{ $plate->description }}</p> --}}
+                </div>
+              @else
+                <div class="disable shop_card_plates">
+                  <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
+                  <h3 class="ellipsis">{{ $plate->name }}</h3>
+                  <p class="ellipsis ingredients"> {{ $plate->ingredients }}</p>
+                  <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
+                  {{-- <p> {{ $plate->description }}</p> --}}
+                </div>
+              @endif
             @endforeach
           </div>
           {{-- carrello --}}

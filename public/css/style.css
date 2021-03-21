@@ -404,6 +404,15 @@ header .header_buttons:hover {
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates p {
   color: #f2474d;
 }
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .disable {
+  cursor: not-allowed;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .disable img {
+  filter: grayscale(1);
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .disable h3, .restaurant_page main #shop_restaurant_bottom .container .plates_container .disable h5, .restaurant_page main #shop_restaurant_bottom .container .plates_container .disable .ingredients {
+  color: #6d6d6d;
+}
 .restaurant_page main #shop_restaurant_bottom .container .shop_cart {
   position: sticky;
   top: 0;

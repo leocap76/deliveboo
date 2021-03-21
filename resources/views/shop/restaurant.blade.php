@@ -48,8 +48,8 @@
             @foreach ($plates as $plate)
               <div class="shop_card_plates" @click="push_plate('{{ $plate->name }}', {{ $plate->price }})" >
                 <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
-                <h3>{{ $plate->name }}</h3>
-                <p> {{ $plate->ingredients }}</p>
+                <h3 class="ellipsis">{{ $plate->name }}</h3>
+                <p class="ellipsis"> {{ $plate->ingredients }}</p>
                 <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
                 {{-- <p> {{ $plate->description }}</p> --}}
               </div> 
@@ -89,7 +89,7 @@
 
               <div id="shop_cart_bottom_total">
                 <div>Totale</div>
-                <div id="item_plate">@{{ tot_price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</div>
+                <div id="item_plate" class="price_animation">@{{ tot_price.toLocaleString("it-IT", {'minimumFractionDigits':2,'maximumFractionDigits':2}) }}€</div>
               </div>
             </div>
             
@@ -110,6 +110,12 @@
     {{-- footer --}}
     @include('partials.footer')
     {{-- !footer --}}
+
+    {{-- Box al click sul piatto --}}
+      <div>
+        
+      </div>
+    {{-- /Box al click sul piatto --}}
 
     <script src="{{ asset('js/cartRestaurantPage.js') }}"></script>
   </body>

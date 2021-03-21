@@ -256,6 +256,7 @@ header .header_buttons:hover {
   overflow: hidden;
   padding: 0;
   transition: all 1s;
+  background-color: #0EC5BF;
 }
 #restaurants_homepage.visible_restaurants {
   max-height: 9000px;
@@ -402,6 +403,11 @@ header .header_buttons:hover {
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates img {
   height: 130px;

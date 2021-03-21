@@ -156,7 +156,9 @@
   max-height: 0;
   overflow: hidden;
   padding: 0;
-  transition: all 1s;
+  transition: all 1s; 
+  background-color: $secondColorClient;
+
   &.visible_restaurants {
     max-height: 9000px;
     padding: $verticalPaddingSections;
@@ -328,6 +330,12 @@
             border-radius: 5px;
             cursor: pointer;
 
+            .ellipsis {
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+
             img{
               height: 130px;
               float: right;
@@ -381,7 +389,7 @@
               display: inline-block;
               color: white;
               width: 100%;
-              background-color: #0EC5BF; //colore del tasto
+              background-color: $secondColorClient; //colore del tasto
               font-size: 16px;
               text-align: center;
               padding: 10px;
@@ -389,7 +397,7 @@
   
               &:hover {
                 color: white;
-                background-color: darken(#0EC5BF, 5%);
+                background-color: darken($secondColorClient, 5%);
               }
             }
   

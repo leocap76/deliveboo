@@ -14152,13 +14152,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         this.tot_price += price;
       }
 
-      if (this.cart_plates.length > 1) {
+      setTimeout(function () {
         var li = document.getElementById('item_plate');
         li.classList.remove('price_animation');
         setTimeout(function () {
           li.classList.add('price_animation');
         }, 100);
-      }
+      }, 100);
     },
     plate_remove: function plate_remove(index) {
       this.tot_price -= this.cart_plates[index].price;
@@ -14172,11 +14172,22 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       if (this.cart_plates[index].amount == 0) {
         this.cart_plates.splice(index, 1);
       }
+
+      var li = document.getElementById('item_plate');
+      li.classList.remove('price_animation');
+      setTimeout(function () {
+        li.classList.add('price_animation');
+      }, 100);
     },
     plate_plus: function plate_plus(index) {
       this.cart_plates[index].amount++;
       this.cart_plates[index].price += this.cart_plates[index].original_price;
       this.tot_price += this.cart_plates[index].original_price;
+      var li = document.getElementById('item_plate');
+      li.classList.remove('price_animation');
+      setTimeout(function () {
+        li.classList.add('price_animation');
+      }, 100);
     }
   }
 });

@@ -14129,8 +14129,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       "img": ""
     }
   },
-  mounted: function mounted() {// this.tot_price = this.delivery;
-    // console.log(this.tot_price);
+  mounted: function mounted() {// var prova = JSON.parse(localStorage.getItem('plates'));
   },
   methods: {
     close_box: function close_box() {
@@ -14210,6 +14209,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       setTimeout(function () {
         li.classList.add('price_animation');
       }, 100);
+    },
+    save: function save() {
+      localStorage.setItem('tot_price', this.tot_price);
+      localStorage.setItem('plates', JSON.stringify(this.cart_plates));
     }
   }
 });

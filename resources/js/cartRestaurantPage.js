@@ -18,8 +18,7 @@ var app = new Vue(
     },   
 
     mounted: function(){
-      // this.tot_price = this.delivery;
-      // console.log(this.tot_price);
+      // var prova = JSON.parse(localStorage.getItem('plates'));
     },
 
     methods: {
@@ -97,6 +96,10 @@ var app = new Vue(
         var li = document.getElementById('item_plate');
         li.classList.remove('price_animation');
         setTimeout(function(){ li.classList.add('price_animation'); }, 100);
+      },
+      save: function () {
+        localStorage.setItem('tot_price', this.tot_price);
+        localStorage.setItem('plates', JSON.stringify(this.cart_plates));
       }
 
     }

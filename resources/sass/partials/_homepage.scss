@@ -1,0 +1,226 @@
+.homepage {
+    #jumbotron {
+        position: relative;
+        height: 650px;
+        background-image: url('../img/sfondo-header.png');
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        z-index: 0;
+      
+        .container {
+          height: 100%;
+          padding-top: 50px;
+      
+          .search_container {
+            position: relative;
+            width: 600px;
+            background-color: white;
+            padding: 40px 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+            @include search-shadow;
+            .search_input_container {
+              position: relative;
+              .input_search,
+              .button_search {
+                padding: 10px;
+                border: none;
+              }
+              .input_search {
+                width: 100%;
+                margin-bottom: 10px;
+                margin-left: -5px;
+                padding-right: 55px;
+                background-color: #ddd;
+                border-radius: 50px;
+                &:focus {
+                  background-color: #ececec;
+                }
+              }
+              .button_search {
+                position: absolute;
+                right: 0;
+                border-radius: 5px 50px 50px 5px;
+                background-color: $delivebooColor;
+                transition: all 0.2s;
+                color: white;
+                &:hover {
+                  background-color: lighten($delivebooColor, 5%);
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #categories {
+        padding: $verticalPaddingSections;
+        h2 {
+          padding: 20px 0;
+          // text-align: center;
+        }
+        .cards {
+          display: flex;
+          justify-content: space-around;
+          position: relative;
+          .swiper-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 314px;
+            position: relative;
+            z-index: 1;
+          }
+      
+          .swiper-slide {
+            position: relative;
+            height: 250px;
+            align-self: center;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 18px;
+            overflow: hidden;
+      
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            background-color: white;
+            align-items: center;
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center;
+            cursor: pointer;
+            span {
+              position: relative;
+              z-index: 3;
+              color: white;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.3);
+              z-index: 2;
+              border-radius: 50%;
+            }
+          }
+          .swiper-button-next,
+          .swiper-button-prev {
+            color: $delivebooColor;
+          }
+        }
+      }
+      
+      //  class category restaurants
+      #restaurants_homepage{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: all 1s; 
+        background-color: $secondColorClient;
+      
+        &.visible_restaurants {
+          max-height: 9000px;
+          padding: $verticalPaddingSections;
+        }
+      
+        .container {
+          position: relative;
+          .section-closer {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            font-size: 40px;
+            cursor: pointer;
+            color: lighten(#212529, 80%);
+            transition: all 0.3s;
+            &:hover {
+              color: #212529;
+            }
+          }
+        }
+
+        .restaurants_homepage_container{
+            display: flex;
+            flex-wrap: wrap;
+            
+            .restaurants_homepage_card{
+              position: relative;
+              width: calc(100% / 3 - 15px);
+              margin: 15px 0;
+        
+              &:nth-of-type(3n + 2) {
+                margin-left: 22.5px;
+                margin-right: 22.5px;
+              }
+        
+              .top_restaurants_homepage_card {
+                height: 200px;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 5px 5px 0 0;
+                }
+              }
+        
+              .middle_restaurants_homepage_card {
+                padding-bottom: 30px;
+                h4 {
+                  margin-top: 10px;
+                }
+              }
+        
+              .bottom_restaurants_homepage_card {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                span {
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+        }
+        
+        // tutorial
+        #tutorial_card_section{ 
+          padding: $verticalPaddingSections;
+          .tutorial_cards_container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .tutorial_card{
+              display: flex;
+              justify-content: center;
+              // margin: 15px;
+              border-radius: 5px;
+              width: calc(100vw / 3 - 15px);
+        
+              &:nth-child(2){
+                margin: 20px;
+              }
+        
+              img{
+                max-width: 100%;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+}

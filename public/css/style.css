@@ -45,39 +45,6 @@ body .clearfix:after {
   clear: both;
 }
 
-header {
-  background-color: #f2474d;
-}
-header .header_container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-}
-header .header_container .header_left {
-  height: 100%;
-}
-header .header_container .header_left .logo_img {
-  height: 100%;
-}
-header .header_buttons {
-  display: inline-block;
-  color: #f2474d;
-  font-size: 19px;
-  margin-left: 20px;
-  padding: 5px 20px;
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid white;
-  box-shadow: 0px 8px 10px -6px #a75a5a;
-}
-header .header_buttons:hover {
-  color: white;
-  background-color: #ff5c5c;
-  border: 1px solid white;
-  box-shadow: none;
-}
-
 #loading_screen {
   display: flex;
   justify-content: center;
@@ -118,7 +85,40 @@ header .header_buttons:hover {
     opacity: 0;
   }
 }
-#jumbotron {
+header {
+  background-color: #f2474d;
+}
+header .header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+header .header_container .header_left {
+  height: 100%;
+}
+header .header_container .header_left .logo_img {
+  height: 100%;
+}
+header .header_buttons {
+  display: inline-block;
+  color: #f2474d;
+  font-size: 19px;
+  margin-left: 20px;
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 0px 8px 10px -6px #a75a5a;
+}
+header .header_buttons:hover {
+  color: white;
+  background-color: #ff5c5c;
+  border: 1px solid white;
+  box-shadow: none;
+}
+
+.homepage #jumbotron {
   position: relative;
   height: 650px;
   background-image: url("../img/sfondo-header.png");
@@ -127,11 +127,11 @@ header .header_buttons:hover {
   background-repeat: no-repeat;
   z-index: 0;
 }
-#jumbotron .container {
+.homepage #jumbotron .container {
   height: 100%;
   padding-top: 50px;
 }
-#jumbotron .container .search_container {
+.homepage #jumbotron .container .search_container {
   position: relative;
   width: 600px;
   background-color: white;
@@ -139,7 +139,7 @@ header .header_buttons:hover {
   border-radius: 5px;
   margin-top: 30px;
 }
-#jumbotron .container .search_container::before, #jumbotron .container .search_container::after {
+.homepage #jumbotron .container .search_container::before, .homepage #jumbotron .container .search_container::after {
   z-index: -1;
   position: absolute;
   content: "";
@@ -152,20 +152,20 @@ header .header_buttons:hover {
   box-shadow: 0 15px 10px #777;
   transform: rotate(-3deg);
 }
-#jumbotron .container .search_container::after {
+.homepage #jumbotron .container .search_container::after {
   transform: rotate(3deg);
   right: 10px;
   left: auto;
 }
-#jumbotron .container .search_container .search_input_container {
+.homepage #jumbotron .container .search_container .search_input_container {
   position: relative;
 }
-#jumbotron .container .search_container .search_input_container .input_search,
-#jumbotron .container .search_container .search_input_container .button_search {
+.homepage #jumbotron .container .search_container .search_input_container .input_search,
+.homepage #jumbotron .container .search_container .search_input_container .button_search {
   padding: 10px;
   border: none;
 }
-#jumbotron .container .search_container .search_input_container .input_search {
+.homepage #jumbotron .container .search_container .search_input_container .input_search {
   width: 100%;
   margin-bottom: 10px;
   margin-left: -5px;
@@ -173,10 +173,10 @@ header .header_buttons:hover {
   background-color: #ddd;
   border-radius: 50px;
 }
-#jumbotron .container .search_container .search_input_container .input_search:focus {
+.homepage #jumbotron .container .search_container .search_input_container .input_search:focus {
   background-color: #ececec;
 }
-#jumbotron .container .search_container .search_input_container .button_search {
+.homepage #jumbotron .container .search_container .search_input_container .button_search {
   position: absolute;
   right: 0;
   border-radius: 5px 50px 50px 5px;
@@ -184,23 +184,22 @@ header .header_buttons:hover {
   transition: all 0.2s;
   color: white;
 }
-#jumbotron .container .search_container .search_input_container .button_search:hover {
+.homepage #jumbotron .container .search_container .search_input_container .button_search:hover {
   background-color: #f45f64;
   color: black;
 }
-
-#categories {
+.homepage #categories {
   padding: 40px 0;
 }
-#categories h2 {
+.homepage #categories h2 {
   padding: 20px 0;
 }
-#categories .cards {
+.homepage #categories .cards {
   display: flex;
   justify-content: space-around;
   position: relative;
 }
-#categories .cards .swiper-container {
+.homepage #categories .cards .swiper-container {
   display: flex;
   align-items: center;
   width: 100%;
@@ -208,7 +207,7 @@ header .header_buttons:hover {
   position: relative;
   z-index: 1;
 }
-#categories .cards .swiper-slide {
+.homepage #categories .cards .swiper-slide {
   position: relative;
   height: 250px;
   align-self: center;
@@ -229,12 +228,12 @@ header .header_buttons:hover {
   background-position: center;
   cursor: pointer;
 }
-#categories .cards .swiper-slide span {
+.homepage #categories .cards .swiper-slide span {
   position: relative;
   z-index: 3;
   color: white;
 }
-#categories .cards .swiper-slide::after {
+.homepage #categories .cards .swiper-slide::after {
   content: "";
   position: absolute;
   top: 0;
@@ -245,12 +244,11 @@ header .header_buttons:hover {
   z-index: 2;
   border-radius: 50%;
 }
-#categories .cards .swiper-button-next,
-#categories .cards .swiper-button-prev {
+.homepage #categories .cards .swiper-button-next,
+.homepage #categories .cards .swiper-button-prev {
   color: #f2474d;
 }
-
-#restaurants_homepage {
+.homepage #restaurants_homepage {
   width: 100%;
   max-height: 0;
   overflow: hidden;
@@ -258,14 +256,14 @@ header .header_buttons:hover {
   transition: all 1s;
   background-color: #0EC5BF;
 }
-#restaurants_homepage.visible_restaurants {
+.homepage #restaurants_homepage.visible_restaurants {
   max-height: 9000px;
   padding: 40px 0;
 }
-#restaurants_homepage .container {
+.homepage #restaurants_homepage .container {
   position: relative;
 }
-#restaurants_homepage .container .section-closer {
+.homepage #restaurants_homepage .container .section-closer {
   position: absolute;
   top: 0;
   right: 15px;
@@ -274,77 +272,66 @@ header .header_buttons:hover {
   color: #eff1f3;
   transition: all 0.3s;
 }
-#restaurants_homepage .container .section-closer:hover {
+.homepage #restaurants_homepage .container .section-closer:hover {
   color: #212529;
 }
-#restaurants_homepage .restaurants_homepage_container {
+.homepage #restaurants_homepage .restaurants_homepage_container {
   display: flex;
   flex-wrap: wrap;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
   position: relative;
   width: calc(100% / 3 - 15px);
   margin: 15px 0;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card:nth-of-type(3n + 2) {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card:nth-of-type(3n + 2) {
   margin-left: 22.5px;
   margin-right: 22.5px;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card {
   height: 200px;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card img {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px 5px 0 0;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card {
   padding-bottom: 30px;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card h4 {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card h4 {
   margin-top: 10px;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card {
   position: absolute;
   bottom: 0;
   left: 0;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card span {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card span {
   margin-right: 5px;
 }
-
-#tutorial_card_section {
+.homepage #tutorial_card_section {
   padding: 40px 0;
 }
-#tutorial_card_section .tutorial_cards_container {
+.homepage #tutorial_card_section .tutorial_cards_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#tutorial_card_section .tutorial_cards_container .tutorial_card {
+.homepage #tutorial_card_section .tutorial_cards_container .tutorial_card {
   display: flex;
   justify-content: center;
   border-radius: 5px;
   width: calc(100vw / 3 - 15px);
 }
-#tutorial_card_section .tutorial_cards_container .tutorial_card:nth-child(2) {
+.homepage #tutorial_card_section .tutorial_cards_container .tutorial_card:nth-child(2) {
   margin: 20px;
 }
-#tutorial_card_section .tutorial_cards_container .tutorial_card img {
+.homepage #tutorial_card_section .tutorial_cards_container .tutorial_card img {
   max-width: 100%;
   border-radius: 5px;
-}
-
-.dashboard main {
-  padding: 50px 0 50px 0;
-}
-.dashboard main img {
-  max-width: 300px;
-}
-.dashboard main p {
-  font-size: 16px;
 }
 
 .restaurant_page main {
@@ -502,6 +489,36 @@ header .header_buttons:hover {
 .restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom #shop_cart_bottom_total #item_plate {
   display: inline-block;
 }
+.restaurant_page .shop_box_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.restaurant_page .shop_box_container .shop_restaurant_box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background-color: #0EC5BF;
+  padding: 15px;
+  border-radius: 5px;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box img {
+  width: 100px;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .button_shop {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .button_shop i {
+  color: seagreen;
+}
 
 .price_animation {
   -webkit-animation-name: zoom;
@@ -533,7 +550,16 @@ header .header_buttons:hover {
     transform: scale(1);
   }
 }
-.plates_bottom {
+.dashboard main {
+  padding: 50px 0 50px 0;
+}
+.dashboard main img {
+  max-width: 300px;
+}
+.dashboard main p {
+  font-size: 16px;
+}
+.dashboard .plates_bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -541,14 +567,13 @@ header .header_buttons:hover {
   border-bottom: 1px solid white;
   box-shadow: 0px 8px 10px -12px #888888;
 }
-
-.plates_bottom_buttons {
+.dashboard .plates_bottom_buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
-.plates_bottom_buttons a {
+.dashboard .plates_bottom_buttons a {
   margin: 10px;
 }
 

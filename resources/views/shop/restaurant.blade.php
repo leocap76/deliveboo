@@ -112,9 +112,16 @@
     {{-- !footer --}}
 
     {{-- Box al click sul piatto --}}
-      <div>
-        
+    <div class="shop_box_container">
+      <div class="shop_restaurant_box">
+        <h2>{{ $plate->name }}</h2>
+        <p>{{ $plate->ingredients }}</p>
+        <p>{{ $plate->description }}</p>
+        <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
+        <button class="button_shop">Aggiungi alla cassa <i class="fas fa-cart-plus"></i></button>
       </div>
+    </div>
+      
     {{-- /Box al click sul piatto --}}
 
     <script src="{{ asset('js/cartRestaurantPage.js') }}"></script>

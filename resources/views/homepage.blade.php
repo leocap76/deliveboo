@@ -32,7 +32,7 @@
         @include('partials.header')
         <!-- !header -->
 
-        <main id="app">
+        <main id="app" class="homepage">
             <section id="jumbotron">
                 <div class="container">
                     <h1>I piatti che ami, a domicilio.</h1>

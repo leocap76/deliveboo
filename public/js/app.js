@@ -1853,24 +1853,34 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: '#app',
   data: {
     restaurants: [],
+    allRestaurants: [],
     restaurantIsVisible: false,
     category: "",
-    categoryColor: ""
+    categoryColor: "",
+    searchTextRestaurant: ""
   },
   created: function created() {},
   methods: {
-    getRestaurants: function getRestaurants(id, name, color) {
+    getSearchedRestaurants: function getSearchedRestaurants() {
       var _this = this;
+
+      if (this.searchTextRestaurant != "") axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/all-restaurants/".concat(this.searchTextRestaurant)).then(function (response) {
+        _this.allRestaurants = response.data;
+        console.log(_this.allRestaurants);
+      });
+    },
+    getRestaurants: function getRestaurants(id, name, color) {
+      var _this2 = this;
 
       this.category = name.toUpperCase();
       this.categoryColor = color;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/restaurants/".concat(id)).then(function (response) {
-        _this.restaurants = response.data;
-        _this.restaurantIsVisible = true;
+        _this2.restaurants = response.data;
+        _this2.restaurantIsVisible = true;
       });
     },
     switchSection: function switchSection() {
-      var _this2 = this;
+      var _this3 = this;
 
       if (this.restaurantIsVisible) {
         this.restaurantIsVisible = false;
@@ -1879,7 +1889,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       }
 
       setTimeout(function () {
-        _this2.restaurants = [];
+        _this3.restaurants = [];
       }, 1000);
     }
   }

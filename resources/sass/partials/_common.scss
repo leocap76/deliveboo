@@ -24,6 +24,10 @@
 body {
     font-family: $smallTextFont;
 
+    ul {
+      list-style: none;
+    }
+
     h1 {
       font-size: 46px;
     }

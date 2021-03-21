@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap);
 * {
   box-sizing: border-box;
   padding: 0;
@@ -24,6 +24,9 @@
 
 body {
   font-family: "Lato", sans-serif;
+}
+body ul {
+  list-style: none;
 }
 body h1 {
   font-size: 46px;
@@ -110,6 +113,7 @@ header .header_buttons {
   border-radius: 5px;
   border: 1px solid white;
   box-shadow: 0px 8px 10px -6px #a75a5a;
+  transition: all 0.4s;
 }
 header .header_buttons:hover {
   color: white;
@@ -157,6 +161,9 @@ header .header_buttons:hover {
   right: 10px;
   left: auto;
 }
+.homepage #jumbotron .container .search_container .input_search_title {
+  font-size: 20px;
+}
 .homepage #jumbotron .container .search_container .search_input_container {
   position: relative;
 }
@@ -167,26 +174,52 @@ header .header_buttons:hover {
 }
 .homepage #jumbotron .container .search_container .search_input_container .input_search {
   width: 100%;
-  margin-bottom: 10px;
-  margin-left: -5px;
-  padding-right: 55px;
   background-color: #ddd;
-  border-radius: 50px;
+  border-radius: 5px;
 }
 .homepage #jumbotron .container .search_container .search_input_container .input_search:focus {
   background-color: #ececec;
 }
-.homepage #jumbotron .container .search_container .search_input_container .button_search {
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list {
   position: absolute;
-  right: 0;
-  border-radius: 5px 50px 50px 5px;
-  background-color: #f2474d;
-  transition: all 0.2s;
-  color: white;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  background: white;
 }
-.homepage #jumbotron .container .search_container .search_input_container .button_search:hover {
-  background-color: #f45f64;
-  color: black;
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #969696;
+  background: inherit;
+  transition: all 0.3s;
+}
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result:hover {
+  background: #e6e6e6;
+}
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result:last-child {
+  border-bottom: 0;
+}
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result .searched_restaurants_result_left {
+  width: 20%;
+  height: 80px;
+  padding: 5px;
+}
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result .searched_restaurants_result_left img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result .searched_restaurants_result_right {
+  width: 80%;
+  padding: 5px;
+}
+.homepage #jumbotron .container .search_container .hashtag {
+  font-weight: 700;
+  margin-top: 15px;
 }
 .homepage #categories {
   padding: 40px 0;
@@ -231,7 +264,9 @@ header .header_buttons:hover {
 .homepage #categories .cards .swiper-slide span {
   position: relative;
   z-index: 3;
+  font-size: 25px;
   color: white;
+  transition: all 0.3s;
 }
 .homepage #categories .cards .swiper-slide::after {
   content: "";
@@ -240,9 +275,13 @@ header .header_buttons:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 2;
   border-radius: 50%;
+  transition: all 0.3s;
+}
+.homepage #categories .cards .swiper-slide:hover::after {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .homepage #categories .cards .swiper-button-next,
 .homepage #categories .cards .swiper-button-prev {

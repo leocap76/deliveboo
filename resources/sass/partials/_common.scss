@@ -5,26 +5,74 @@
 }
 
 :focus {
-    outline: none;
+  outline: none;
+}
+// scrollbar
+::-webkit-scrollbar{
+  width: 6px;
+  margin-right: 2px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: $delivebooColor;
 }
 
-body { 
-    // font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-family: 'Oswald', sans-serif;
+// !scrollbar
+
+body {
+    font-family: $smallTextFont;
 
     h1 {
-        font-size: 46px;
+      font-size: 46px;
     }
 
     h2 {
-        font-size: 40px;
+      font-size: 40px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $titlesFont;
     }
 
     a, 
     a:hover {
-        text-decoration: none;
-        color: inherit;
+      text-decoration: none;
+      color: inherit;
     }
+
+    .clearfix:after {    
+      content: "";
+      display: table;
+      clear: both;
+    }
+}
+
+#loading_screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $delivebooColor;
+  z-index: 4;
+  img{
+    width: 40%;
+  }
+}
+.fadeout_loading{
+  opacity: 1;
+  animation: fade 0.1s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fade {
+  0% { opacity: 1;}
+  100% { opacity: 0; }
 }
 
 

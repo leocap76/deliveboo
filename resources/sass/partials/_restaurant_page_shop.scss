@@ -1,0 +1,256 @@
+.restaurant_page{
+
+    main {
+      min-height: calc(100vh - 392px);
+      background-color: #eee;
+      
+      #shop_restaurant_top{
+        border-bottom: 1px solid white;
+        box-shadow: 0px 8px 10px -12px #888888;
+        background-color: white;
+        padding: $verticalPaddingSections;
+  
+        .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          // padding: $verticalPaddingSections;
+          
+          .left{
+            width: 70%;
+  
+            p {
+              margin: 0;
+              color: $shopRestaurantSmallText;
+            }
+  
+            .shop_restaurant_address {
+              margin-bottom: 10px;
+            }
+          }
+  
+          .right{
+            width: 29%;
+            text-align: right;
+  
+            img{
+              width: 100%;
+              border-radius: 5px;
+            }
+          }
+        }
+      } 
+  
+      #shop_restaurant_bottom{
+        padding: $verticalPaddingSections;
+  
+        .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+  
+          .plates_container{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 70%;
+
+
+            .shop_card_plates{
+              height: 150px;
+              width: calc(100% / 2 - 5px);
+              padding: 10px;
+              margin-bottom: 10px;
+              background-color: white;
+              border-radius: 5px;
+              cursor: pointer;
+              
+              .ellipsis {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+              
+              img{
+                height: 130px;
+                float: right;
+                border-radius: 5px;
+              }
+              
+              p{
+                color: $delivebooColor;
+              }
+            }
+            .disable {
+              cursor: not-allowed;
+              img {
+                filter: grayscale(1);
+              }
+              h3,h5,.ingredients {
+                color: #6d6d6d;
+              }
+            }
+          }
+          
+          //carrello
+          .shop_cart{
+            position: sticky;
+            top: 0;
+            width: 29%;
+            min-height: 150px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: white;
+  
+            //tasto del carrello quando è vuoto
+            .shop_cart_empty_button {
+              cursor: not-allowed; 
+              
+              .shop_cart_button {
+                display: inline-block;
+                color: white;
+                width: 100%;
+                background-color: #E2E5E5; //colore del tasto non usabile
+                font-size: 16px;
+                text-align: center;
+                padding: 10px;
+                border-radius: 5px;
+                pointer-events: none;
+              }
+            }
+  
+            .shop_cart_empty_content {
+              text-align: center;
+              font-size: 16px;
+              color: #E2E5E5;
+              padding-top: 30px;
+            }
+  
+            #shop_cart_top {
+              border-bottom: 1px solid #E0E8E8;
+  
+              .shop_cart_button {
+                display: inline-block;
+                color: white;
+                width: 100%;
+                background-color: $secondColorClient; //colore del tasto
+                font-size: 16px;
+                text-align: center;
+                padding: 10px;
+                border-radius: 5px;
+    
+                &:hover {
+                  color: white;
+                  background-color: darken($secondColorClient, 5%);
+                }
+              }
+    
+              ul {
+                list-style: none;
+    
+                div {
+                  margin-top: 15px;
+                }
+                .cart_left_div {
+                  float: left;
+                  padding-right: 5px;
+    
+                  .fas {
+                    color: #0EC5BF;
+                  }
+                  span {
+                    padding: 0 5px;
+                  }
+                }
+                .cart_middle_div{
+                  display: inline-block;
+                  max-width: 60%;
+                  padding-left: 10px;
+                }
+                .cart_right_div {
+                  float: right;
+                }
+              }
+            }
+  
+            #shop_cart_bottom {
+              padding-top: 15px;
+  
+              #shop_cart_bottom_delivery{
+                display: flex;
+                justify-content: space-between;
+              }
+              #shop_cart_bottom_total{
+                display: flex;
+                justify-content: space-between;
+                font-size: 16px;
+  
+                #item_plate {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .shop_box_container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: none;
+      z-index: 1;
+      .shop_restaurant_box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        padding: 2px;
+        border-radius: 5px;
+        background-color: white;
+        .top {
+          background-color: $delivebooColor;
+          padding: 13px;
+          border-radius: 5px 5px 0 0;
+          margin-bottom: 2px;
+          h2 {
+            color: $titleColor;
+          }
+        }
+        .bottom {
+          padding: 15px;
+          background-color: #ddd;
+          border-radius: 0 0 5px 5px;
+          img {
+            width: 100px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+          }
+          .button_shop {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: #0EC5BF;
+            color: white;
+          }
+        }
+      }
+    }
+}
+  
+.price_animation {
+    animation-name: zoom;
+    animation-duration: 0.2s;
+}
+
+@keyframes zoom {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}

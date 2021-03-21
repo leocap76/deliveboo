@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap);
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,8 +10,20 @@
   outline: none;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  margin-right: 2px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f2474d;
+}
+
 body {
-  font-family: "Oswald", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 body h1 {
   font-size: 46px;
@@ -18,37 +31,18 @@ body h1 {
 body h2 {
   font-size: 40px;
 }
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: "Oswald", sans-serif;
+}
 body a,
 body a:hover {
   text-decoration: none;
   color: inherit;
 }
-
-header {
-  background-color: #f2474d;
-}
-header .header_container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-header .header_left {
-  height: 100px;
-}
-header .logo_img {
-  height: 100%;
-}
-header .header_buttons {
-  color: #f2474d;
-  font-size: 19px;
-  margin-left: 20px;
-  padding: 5px 20px;
-  background-color: white;
-  border-radius: 5px;
-  border: none;
-}
-header .header_buttons:hover {
-  color: black;
+body .clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #loading_screen {
@@ -91,7 +85,40 @@ header .header_buttons:hover {
     opacity: 0;
   }
 }
-#jumbotron {
+header {
+  background-color: #f2474d;
+}
+header .header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+header .header_container .header_left {
+  height: 100%;
+}
+header .header_container .header_left .logo_img {
+  height: 100%;
+}
+header .header_buttons {
+  display: inline-block;
+  color: #f2474d;
+  font-size: 19px;
+  margin-left: 20px;
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 0px 8px 10px -6px #a75a5a;
+}
+header .header_buttons:hover {
+  color: white;
+  background-color: #ff5c5c;
+  border: 1px solid white;
+  box-shadow: none;
+}
+
+.homepage #jumbotron {
   position: relative;
   height: 650px;
   background-image: url("../img/sfondo-header.png");
@@ -100,11 +127,11 @@ header .header_buttons:hover {
   background-repeat: no-repeat;
   z-index: 0;
 }
-#jumbotron .container {
+.homepage #jumbotron .container {
   height: 100%;
   padding-top: 50px;
 }
-#jumbotron .container .search_container {
+.homepage #jumbotron .container .search_container {
   position: relative;
   width: 600px;
   background-color: white;
@@ -112,7 +139,7 @@ header .header_buttons:hover {
   border-radius: 5px;
   margin-top: 30px;
 }
-#jumbotron .container .search_container::before, #jumbotron .container .search_container::after {
+.homepage #jumbotron .container .search_container::before, .homepage #jumbotron .container .search_container::after {
   z-index: -1;
   position: absolute;
   content: "";
@@ -125,20 +152,20 @@ header .header_buttons:hover {
   box-shadow: 0 15px 10px #777;
   transform: rotate(-3deg);
 }
-#jumbotron .container .search_container::after {
+.homepage #jumbotron .container .search_container::after {
   transform: rotate(3deg);
   right: 10px;
   left: auto;
 }
-#jumbotron .container .search_container .search_input_container {
+.homepage #jumbotron .container .search_container .search_input_container {
   position: relative;
 }
-#jumbotron .container .search_container .search_input_container .input_search,
-#jumbotron .container .search_container .search_input_container .button_search {
+.homepage #jumbotron .container .search_container .search_input_container .input_search,
+.homepage #jumbotron .container .search_container .search_input_container .button_search {
   padding: 10px;
   border: none;
 }
-#jumbotron .container .search_container .search_input_container .input_search {
+.homepage #jumbotron .container .search_container .search_input_container .input_search {
   width: 100%;
   margin-bottom: 10px;
   margin-left: -5px;
@@ -146,10 +173,10 @@ header .header_buttons:hover {
   background-color: #ddd;
   border-radius: 50px;
 }
-#jumbotron .container .search_container .search_input_container .input_search:focus {
+.homepage #jumbotron .container .search_container .search_input_container .input_search:focus {
   background-color: #ececec;
 }
-#jumbotron .container .search_container .search_input_container .button_search {
+.homepage #jumbotron .container .search_container .search_input_container .button_search {
   position: absolute;
   right: 0;
   border-radius: 5px 50px 50px 5px;
@@ -157,23 +184,22 @@ header .header_buttons:hover {
   transition: all 0.2s;
   color: white;
 }
-#jumbotron .container .search_container .search_input_container .button_search:hover {
+.homepage #jumbotron .container .search_container .search_input_container .button_search:hover {
   background-color: #f45f64;
   color: black;
 }
-
-#categories {
+.homepage #categories {
   padding: 40px 0;
 }
-#categories h2 {
+.homepage #categories h2 {
   padding: 20px 0;
 }
-#categories .cards {
+.homepage #categories .cards {
   display: flex;
   justify-content: space-around;
   position: relative;
 }
-#categories .cards .swiper-container {
+.homepage #categories .cards .swiper-container {
   display: flex;
   align-items: center;
   width: 100%;
@@ -181,7 +207,7 @@ header .header_buttons:hover {
   position: relative;
   z-index: 1;
 }
-#categories .cards .swiper-slide {
+.homepage #categories .cards .swiper-slide {
   position: relative;
   height: 250px;
   align-self: center;
@@ -202,12 +228,12 @@ header .header_buttons:hover {
   background-position: center;
   cursor: pointer;
 }
-#categories .cards .swiper-slide span {
+.homepage #categories .cards .swiper-slide span {
   position: relative;
   z-index: 3;
   color: white;
 }
-#categories .cards .swiper-slide::after {
+.homepage #categories .cards .swiper-slide::after {
   content: "";
   position: absolute;
   top: 0;
@@ -218,27 +244,26 @@ header .header_buttons:hover {
   z-index: 2;
   border-radius: 50%;
 }
-#categories .cards .swiper-button-next,
-#categories .cards .swiper-button-prev {
+.homepage #categories .cards .swiper-button-next,
+.homepage #categories .cards .swiper-button-prev {
   color: #f2474d;
 }
-
-#restaurants_homepage {
+.homepage #restaurants_homepage {
   width: 100%;
   max-height: 0;
-  background-color: #D83F45;
   overflow: hidden;
   padding: 0;
   transition: all 1s;
+  background-color: #0EC5BF;
 }
-#restaurants_homepage.visible_restaurants {
+.homepage #restaurants_homepage.visible_restaurants {
   max-height: 9000px;
   padding: 40px 0;
 }
-#restaurants_homepage .container {
+.homepage #restaurants_homepage .container {
   position: relative;
 }
-#restaurants_homepage .container .section-closer {
+.homepage #restaurants_homepage .container .section-closer {
   position: absolute;
   top: 0;
   right: 15px;
@@ -247,69 +272,310 @@ header .header_buttons:hover {
   color: #eff1f3;
   transition: all 0.3s;
 }
-#restaurants_homepage .container .section-closer:hover {
+.homepage #restaurants_homepage .container .section-closer:hover {
   color: #212529;
 }
-#restaurants_homepage .restaurants_homepage_container {
+.homepage #restaurants_homepage .restaurants_homepage_container {
   display: flex;
   flex-wrap: wrap;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
   position: relative;
   width: calc(100% / 3 - 15px);
   margin: 15px 0;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card:nth-of-type(3n + 2) {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card:nth-of-type(3n + 2) {
   margin-left: 22.5px;
   margin-right: 22.5px;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card {
   height: 200px;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card img {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .top_restaurants_homepage_card img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px 5px 0 0;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card {
-  padding-bottom: 20px;
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card {
+  padding-bottom: 30px;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card h4 {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .middle_restaurants_homepage_card h4 {
   margin-top: 10px;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card {
   position: absolute;
   bottom: 0;
   left: 0;
 }
-#restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card span {
+.homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card .bottom_restaurants_homepage_card span {
   margin-right: 5px;
 }
-
-#tutorial_card_section {
+.homepage #tutorial_card_section {
   padding: 40px 0;
 }
-#tutorial_card_section .tutorial_cards_container {
+.homepage #tutorial_card_section .tutorial_cards_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#tutorial_card_section .tutorial_cards_container .tutorial_card {
+.homepage #tutorial_card_section .tutorial_cards_container .tutorial_card {
   display: flex;
   justify-content: center;
   border-radius: 5px;
   width: calc(100vw / 3 - 15px);
 }
-#tutorial_card_section .tutorial_cards_container .tutorial_card:nth-child(2) {
+.homepage #tutorial_card_section .tutorial_cards_container .tutorial_card:nth-child(2) {
   margin: 20px;
 }
-#tutorial_card_section .tutorial_cards_container .tutorial_card img {
+.homepage #tutorial_card_section .tutorial_cards_container .tutorial_card img {
   max-width: 100%;
   border-radius: 5px;
 }
 
+.restaurant_page main {
+  min-height: calc(100vh - 392px);
+  background-color: #eee;
+}
+.restaurant_page main #shop_restaurant_top {
+  border-bottom: 1px solid white;
+  box-shadow: 0px 8px 10px -12px #888888;
+  background-color: white;
+  padding: 40px 0;
+}
+.restaurant_page main #shop_restaurant_top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.restaurant_page main #shop_restaurant_top .container .left {
+  width: 70%;
+}
+.restaurant_page main #shop_restaurant_top .container .left p {
+  margin: 0;
+  color: #828585;
+}
+.restaurant_page main #shop_restaurant_top .container .left .shop_restaurant_address {
+  margin-bottom: 10px;
+}
+.restaurant_page main #shop_restaurant_top .container .right {
+  width: 29%;
+  text-align: right;
+}
+.restaurant_page main #shop_restaurant_top .container .right img {
+  width: 100%;
+  border-radius: 5px;
+}
+.restaurant_page main #shop_restaurant_bottom {
+  padding: 40px 0;
+}
+.restaurant_page main #shop_restaurant_bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 70%;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates {
+  height: 150px;
+  width: calc(100% / 2 - 5px);
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates img {
+  height: 130px;
+  float: right;
+  border-radius: 5px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates p {
+  color: #f2474d;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .disable {
+  cursor: not-allowed;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .disable img {
+  filter: grayscale(1);
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .disable h3, .restaurant_page main #shop_restaurant_bottom .container .plates_container .disable h5, .restaurant_page main #shop_restaurant_bottom .container .plates_container .disable .ingredients {
+  color: #6d6d6d;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart {
+  position: sticky;
+  top: 0;
+  width: 29%;
+  min-height: 150px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: white;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart .shop_cart_empty_button {
+  cursor: not-allowed;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart .shop_cart_empty_button .shop_cart_button {
+  display: inline-block;
+  color: white;
+  width: 100%;
+  background-color: #E2E5E5;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart .shop_cart_empty_content {
+  text-align: center;
+  font-size: 16px;
+  color: #E2E5E5;
+  padding-top: 30px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top {
+  border-bottom: 1px solid #E0E8E8;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top .shop_cart_button {
+  display: inline-block;
+  color: white;
+  width: 100%;
+  background-color: #0EC5BF;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top .shop_cart_button:hover {
+  color: white;
+  background-color: #0cada8;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul {
+  list-style: none;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul div {
+  margin-top: 15px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_left_div {
+  float: left;
+  padding-right: 5px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_left_div .fas {
+  color: #0EC5BF;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_left_div span {
+  padding: 0 5px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_middle_div {
+  display: inline-block;
+  max-width: 60%;
+  padding-left: 10px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_right_div {
+  float: right;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom {
+  padding-top: 15px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom #shop_cart_bottom_delivery {
+  display: flex;
+  justify-content: space-between;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom #shop_cart_bottom_total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_bottom #shop_cart_bottom_total #item_plate {
+  display: inline-block;
+}
+.restaurant_page .shop_box_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 1;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  padding: 2px;
+  border-radius: 5px;
+  background-color: white;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .top {
+  background-color: #f2474d;
+  padding: 13px;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 2px;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .top h2 {
+  color: #f6bfc2;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .bottom {
+  padding: 15px;
+  background-color: #ddd;
+  border-radius: 0 0 5px 5px;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .bottom img {
+  width: 100px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.restaurant_page .shop_box_container .shop_restaurant_box .bottom .button_shop {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #0EC5BF;
+  color: white;
+}
+
+.price_animation {
+  -webkit-animation-name: zoom;
+          animation-name: zoom;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+@-webkit-keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .dashboard main {
   padding: 50px 0 50px 0;
 }
@@ -318,6 +584,23 @@ header .header_buttons:hover {
 }
 .dashboard main p {
   font-size: 16px;
+}
+.dashboard .plates_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 0;
+  border-bottom: 1px solid white;
+  box-shadow: 0px 8px 10px -12px #888888;
+}
+.dashboard .plates_bottom_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.dashboard .plates_bottom_buttons a {
+  margin: 10px;
 }
 
 footer {
@@ -388,7 +671,7 @@ footer .footer_bottom .footer_bottom_right ul li a {
   padding: 6px;
   box-sizing: border-box;
   text-decoration: none;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 15px rgba(7, 7, 7, 0.267);
   background: linear-gradient(0deg, #ddd, #fff);
   transition: 0.5s;
 }

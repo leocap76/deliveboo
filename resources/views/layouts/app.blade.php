@@ -7,25 +7,30 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+     {{-- fontawesome --}}
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.css" integrity="sha512-9iWaz7iMchMkQOKA8K4Qpz6bpQRbhedFJB+MSdmJ5Nf4qIN1+5wOVnzg5BQs/mYH3sKtzY+DOgxiwMz8ZtMCsw==" crossorigin="anonymous" />
+     {{-- /fontawesome --}}
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- style --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <title>Deliveboo - Login|Register</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    {{-- loading screen --}}
+    <section id="loading_screen">
+        <img src="img/deliverbooML.jpg" alt="Deliveboo">
+    </section>
+    {{-- /loading screen --}}
+    <!-- header -->
+    @include('partials.header')
+    <!-- !header -->
+
+    {{-- <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -72,9 +77,27 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+        
+    {{-- </div>  --}}
+
+    {{-- box name & password --}}
+    <main class="py-4">
+        @yield('content')
+    </main>
+    {{-- !box name & password --}}
+
+    {{-- footer --}}
+    @include('partials.footer')
+    {{-- !footer --}}
+
+    <!-- Scripts -->
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- slider cdn --}}
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    {{-- /slider cdn --}}
+
+    <script src="{{ asset('js/loading.js') }}"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 footer{
+  // background-image: url('../img/footersfondo.png');
   background-color: $footerColor;
   color: $footerTextColor;
     
@@ -67,7 +68,7 @@ footer{
         padding: 6px;
         box-sizing: border-box;
         text-decoration:none;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 15px rgba(7, 7, 7, 0.267);
         background: linear-gradient(0deg, #ddd, #fff);
         transition: .5s;
       }

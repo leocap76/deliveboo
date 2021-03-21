@@ -14,17 +14,25 @@ class PlatesTableSeeder extends Seeder
      */
     public function run()
     {
-        $plates = config('plates');
+        $restaurant_plates = config('plates');
 
         $users = User::all();
 
-        foreach($users as $key => $user) {
-            $db = new Plate();
-            
-            $db->user_id = $user->id;
-            $plates[$key]['slug'] = Str::slug($plates[$key]['name']);
-            $db->fill($plates[$key]);
-            $db->save();
+        $number = 0;
+
+
+        foreach ($restaurant_plates as $key => $plates) {
+
+            $number += 1;
+
+            foreach ($plates as $plate) {
+                $db = new Plate();
+                $db->user_id = $number;
+                $plate['slug'] = Str::slug($plate['name']);
+                $db->fill($plate);
+                $db->save();
+            }
         }
+            
     }
 }

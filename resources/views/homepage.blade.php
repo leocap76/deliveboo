@@ -29,10 +29,10 @@
         {{-- /loading screen --}}
 
         <!-- header -->
-
         @include('partials.header')
+        <!-- !header -->
 
-        <main id="app">
+        <main id="app" class="homepage">
             <section id="jumbotron">
                 <div class="container">
                     <h1>I piatti che ami, a domicilio.</h1>
@@ -55,7 +55,7 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 @foreach ($categories as $category)
-                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 5px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }}, '{{ $category->name}}')"> <span>{{ $category->name }}</span> </div>
+                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 5px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }}, '{{ $category->name}}', '{{ $category->color}}')"> <span>{{ $category->name }}</span> </div>
                                 @endforeach
                             </div>
                             <!-- arrow -->
@@ -77,10 +77,9 @@
                     <h4>Abbiamo trovato @{{ restaurants.length }} @{{ restaurants.length != 1 ? 'ristoranti' : 'ristorante' }} nella categoria: @{{ category }}</h4>
 
                     <div class="restaurants_homepage_container">
-
-                        <a v-for="restaurant in restaurants" class="restaurants_homepage_card" href="#">
+                        <a v-for="restaurant in restaurants" class="restaurants_homepage_card" :href="'{{ url('restaurant') }}' + '/' + restaurant.info_restaurant.slug">
                             <div class="top_restaurants_homepage_card">
-                                <img :src="'storage/' + restaurant.info_restaurant.img_path" :alt="restaurant.info_restaurant.name">
+                                <img :src="(restaurant.info_restaurant.img_path.includes('images/')) ? 'storage/' + restaurant.info_restaurant.img_path : restaurant.info_restaurant.img_path" :alt="restaurant.info_restaurant.name">
                             </div>
 
                             <div class="middle_restaurants_homepage_card">
@@ -93,7 +92,6 @@
                                 <span v-for="restaurant_category in restaurant.categories" class="badge" :style="'background-color: ' + restaurant_category.color">@{{ restaurant_category.name }}</span>
                             </div>
                         </a>
-
 
                     </div>
                     
@@ -130,58 +128,10 @@
             
         </main>
 
-            <!--  footer -->
-        <footer>
-            <div class="container">
-                {{-- footer top --}}
-                <div class="footer_top">
-                    <div class="items">
-                        <h4>ABOUT US</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas hic asperiores iusto blanditiis beatae magni illum? Aperiam placeat,</p>
-                    </div>
-                    <div class="items">
-                        <h4>TEAM</h4>
-                        <ul>
-                            <li><a href="https://github.com/stefanof707" target="_blank">Stefano Franchini</a></li>
-                            <li><a href="https://github.com/alessio-source" target="_blank">Alessio Pancia</a></li>
-                            <li><a href="https://github.com/alexsircu" target="_blank">Alex Sircu</a></li>
-                            <li><a href="https://github.com/mariotota" target="_blank">Mario Tota</a></li>
-                            <li><a href="https://github.com/leocap76" target="_blank">Leonardo Capogna</a></li>
-                        </ul>
-                    </div>
-                    <div class="items">
-                        <h4>CONTACTS</h4>
-                        <ul>
-                            <li>tel: +39 3663140799</li>
-                            <li>deliveboo.info@email.com</li>
-
-                        </ul>
-                        
-                    </div>
-                </div>
-                {{-- /footer top --}}
-                
-                {{-- footer bottom --}}
-                <div class="footer_bottom">
-                    <div class="footer_bottom_left">
-                        <p>
-                          &copy;Deliveboo {{ date('Y') }} 
-                        </p>
-                    </div>
-
-                    <div class="footer_bottom_right">
-                        <ul>
-                            <li><a href="https://www.facebook.com/boolean.careers/" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="https://twitter.com/booleancareers" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="https://youtu.be/59zORE5buOo" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.linkedin.com/school/boolean-careers/mycompany/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com/boolean.careers/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                          </ul>
-                    </div>
-                </div>
-                {{-- /footer bottom --}}
-            </div>
-        </footer> 
+        
+        {{-- footer --}}
+        @include('partials.footer')
+        {{-- !footer --}}
 
         <script src="{{ asset('js/app.js') }}"></script>
         {{-- slider cdn --}}

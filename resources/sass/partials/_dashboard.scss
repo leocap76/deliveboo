@@ -1,4 +1,22 @@
 .dashboard {
+  position: relative;
+
+  #dashboard_side_menu {
+    position: absolute;
+    left: 0;
+    width: 375px;
+    height: calc(100% - 392px);
+    background-color: cornflowerblue;
+    padding-top: 50px;
+
+    li {
+      border-bottom: 1px solid black;
+      padding: 30px 40px;
+    }
+
+    
+    
+  }
 
     main {
       padding: 50px 0 50px 0;

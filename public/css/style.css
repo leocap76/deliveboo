@@ -44,6 +44,9 @@ body .clearfix:after {
   display: table;
   clear: both;
 }
+body ul {
+  list-style: none;
+}
 
 #loading_screen {
   display: flex;
@@ -575,6 +578,21 @@ header .header_buttons:hover {
   100% {
     transform: scale(1);
   }
+}
+.dashboard {
+  position: relative;
+}
+.dashboard #dashboard_side_menu {
+  position: absolute;
+  left: 0;
+  width: 375px;
+  height: calc(100% - 392px);
+  background-color: cornflowerblue;
+  padding-top: 50px;
+}
+.dashboard #dashboard_side_menu li {
+  border-bottom: 1px solid black;
+  padding: 30px 40px;
 }
 .dashboard main {
   padding: 50px 0 50px 0;

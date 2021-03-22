@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+  {{-- favicon --}}
+  <link rel="shortcut icon" type="image/x-icon"href="img/favicon.png">
+
   <title>Modifica - {{ $plate->name }}</title>
 </head>
 <body class="dashboard">

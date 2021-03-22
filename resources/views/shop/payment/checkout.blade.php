@@ -18,13 +18,14 @@
     <title>Document</title>
   </head>
   <body>
-    
-    @extends('partials.header')
 
+    @extends('partials.footer')
+    
     <main>
       
     </main>
 
-
+    @extends('partials.header')
+    
   </body>
 </html>

@@ -23,6 +23,22 @@
         <main id="app">
             <div class="container">
 
+                @if (session('success_message'))
+                    <div class="alert alert-success">
+                        {{ session('success_message') }}
+                    </div>
+                @endif
+
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <div class="left">
                     <h1>Pagamento</h1>
                     {{-- <form action="{{ route('shop.payment.checkout') }}" method="post">
@@ -58,7 +74,7 @@
                     {{-- FORM GIA CREATO --}}
 
                     <div class="content">
-                        <form method="post" id="payment-form" action="#">
+                        <form id="payment-form" action="{{ route('shop.payment.checkout') }}" method="post">
                             @csrf
                             @method('POST')
                             <section>

@@ -22,8 +22,4 @@ class RestaurantController extends Controller
 
         return view('shop.restaurant', compact('infoRestaurant','restaurant','categories','plates'));
     }
-
-    public function shop() {
-        return view('shop.payment');
-    }
 }

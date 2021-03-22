@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function checkout() {
+    public function index() {
 
         $gateway = new \Braintree\Gateway([
             'environment' => 'sandbox',
@@ -15,13 +15,15 @@ class PaymentController extends Controller
             'privateKey' => '24301cc5242a3d141eafab3722414341'
         ]);
 
-        $clientToken = $gateway->clientToken()->generate();
+        $token = $gateway->clientToken()->generate(); //genero il token del cliente senza id
     
-        return view('shop.paymentCheckout', compact('clientToken'));
+        return view('shop.payment.index', compact('token'));
 
     }  
-    
-    public function transaction(Request $request) {
 
+    public function checkout() {
+
+
+        return view('shop.payment.checkout');
     }
 }

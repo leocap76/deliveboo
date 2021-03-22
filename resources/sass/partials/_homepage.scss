@@ -20,6 +20,11 @@
             border-radius: 5px;
             margin-top: 30px;
             @include search-shadow;
+
+            .input_search_title {
+              font-size: 20px;
+            }
+
             .search_input_container {
               position: relative;
               .input_search,
@@ -29,27 +34,84 @@
               }
               .input_search {
                 width: 100%;
-                margin-bottom: 10px;
-                margin-left: -5px;
-                padding-right: 55px;
                 background-color: #ddd;
-                border-radius: 50px;
+                border-radius: 5px 5px 0 0;
                 &:focus {
                   background-color: #ececec;
                 }
               }
-              .button_search {
+              // .button_search {
+              //   position: absolute;
+              //   right: 0;
+              //   border-radius: 5px 50px 50px 5px;
+              //   background-color: $delivebooColor;
+              //   transition: all 0.2s;
+              //   color: white;
+              //   &:hover {
+              //     background-color: lighten($delivebooColor, 5%);
+              //     color: black;
+              //   }
+
+              // }
+              .searched_restaurants_list {
                 position: absolute;
-                right: 0;
-                border-radius: 5px 50px 50px 5px;
-                background-color: $delivebooColor;
-                transition: all 0.2s;
-                color: white;
-                &:hover {
-                  background-color: lighten($delivebooColor, 5%);
-                  color: black;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                border-radius: 0 0 5px 5px;
+                background: #ececec;
+                
+                
+                a.searched_restaurants_result {
+                  display: block;
+                  display: flex;
+                  justify-content: space-between;
+                  border-bottom: 1px solid #a3a3a3;
+                  background: inherit;
+                  transition: all 0.3s;
+                  @include search-shadow;
+                  &:hover {
+                    background: #d8d8d8;
+                  }
+                  &:last-child {
+                    border-bottom: 0;
+                  }
+
+                  .searched_restaurants_result_left {
+                    width: 20%;
+                    height: 80px;
+                    padding: 5px;
+
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 3px;
+                    }
+                  }
+                  .searched_restaurants_result_right {
+                    width: 80%;
+                    padding: 5px;
+                    position: relative;
+
+                    p {
+                      margin-bottom: 5px;
+                    }
+
+                    .restaurant-times {
+                      position: absolute;
+                      right: 5px;
+                      top: 5px;
+                      font-size: 13px;
+                      color: rgba(0, 0, 0, 0.6);
+                    }
+                  }
                 }
               }
+            }
+            .hashtag {
+              font-weight: 700;
+              margin-top: 15px;
             }
           }
         }
@@ -104,7 +166,9 @@
             span {
               position: relative;
               z-index: 3;
+              font-size: 25px;
               color: white;
+              transition: all 0.3s;
             }
             &::after {
               content: '';
@@ -113,9 +177,15 @@
               left: 0;
               width: 100%;
               height: 100%;
-              background-color: rgba(0, 0, 0, 0.3);
+              background-color: rgba(0, 0, 0, 0.4);
               z-index: 2;
               border-radius: 50%;
+              transition: all 0.3s;
+            }
+            &:hover {
+              &::after {
+                background-color: rgba(0, 0, 0, 0.2);
+              }
             }
           }
           .swiper-button-next,

@@ -7,14 +7,28 @@ var app = new Vue(
       el: '#app',
       data: {
           restaurants: [],
+          allRestaurants: [],
           restaurantIsVisible: false,
           category: "",
           categoryColor: "",
-
+          searchTextRestaurant: ""
       },
       created: function() {
+        
             },
             methods: {
+
+                getSearchedRestaurants: function () {
+
+                    if(this.searchTextRestaurant != "")
+                    axios
+                        .get(`http://127.0.0.1:8000/api/all-restaurants/${this.searchTextRestaurant}`)
+                        .then( (response) => {
+                            this.allRestaurants = response.data;
+                            console.log(this.allRestaurants);
+                    } );
+                },
+
                 getRestaurants: function(id, name, color) {
                     this.category = name.toUpperCase();
                     this.categoryColor = color;

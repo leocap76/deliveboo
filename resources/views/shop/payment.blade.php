@@ -25,7 +25,9 @@
 
                 <div class="left">
                     <h1>Pagamento</h1>
-                    <form action="">
+                    <form action="{{ route('shop.payment.checkout') }}" method="post">
+                        @csrf
+                        @method('POST')
                         <label for="name">Nome: </label>
                         <input type="text" placeholder="Inserisci il tuo nome" id="name">
 
@@ -44,7 +46,10 @@
                         {{-- <input type="text" placeholder="prezzo"> --}}
 
                         <div>
+
                             <input type="submit" value="Aquista" class="btn">
+                            <input type="hidden" value="{{ $clientToken }}">
+
                             <a href="{{ url()->previous() }}" class="btn">Torna indietro</a>
                         </div>
 

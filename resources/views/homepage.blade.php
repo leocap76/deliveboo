@@ -123,12 +123,12 @@
                         </div>
                         <div class="tutorial_card">
                             {{-- <h3>Monitora la consegna in tempo reale</h3> --}}
-                            <img src="{{ asset('img/ciclista6000.png') }}" alt="">
+                            <img src="{{ asset('img/ciclista6000 copia.png') }}" alt="">
                             
                         </div>
                         <div class="tutorial_card">
                             {{-- <h3>Buon appetito!</h3> --}}
-                            <img src="{{ asset('img/buonappetito6000.png') }}" alt="">
+                            <img src="{{ asset('img/buonappetito6000 copia.png') }}" alt="">
                             
                         </div>
                     </div>

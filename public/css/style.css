@@ -360,7 +360,7 @@ header .header_buttons:hover {
   margin-bottom: 10px;
 }
 .restaurant_page main #shop_restaurant_top .container .right {
-  width: 29%;
+  width: 30%;
   text-align: right;
 }
 .restaurant_page main #shop_restaurant_top .container .right img {
@@ -601,6 +601,85 @@ header .header_buttons:hover {
 }
 .dashboard .plates_bottom_buttons a {
   margin: 10px;
+}
+
+.payment main .container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+.payment main .container .left {
+  width: 70%;
+  padding-right: 10px;
+}
+.payment main .container .left form {
+  display: flex;
+  flex-direction: column;
+}
+.payment main .container .left form input[type=text] {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #ddd;
+}
+.payment main .container .left form input[type=submit],
+.payment main .container .left form a {
+  margin-top: 10px;
+  background-color: #0EC5BF;
+  color: white;
+}
+.payment main .container .right {
+  width: 30%;
+}
+.payment main .shop_cart {
+  position: sticky;
+  top: 0;
+  min-height: 150px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: white;
+}
+.payment main .shop_cart .shop_cart_empty_button {
+  cursor: not-allowed;
+}
+.payment main .shop_cart .shop_cart_empty_button .shop_cart_button {
+  display: inline-block;
+  color: white;
+  width: 100%;
+  background-color: #E2E5E5;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+.payment main .shop_cart .shop_cart_empty_content {
+  text-align: center;
+  font-size: 16px;
+  color: #E2E5E5;
+  padding-top: 30px;
+}
+.payment main .shop_cart #shop_cart_top {
+  border-bottom: 1px solid #E0E8E8;
+}
+.payment main .shop_cart #shop_cart_top .title_top {
+  font-weight: bold;
+}
+.payment main .shop_cart #shop_cart_bottom {
+  padding-top: 15px;
+}
+.payment main .shop_cart #shop_cart_bottom #shop_cart_bottom_delivery {
+  display: flex;
+  justify-content: space-between;
+}
+.payment main .shop_cart #shop_cart_bottom #shop_cart_bottom_total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.payment main .shop_cart #shop_cart_bottom #shop_cart_bottom_total #item_plate {
+  display: inline-block;
 }
 
 footer {

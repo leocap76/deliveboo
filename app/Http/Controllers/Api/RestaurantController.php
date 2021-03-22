@@ -13,7 +13,7 @@ class RestaurantController extends Controller
 
     // Prende tutti i ristoranti filtrati in base alla ricerca dell'utente
     public function all_restaurants($input)  {
-        $all_restaurants = InfoRestaurant::where('name', 'LIKE', '%'.$input.'%')->get();
+        $all_restaurants = InfoRestaurant::where('name', 'LIKE', '%'.$input.'%')->limit(5)->get();
 
         return response()->json($all_restaurants);
     }

@@ -48,7 +48,7 @@
                                     <div class="searched_restaurants_result_right">
                                         <h5>@{{ restaurant.name }}</h5>
                                         <p>@{{ restaurant.address }}</p>
-                                        <span>@{{ restaurant.opening_time }} - @{{ restaurant.closing_time }}</span>
+                                        <span class="restaurant-times">@{{ restaurant.opening_time.slice(0, 5) }} - @{{ restaurant.closing_time.slice(0, 5) }}</span>
                                     </div>
                                 </a>      
                             </div>

@@ -175,7 +175,7 @@ header .header_buttons:hover {
 .homepage #jumbotron .container .search_container .search_input_container .input_search {
   width: 100%;
   background-color: #ddd;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 }
 .homepage #jumbotron .container .search_container .search_input_container .input_search:focus {
   background-color: #ececec;
@@ -185,19 +185,37 @@ header .header_buttons:hover {
   top: 100%;
   left: 0;
   width: 100%;
-  border-radius: 5px;
-  background: white;
+  border-radius: 0 0 5px 5px;
+  background: #ececec;
 }
 .homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result {
   display: block;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #969696;
+  border-bottom: 1px solid #a3a3a3;
   background: inherit;
   transition: all 0.3s;
 }
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result::before, .homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result::after {
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
 .homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result:hover {
-  background: #e6e6e6;
+  background: #d8d8d8;
 }
 .homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result:last-child {
   border-bottom: 0;
@@ -212,10 +230,22 @@ header .header_buttons:hover {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 3px;
 }
 .homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result .searched_restaurants_result_right {
   width: 80%;
   padding: 5px;
+  position: relative;
+}
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result .searched_restaurants_result_right p {
+  margin-bottom: 5px;
+}
+.homepage #jumbotron .container .search_container .search_input_container .searched_restaurants_list a.searched_restaurants_result .searched_restaurants_result_right .restaurant-times {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
 }
 .homepage #jumbotron .container .search_container .hashtag {
   font-weight: 700;

@@ -99,6 +99,7 @@ var app = new Vue(
       },
       save: function () {
         localStorage.setItem('tot_price', this.tot_price);
+        localStorage.setItem('delivery', this.delivery);
         localStorage.setItem('plates', JSON.stringify(this.cart_plates));
       }
 

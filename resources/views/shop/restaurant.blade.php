@@ -99,7 +99,7 @@
           <div class="shop_cart"  v-if="cart_plates.length > 0" >
 
             <div id="shop_cart_top">
-              <a href="#" class="shop_cart_button" @click="save">Vai alla cassa</a>
+              <a href="{{ route('shop.payment') }}" class="shop_cart_button" @click="save">Vai alla cassa</a>
               <ul>
                 <li v-for="(item,index) in cart_plates" class="clearfix">
 

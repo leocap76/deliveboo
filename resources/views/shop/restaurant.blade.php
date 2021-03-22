@@ -9,7 +9,7 @@
     {{-- /fontawesome --}}
 
     {{-- favicon --}}
-    <link rel="shortcut icon" type="image/x-icon"href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:8000/img/favicon.png">
 
     {{-- style --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">

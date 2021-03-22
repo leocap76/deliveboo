@@ -10,7 +10,7 @@
   <script src="{{ asset('js/select2.js') }}" defer></script>
 
   {{-- favicon --}}
-  <link rel="shortcut icon" type="image/x-icon"href="img/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:8000/img/favicon.png">
 
   <title>Modifica - {{ $infoRestaurant->name }}</title>
 </head>

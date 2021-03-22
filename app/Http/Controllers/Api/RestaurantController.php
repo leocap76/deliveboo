@@ -10,12 +10,15 @@ use App\User;
 
 class RestaurantController extends Controller
 {
-    public function categories()  {
-        $categories = Category::all();
 
-        return response()->json($categories);
+    // Prende tutti i ristoranti filtrati in base alla ricerca dell'utente
+    public function all_restaurants($input)  {
+        $all_restaurants = InfoRestaurant::where('name', 'LIKE', '%'.$input.'%')->limit(5)->get();
+
+        return response()->json($all_restaurants);
     }
 
+    // Prende tutti i ristoranti filtrati per categoria
     public function restaurants($id) {
         $restaurants = User::with('infoRestaurant','categories')->get();
 

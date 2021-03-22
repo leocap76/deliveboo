@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::namespace('Api')->group(function () {
     // Controllers Within The "App\Http\Controllers\Api" Namespace
-    Route::get('/categories', 'RestaurantController@categories');
+    Route::get('/all-restaurants/{input}', 'RestaurantController@all_restaurants');
 
     Route::get('/restaurants/{id}', 'RestaurantController@restaurants');
 

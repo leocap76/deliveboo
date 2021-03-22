@@ -81,19 +81,25 @@
             @foreach ($plates as $plate)
               @if ($plate->available == 1)
                 <div class="shop_card_plates" @click="open_box('{{ $plate->name }}', {{ $plate->price }}, '{{ $plate->description }}', '{{ $plate->ingredients }}', '{{ $plate->img_path }}' )" >
-                  <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
-                  <h3 class="ellipsis">{{ $plate->name }}</h3>
-                  <p class="ellipsis"> {{ $plate->ingredients }}</p>
-                  <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
-                  {{-- <p> {{ $plate->description }}</p> --}}
+                  <div class="shop_card_plates_left">
+                    <h3 class="ellipsis">{{ $plate->name }}</h3>
+                    <p class="ellipsis"> {{ $plate->ingredients }}</p>
+                    <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
+                  </div>
+                  <div class="shop_card_plates_right">
+                    <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
+                  </div>
                 </div>
               @else
                 <div class="disable shop_card_plates">
-                  <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
-                  <h3 class="ellipsis">{{ $plate->name }}</h3>
-                  <p class="ellipsis ingredients"> {{ $plate->ingredients }}</p>
-                  <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
-                  {{-- <p> {{ $plate->description }}</p> --}}
+                  <div class="shop_card_plates_left">
+                    <h3 class="ellipsis">{{ $plate->name }}</h3>
+                    <p class="ellipsis"> {{ $plate->ingredients }}</p>
+                    <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
+                  </div>
+                  <div class="shop_card_plates_right">
+                    <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
+                  </div>
                 </div>
               @endif
             @endforeach

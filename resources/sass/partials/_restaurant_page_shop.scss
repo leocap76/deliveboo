@@ -58,6 +58,7 @@
 
 
             .shop_card_plates{
+              display: flex;
               height: 150px;
               width: calc(100% / 2 - 5px);
               padding: 10px;
@@ -65,6 +66,21 @@
               background-color: white;
               border-radius: 5px;
               cursor: pointer;
+
+              .shop_card_plates_left {
+                width: 70%;
+                padding: 0 10px;
+              }
+
+              .shop_card_plates_right {
+                width: 30%;
+                img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 5px;
+                }
+              }
               
               .ellipsis {
                 overflow: hidden;
@@ -72,11 +88,6 @@
                 text-overflow: ellipsis;
               }
               
-              img{
-                height: 130px;
-                float: right;
-                border-radius: 5px;
-              }
               
               p{
                 color: $delivebooColor;

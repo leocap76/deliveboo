@@ -14,7 +14,6 @@ var app = new Vue(
           searchTextRestaurant: ""
       },
       created: function() {
-        
             },
             methods: {
 
@@ -25,7 +24,6 @@ var app = new Vue(
                         .get(`http://127.0.0.1:8000/api/all-restaurants/${this.searchTextRestaurant}`)
                         .then( (response) => {
                             this.allRestaurants = response.data;
-                            console.log(this.allRestaurants);
                     } );
                 },
 

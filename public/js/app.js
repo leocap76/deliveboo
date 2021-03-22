@@ -1866,7 +1866,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
       if (this.searchTextRestaurant != "") axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/all-restaurants/".concat(this.searchTextRestaurant)).then(function (response) {
         _this.allRestaurants = response.data;
-        console.log(_this.allRestaurants);
       });
     },
     getRestaurants: function getRestaurants(id, name, color) {

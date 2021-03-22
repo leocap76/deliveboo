@@ -23,7 +23,7 @@
     </head>
 
     
-    <body>
+    <body id="page">
 
         {{-- loading screen --}}
         <section id="loading_screen">
@@ -41,7 +41,7 @@
                     <h1>I piatti che ami, a domicilio.</h1>
                     <div class="search_container">
                         <p class="input_search_title">Inserisci il nome del tuo ristorante preferito!</p>
-                        <div class="search_input_container">
+                        <div class="search_input_container" v-on:mouseleave="allRestaurants = []">
                             <input type="text" placeholder="Inserisci il nome del ristorante" class="input_search" v-model="searchTextRestaurant" v-on:input.all="getSearchedRestaurants">
                             <div v-if="allRestaurants.length > 0" class="searched_restaurants_list">
                                 <a  :href="'{{ url('restaurant') }}' + '/' + restaurant.slug" v-for="restaurant in allRestaurants" class="searched_restaurants_result">

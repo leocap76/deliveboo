@@ -14,15 +14,17 @@ var app = new Vue(
           "description": "",
           "ingredients": "",
           "img": ""
-        }
+        },
+      restaurant_id: 0
     },   
 
     mounted: function(){
       // var prova = JSON.parse(localStorage.getItem('plates'));
-      if(localStorage.getItem('tot_price') != undefined) {
+      this.restaurant_id = restaurant_id_js;
+      if(localStorage.getItem('tot_price') != undefined && this.restaurant_id == localStorage.getItem('restaurant_id')) {
         this.tot_price = parseFloat(localStorage.getItem('tot_price')).toFixed(2);
         this.delivery = parseFloat(localStorage.getItem('delivery')).toFixed(2);
-        this.cart_plates = JSON.parse(localStorage.getItem('plates')); 
+        this.cart_plates = JSON.parse(localStorage.getItem('plates'));
       }
     },
 
@@ -41,10 +43,9 @@ var app = new Vue(
         this.plate.ingredients = ingredients;
         this.plate.img = img;
       },
-      push_plate: function(name,price){
+      push_plate: function(name,price,restaurant_id){
         var box = document.getElementById('box');
         box.style.display = 'none';
-        
         let isNew = true;
 
         this.tot_price = this.delivery;
@@ -106,6 +107,7 @@ var app = new Vue(
         localStorage.setItem('tot_price', this.tot_price);
         localStorage.setItem('delivery', this.delivery);
         localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+        localStorage.setItem('restaurant_id', this.restaurant_id);
       }
 
     }

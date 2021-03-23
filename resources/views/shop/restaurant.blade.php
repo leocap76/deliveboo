@@ -14,8 +14,10 @@
     {{-- style --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <script>var restaurant_id_js = {{ $infoRestaurant->id }};</script>
     
-    <title>Deliveboo - {{ $infoRestaurant->name }}</title> 
+    <title>Deliveboo - {{ $infoRestaurant->name }}</title>
   </head>
   <body class="restaurant_page">
     {{-- header --}}

@@ -41,42 +41,28 @@
 
                 <div class="left">
                     <h1>Pagamento</h1>
-                    {{-- <form action="{{ route('shop.payment.checkout') }}" method="post">
-                        @csrf
-                        @method('POST')
-                        <label for="name">Nome: </label>
-                        <input type="text" placeholder="Inserisci il tuo nome" id="name">
-
-                        <label for="lastname">Cognome: </label>
-                        <input type="text" placeholder="Inserisci il tuo cognome" id="lastname">
-
-                        <label for="address">Indirizzo: </label>
-                        <input type="text" placeholder="Inserisci il tuo indirizzo" id="address">
-
-                        <label for="mail">Email: </label>
-                        <input type="text" placeholder="Inserisci la tua email" id="mail">
-
-                        <label for="number">Numero di telefono: </label>
-                        <input type="text" placeholder="Inserisci il tuo numero telefonico" id="number"> --}}
-
-                        {{-- <input type="text" placeholder="prezzo"> --}}
-                        {{-- 
-                        <div>
-
-                            <input type="submit" value="Aquista" class="btn">
-                            
-
-                            <a href="{{ url()->previous() }}" class="btn">Torna indietro</a>
-                        </div>
-
-                    </form> --}}
-
                     {{-- FORM GIA CREATO --}}
 
                     <div class="content">
                         <form id="payment-form" action="{{ route('shop.payment.checkout') }}" method="post">
                             @csrf
                             @method('POST')
+
+                            <label for="name">Nome: </label>
+                            <input type="text" placeholder="Inserisci il tuo nome" id="name" required>
+
+                            <label for="lastname">Cognome: </label>
+                            <input type="text" placeholder="Inserisci il tuo cognome" id="lastname" required>
+
+                            <label for="address">Indirizzo: </label>
+                            <input type="text" placeholder="Inserisci il tuo indirizzo" id="address" required>
+
+                            <label for="mail">Email: </label>
+                            <input type="text" placeholder="Inserisci la tua email" id="mail" required>
+
+                            <label for="number">Numero di telefono: </label>
+                            <input type="text" placeholder="Inserisci il tuo numero telefonico" id="number" required>
+
                             <section>
                                 <label for="amount">
                                     <div class="input-wrapper amount-wrapper">
@@ -90,7 +76,12 @@
                             </section>
         
                             <input id="nonce" name="payment_method_nonce" type="hidden" />
-                            <button class="button" type="submit"><span>Test Transaction</span></button>
+
+                            <div>
+                                <button class="button btn btn-primary" type="submit"><span>Acquista</span></button>
+                                <a href="{{ url()->previous() }}" class="btn">Torna indietro</a>
+                            </div>
+                            
                         </form>
                     </div>
                     
@@ -151,6 +142,11 @@
                         return;
                     }
                     // Add the nonce to the form and submit
+
+                    localStorage.removeItem('tot_price');
+                    localStorage.removeItem('delivery');
+                    localStorage.removeItem('plates');
+
                     document.querySelector('#nonce').value = payload.nonce;
                     form.submit();
                     });

@@ -1,0 +1,19 @@
+.checkout {
+    
+    main {
+        min-height: calc(100vh - 392px);
+        padding: 50px 0;
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            a {
+                padding: 15px;
+                background-color: $delivebooColor;
+                border-radius: 5px;
+                color: white;
+            }
+        }
+    }
+}

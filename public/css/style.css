@@ -272,6 +272,7 @@ header .header_buttons:hover {
 }
 .homepage #categories .cards .swiper-slide {
   position: relative;
+  width: 250px;
   height: 250px;
   align-self: center;
   text-align: center;
@@ -759,6 +760,23 @@ header .header_buttons:hover {
 }
 .payment main .shop_cart #shop_cart_bottom #shop_cart_bottom_total #item_plate {
   display: inline-block;
+}
+
+.checkout main {
+  min-height: calc(100vh - 392px);
+  padding: 50px 0;
+}
+.checkout main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkout main .container a {
+  padding: 15px;
+  background-color: #f2474d;
+  border-radius: 5px;
+  color: white;
 }
 
 footer {

@@ -35,4 +35,8 @@ Route::prefix('dashboard')
     });
 
 Route::get('restaurant/{slug}', 'RestaurantController@restaurant')->name('shop.restaurant');
-Route::get('payment', 'RestaurantController@shop')->name('shop.payment');
+// Route::get('payment', 'RestaurantController@shop')->name('shop.payment.index');
+
+Route::get('payment', 'PaymentController@index')->name('shop.payment.index');
+
+Route::post('payment/checkout', 'PaymentController@checkout')->name('shop.payment.checkout');

@@ -79,9 +79,8 @@
                             @method('POST')
                             <section>
                                 <label for="amount">
-                                    <span class="input-label">Amount</span>
                                     <div class="input-wrapper amount-wrapper">
-                                        <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                                        <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" :value="parseFloat(tot_price).toFixed(2)" readonly>
                                     </div>
                                 </label>
         
@@ -112,12 +111,12 @@
                         <div id="shop_cart_bottom">
                         <div id="shop_cart_bottom_delivery">
                             <div>Spese di consegna</div>
-                            <div>@{{ delivery }}€</div>
+                            <div>@{{ parseFloat(delivery).toFixed(2) }}€</div>
                         </div>
             
                         <div id="shop_cart_bottom_total">
                             <div>Totale</div>
-                            <div id="item_plate" class="price_animation">@{{ tot_price }}€</div>
+                            <div id="item_plate" class="price_animation">@{{ parseFloat(tot_price).toFixed(2) }}€</div>
                         </div>
                         </div>
                         

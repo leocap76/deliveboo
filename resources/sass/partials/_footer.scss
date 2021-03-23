@@ -6,6 +6,7 @@ footer{
   .footer_top{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
     padding: 20px 0;
     border-bottom: 2px solid $footerTextColor;
@@ -108,6 +109,16 @@ footer{
       
       ul li:nth-child(5) a:hover .fab {
         color: #e4405f;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  footer {
+    .footer_top{
+      .items {
+        width: 100%;
       }
     }
   }

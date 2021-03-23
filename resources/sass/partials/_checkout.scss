@@ -17,3 +17,13 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    main {
+        .container {
+            h1 {
+                text-align: center;
+            }
+        }
+    }
+}

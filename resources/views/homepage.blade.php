@@ -36,23 +36,36 @@
         <!-- !header -->
 
         <main id="app" class="homepage">
+
             <section id="jumbotron">
+
                 <div class="container">
+
                     <h1>I piatti che ami, a domicilio.</h1>
+
                     <div class="search_container">
+
                         <p class="input_search_title">Inserisci il nome del tuo ristorante preferito!</p>
+                        
                         <div class="search_input_container" v-on:mouseleave="allRestaurants = []">
+                            
                             <input type="text" placeholder="Inserisci il nome del ristorante" class="input_search" v-model="searchTextRestaurant" v-on:input.all="getSearchedRestaurants">
+                            
                             <div v-if="allRestaurants.length > 0" class="searched_restaurants_list">
+                                
                                 <a  :href="'{{ url('restaurant') }}' + '/' + restaurant.slug" v-for="restaurant in allRestaurants" class="searched_restaurants_result">
+                                    
                                     <div class="searched_restaurants_result_left">
                                         <img :src="restaurant.img_path" alt="restaurant.name">
                                     </div>
+                                    
                                     <div class="searched_restaurants_result_right">
                                         <h5>@{{ restaurant.name }}</h5>
                                         <p>@{{ restaurant.address }}</p>
                                         <span class="restaurant-times">@{{ restaurant.opening_time.slice(0, 5) }} - @{{ restaurant.closing_time.slice(0, 5) }}</span>
+                                    
                                     </div>
+                                
                                 </a>      
                             </div>
                         </div>

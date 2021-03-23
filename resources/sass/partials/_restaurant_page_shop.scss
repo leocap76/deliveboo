@@ -48,6 +48,7 @@
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
+          flex-wrap: wrap-reverse;
   
           .plates_container{
             display: flex;
@@ -264,4 +265,48 @@
     0% {transform: scale(1);}
     50% {transform: scale(1.1);}
     100% {transform: scale(1);}
+}
+
+@media screen and (max-width: 1000px) {
+  .restaurant_page{
+    main {
+      #shop_restaurant_bottom{
+        .container {
+          .plates_container{
+            margin-top: 10px;
+            width: 100%;
+          }
+          .shop_cart{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .restaurant_page{
+    main {
+      #shop_restaurant_bottom{
+        .container {
+          .plates_container{
+            margin-top: 10px;
+            width: 100%;
+            .shop_card_plates{
+              width: 100%;
+            }
+          }
+          .shop_cart{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .shop_box_container {
+      .shop_restaurant_box {
+        width: 90%;
+      }
+    }
+  }
 }

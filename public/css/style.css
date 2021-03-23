@@ -404,6 +404,32 @@ header .header_buttons:hover {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 767px) {
+  .homepage h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+  .homepage #jumbotron .container h1 {
+    text-align: center;
+  }
+  .homepage #jumbotron .container .search_container {
+    width: 90%;
+    margin: auto;
+  }
+  .homepage #jumbotron .container .search_container .restaurant-times {
+    display: none;
+  }
+  .homepage #restaurants_homepage h2 {
+    text-align: left;
+  }
+  .homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
+    width: 100%;
+  }
+  .homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card:nth-of-type(3n + 2) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .restaurant_page main {
   min-height: calc(100vh - 392px);
   background-color: #eee;
@@ -444,6 +470,7 @@ header .header_buttons:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap-reverse;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container {
   display: flex;
@@ -656,6 +683,30 @@ header .header_buttons:hover {
     transform: scale(1);
   }
 }
+@media screen and (max-width: 1000px) {
+  .restaurant_page main #shop_restaurant_bottom .container .plates_container {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .restaurant_page main #shop_restaurant_bottom .container .shop_cart {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .restaurant_page main #shop_restaurant_bottom .container .plates_container {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates {
+    width: 100%;
+  }
+  .restaurant_page main #shop_restaurant_bottom .container .shop_cart {
+    width: 100%;
+  }
+  .restaurant_page .shop_box_container .shop_restaurant_box {
+    width: 90%;
+  }
+}
 .dashboard main {
   padding: 50px 0 50px 0;
 }
@@ -762,6 +813,18 @@ header .header_buttons:hover {
   display: inline-block;
 }
 
+@media screen and (max-width: 767px) {
+  .payment main .container {
+    padding: 15px;
+    flex-wrap: wrap-reverse;
+  }
+  .payment main .container h1 {
+    display: none;
+  }
+  .payment main .container .left, .payment main .container .right {
+    width: 100%;
+  }
+}
 .checkout main {
   min-height: calc(100vh - 392px);
   padding: 50px 0;
@@ -779,6 +842,11 @@ header .header_buttons:hover {
   color: white;
 }
 
+@media screen and (max-width: 767px) {
+  main .container h1 {
+    text-align: center;
+  }
+}
 footer {
   background-color: #26272b;
   color: #737373;
@@ -786,6 +854,7 @@ footer {
 footer .footer_top {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
   padding: 20px 0;
   border-bottom: 2px solid #737373;
@@ -880,4 +949,10 @@ footer .footer_bottom .footer_bottom_right ul li:nth-child(4) a:hover .fab {
 }
 footer .footer_bottom .footer_bottom_right ul li:nth-child(5) a:hover .fab {
   color: #e4405f;
+}
+
+@media screen and (max-width: 767px) {
+  footer .footer_top .items {
+    width: 100%;
+  }
 }

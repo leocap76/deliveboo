@@ -40,19 +40,6 @@
                   background-color: #ececec;
                 }
               }
-              // .button_search {
-              //   position: absolute;
-              //   right: 0;
-              //   border-radius: 5px 50px 50px 5px;
-              //   background-color: $delivebooColor;
-              //   transition: all 0.2s;
-              //   color: white;
-              //   &:hover {
-              //     background-color: lighten($delivebooColor, 5%);
-              //     color: black;
-              //   }
-
-              // }
               .searched_restaurants_list {
                 position: absolute;
                 top: 100%;
@@ -294,4 +281,44 @@
             }
           }
         }
+}
+
+@media screen and (max-width: 767px) {
+  .homepage {
+    h2 {
+      text-align: center;
+      font-size: 30px;
+    }
+    #jumbotron {
+      .container {
+        h1 {
+          text-align: center;
+        }
+        .search_container {
+          width: 90%;
+          margin: auto;
+          .restaurant-times {
+            display: none;
+          }
+        }
+      }
+    }
+
+    #restaurants_homepage{
+      h2 {
+        text-align: left;
+      }
+      .restaurants_homepage_container{
+        .restaurants_homepage_card {
+          width: 100%;
+
+          &:nth-of-type(3n + 2) {
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+  }
 }

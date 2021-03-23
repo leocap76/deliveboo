@@ -92,3 +92,20 @@
     }
     
 }
+
+@media screen and (max-width: 767px) {
+  .payment {
+    main {
+      .container {
+        h1 {
+          display: none;
+        }
+        padding: 15px;
+        flex-wrap: wrap-reverse;
+        .left, .right{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

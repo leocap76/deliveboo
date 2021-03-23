@@ -91,6 +91,9 @@ body .clearfix:after {
 header {
   background-color: #f2474d;
 }
+header #hamurger_menu_container {
+  display: none;
+}
 header .header_container {
   display: flex;
   align-items: center;
@@ -121,7 +124,63 @@ header .header_buttons:hover {
   border: 1px solid white;
   box-shadow: none;
 }
+header .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+header .hamRotate.active {
+  transform: rotate(45deg);
+}
+header .hamRotate180.active {
+  transform: rotate(180deg);
+}
+header .line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: white;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+header .ham1 .top {
+  stroke-dasharray: 40 139;
+}
+header .ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+header .ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+header .ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
 
+@media screen and (max-width: 767px) {
+  header #hamurger_menu_container {
+    display: block;
+  }
+  header #header_buttons_section {
+    display: none;
+  }
+  header .header_buttons {
+    display: block;
+  }
+
+  .closed {
+    display: none;
+  }
+
+  .open {
+    display: block;
+    width: 100%;
+  }
+}
 .homepage #jumbotron {
   position: relative;
   height: 650px;
@@ -257,6 +316,9 @@ header .header_buttons:hover {
 .homepage #categories h2 {
   padding: 20px 0;
 }
+.homepage #categories .categories_choose_category_title {
+  display: none;
+}
 .homepage #categories .cards {
   display: flex;
   justify-content: space-around;
@@ -276,7 +338,7 @@ header .header_buttons:hover {
   height: 250px;
   align-self: center;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 5px;
   font-size: 18px;
   overflow: hidden;
   /* Center slide text vertically */
@@ -308,7 +370,6 @@ header .header_buttons:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 2;
-  border-radius: 50%;
   transition: all 0.3s;
 }
 .homepage #categories .cards .swiper-slide:hover::after {
@@ -407,16 +468,38 @@ header .header_buttons:hover {
 @media screen and (max-width: 767px) {
   .homepage h2 {
     text-align: center;
-    font-size: 30px;
+    font-size: 26px;
+  }
+  .homepage #jumbotron .container {
+    padding-top: 30px;
   }
   .homepage #jumbotron .container h1 {
     text-align: center;
+    font-size: 30px;
+    padding: 0 50px;
+    margin-bottom: 20px;
   }
   .homepage #jumbotron .container .search_container {
     width: 90%;
     margin: auto;
+    padding: 20px;
+  }
+  .homepage #jumbotron .container .search_container .input_search_title {
+    font-size: 14px;
   }
   .homepage #jumbotron .container .search_container .restaurant-times {
+    display: none;
+  }
+  .homepage #categories {
+    padding: 0;
+  }
+  .homepage #categories h2 {
+    padding-bottom: 0;
+  }
+  .homepage #categories .categories_choose_category_title {
+    display: block;
+  }
+  .homepage #categories .categories_click_category_title {
     display: none;
   }
   .homepage #restaurants_homepage h2 {
@@ -428,6 +511,21 @@ header .header_buttons:hover {
   .homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card:nth-of-type(3n + 2) {
     margin-left: 0;
     margin-right: 0;
+  }
+  .homepage #tutorial_card_section {
+    padding: 0;
+  }
+  .homepage #tutorial_card_section h2 {
+    padding-top: 10px;
+  }
+  .homepage #tutorial_card_section .tutorial_cards_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+  .homepage #tutorial_card_section .tutorial_cards_container .tutorial_card {
+    width: 70%;
   }
 }
 .restaurant_page main {
@@ -952,6 +1050,9 @@ footer .footer_bottom .footer_bottom_right ul li:nth-child(5) a:hover .fab {
 }
 
 @media screen and (max-width: 767px) {
+  footer .footer_top h4 {
+    font-size: 18px;
+  }
   footer .footer_top .items {
     width: 100%;
   }

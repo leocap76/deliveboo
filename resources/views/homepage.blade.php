@@ -76,13 +76,14 @@
 
             <section id="categories">
                 <div class="container">
-                    <h2>Clicca su una categoria per vederne i ristoranti di deliveboo</h2>
+                    <h2 class="categories_click_category_title">Clicca su una categoria per vedere i ristoranti di deliveboo</h2> <!-- Visibile sopra i 676px -->
+                    <h2 class="categories_choose_category_title">Scegli una categoria</h2> <!-- Visibile sotto i 676px -->
 
                     <div class="cards">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 @foreach ($categories as $category)
-                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 5px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }}, '{{ $category->name}}', '{{ $category->color}}')"> <span>{{ $category->name }}</span> </div>
+                                    <div class="swiper-slide" style="background-image: url('{{ asset('img/' . $category->img_path) }}'); border: 2px solid {{ $category->color }}" @click="getRestaurants({{ $category->id }}, '{{ $category->name}}', '{{ $category->color}}')"> <span>{{ $category->name }}</span> </div>
                                 @endforeach
                             </div>
                             <!-- arrow -->

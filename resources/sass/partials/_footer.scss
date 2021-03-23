@@ -117,6 +117,10 @@ footer{
 @media screen and (max-width: 767px) {
   footer {
     .footer_top{
+      h4 {
+        font-size: 18px;
+      }
+
       .items {
         width: 100%;
       }

@@ -1,6 +1,10 @@
 header {
   background-color: $delivebooColor;
 
+  #hamurger_menu_container {
+    display: none;
+  }
+
   .header_container {
     display: flex;
     align-items: center;
@@ -15,8 +19,6 @@ header {
       }
     }
   }
-
-  
 
   .header_buttons {
     display: inline-block;
@@ -36,4 +38,70 @@ header {
       box-shadow: none;
     }
   }
+
+  .ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    z-index: 2;
+  }
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+  .hamRotate180.active {
+    transform: rotate(180deg);
+  }
+  .line {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    // stroke:#000;
+    stroke: white;
+    stroke-width:5.5;
+    stroke-linecap:round;
+  }
+  .ham1 .top {
+    stroke-dasharray: 40 139;
+  }
+  .ham1 .bottom {
+    stroke-dasharray: 40 180;
+  }
+  .ham1.active .top {
+    stroke-dashoffset: -98px;
+  }
+  .ham1.active .bottom {
+    stroke-dashoffset: -138px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+    header {
+
+      #hamurger_menu_container {
+        display: block;
+      }
+
+      #header_buttons_section {
+        display: none;
+      }
+
+      .header_buttons {
+        display: block;
+      }
+      
+    }
+
+    .closed {
+      display: none;
+    }
+
+    .open {
+      display: block;
+      width: 100%;
+    }
 }

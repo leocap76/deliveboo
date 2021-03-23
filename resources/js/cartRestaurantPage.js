@@ -26,6 +26,10 @@ var app = new Vue(
         this.delivery = parseFloat(localStorage.getItem('delivery')).toFixed(2);
         this.cart_plates = JSON.parse(localStorage.getItem('plates'));
       }
+
+      this.tot_price = parseFloat(this.tot_price);
+
+      console.log(this.tot_price);
     },
 
     methods: {

@@ -761,6 +761,23 @@ header .header_buttons:hover {
   display: inline-block;
 }
 
+.checkout main {
+  min-height: calc(100vh - 392px);
+  padding: 50px 0;
+}
+.checkout main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkout main .container a {
+  padding: 15px;
+  background-color: #f2474d;
+  border-radius: 5px;
+  color: white;
+}
+
 footer {
   background-color: #26272b;
   color: #737373;

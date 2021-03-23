@@ -101,7 +101,8 @@
                 <div class="container">
 
                     <i class="fas fa-times section-closer" @click="switchSection()"></i>
-                    <h2>I tuoi ristoranti preferiti, direttamente a casa tua</h2>
+                    <h2 class="restaurants_lg_title">I tuoi ristoranti preferiti, direttamente a casa tua</h2> <!-- Visibile sopra i 676px -->
+                    <h2 class="restaurants_xs_title">I tuoi ristoranti preferiti</h2> <!-- Visibile sotto i 676px -->
                     <h4>Abbiamo trovato @{{ restaurants.length }} @{{ restaurants.length != 1 ? 'ristoranti' : 'ristorante' }} nella categoria: @{{ category }}</h4>
 
                     <div class="restaurants_homepage_container">

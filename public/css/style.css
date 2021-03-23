@@ -201,12 +201,12 @@ header .ham1.active .bottom {
 }
 .homepage #jumbotron {
   position: relative;
+  z-index: 0;
   height: 650px;
-  background-image: url("../img/sfondo-header.png");
+  width: 100%;
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  z-index: 0;
 }
 .homepage #jumbotron .container {
   height: 100%;
@@ -403,7 +403,7 @@ header .ham1.active .bottom {
   overflow: hidden;
   padding: 0;
   transition: all 1s;
-  background-color: #0EC5BF;
+  background-color: #d9fff8;
 }
 .homepage #restaurants_homepage.visible_restaurants {
   max-height: 9000px;
@@ -411,6 +411,12 @@ header .ham1.active .bottom {
 }
 .homepage #restaurants_homepage .container {
   position: relative;
+}
+.homepage #restaurants_homepage .container .restaurants_lg_title {
+  display: none;
+}
+.homepage #restaurants_homepage .container .restaurants_xs_title {
+  display: block;
 }
 .homepage #restaurants_homepage .container .section-closer {
   position: absolute;
@@ -488,6 +494,12 @@ header .ham1.active .bottom {
     text-align: center;
     font-size: 26px;
   }
+  .homepage #jumbotron {
+    height: 500px;
+    background-image: url("../img/sfondoresponsive.jpg");
+    background-position: bottom;
+    background-size: cover;
+  }
   .homepage #jumbotron .container {
     padding-top: 30px;
   }
@@ -520,8 +532,18 @@ header .ham1.active .bottom {
   .homepage #categories .categories_click_category_title {
     display: none;
   }
-  .homepage #restaurants_homepage h2 {
+  .homepage #restaurants_homepage .container h2 {
     text-align: left;
+  }
+  .homepage #restaurants_homepage .container h2.restaurants_lg_title {
+    display: none;
+  }
+  .homepage #restaurants_homepage .container h2.restaurants_xs_title {
+    display: block;
+  }
+  .homepage #restaurants_homepage .container .section-closer {
+    font-size: 22px;
+    color: #f2474d;
   }
   .homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
     width: 100%;
@@ -544,6 +566,11 @@ header .ham1.active .bottom {
   }
   .homepage #tutorial_card_section .tutorial_cards_container .tutorial_card {
     width: 70%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .homepage #jumbotron {
+    background-image: url("../img/sfondo-header.png");
   }
 }
 .restaurant_page main {

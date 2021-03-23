@@ -14129,7 +14129,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       "img": ""
     }
   },
-  mounted: function mounted() {// var prova = JSON.parse(localStorage.getItem('plates'));
+  mounted: function mounted() {
+    // var prova = JSON.parse(localStorage.getItem('plates'));
+    if (localStorage.getItem('tot_price') != undefined) {
+      this.tot_price = parseFloat(localStorage.getItem('tot_price')).toFixed(2);
+      this.delivery = parseFloat(localStorage.getItem('delivery')).toFixed(2);
+      this.cart_plates = JSON.parse(localStorage.getItem('plates'));
+    }
   },
   methods: {
     close_box: function close_box() {

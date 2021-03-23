@@ -19,6 +19,11 @@ var app = new Vue(
 
     mounted: function(){
       // var prova = JSON.parse(localStorage.getItem('plates'));
+      if(localStorage.getItem('tot_price') != undefined) {
+        this.tot_price = parseFloat(localStorage.getItem('tot_price')).toFixed(2);
+        this.delivery = parseFloat(localStorage.getItem('delivery')).toFixed(2);
+        this.cart_plates = JSON.parse(localStorage.getItem('plates')); 
+      }
     },
 
     methods: {

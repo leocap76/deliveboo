@@ -24,6 +24,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  overflow-x: hidden;
 }
 body ul {
   list-style: none;
@@ -161,6 +162,10 @@ header .ham1.active .bottom {
   stroke-dashoffset: -138px;
 }
 
+.closed {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   header #hamurger_menu_container {
     display: block;
@@ -177,8 +182,21 @@ header .ham1.active .bottom {
   }
 
   .open {
-    display: block;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 150px;
+    right: 0;
+    padding: 20px;
+    background-color: #f76969;
+    z-index: 999;
+    border-radius: 5px;
+    box-shadow: 0px 8px 10px -8px #888888;
+  }
+  .open a {
+    margin: 20px 0;
+    border-bottom: 1px solid #ddd;
   }
 }
 .homepage #jumbotron {

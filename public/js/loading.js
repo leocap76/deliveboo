@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
     // document.body.removeChild(loading_screen);
     
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 4,
+        slidesPerView: 'auto',
         spaceBetween: 30,
         navigation: {
             nextEl: '.swiper-button-next',

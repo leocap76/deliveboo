@@ -48,6 +48,9 @@ body .clearfix:after {
   display: table;
   clear: both;
 }
+body ul {
+  list-style: none;
+}
 
 #loading_screen {
   display: flex;
@@ -841,6 +844,9 @@ header .ham1.active .bottom {
     transform: scale(1);
   }
 }
+.dashboard {
+  position: relative;
+}
 @media screen and (max-width: 1000px) {
   .restaurant_page main #shop_restaurant_bottom .container .plates_container {
     margin-top: 10px;
@@ -866,30 +872,63 @@ header .ham1.active .bottom {
   }
 }
 .dashboard main {
-  padding: 50px 0 50px 0;
+  width: calc(100% - 375px);
+  height: 800px;
+  margin-left: 375px;
 }
-.dashboard main img {
-  max-width: 300px;
-}
-.dashboard main p {
-  font-size: 16px;
-}
-.dashboard .plates_bottom {
+.dashboard main #dashboard_index_center {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 40px 0;
-  border-bottom: 1px solid white;
-  box-shadow: 0px 8px 10px -12px #888888;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
 }
-.dashboard .plates_bottom_buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+.dashboard main #dashboard_index_center .dashboard_card {
+  width: 50%;
+  height: 50%;
+  padding: 10px;
 }
-.dashboard .plates_bottom_buttons a {
-  margin: 10px;
+.dashboard main #dashboard_index_center .dashboard_card.info_restaurant {
+  overflow-y: auto;
+  padding-left: 40px;
+}
+.dashboard main #dashboard_index_center .dashboard_card.info_restaurant h2 {
+  margin: 20px 0;
+}
+.dashboard main #dashboard_index_center .dashboard_card.restaurant img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.dashboard .dashboard_side_menu {
+  position: absolute;
+  left: 0;
+  width: 375px;
+  height: calc(100% - 392px);
+  background-color: #ffc966b9;
+}
+.dashboard .dashboard_side_menu li {
+  border-bottom: 1px solid rgba(153, 99, 0, 0.7254901961);
+  padding: 30px 50px;
+}
+.dashboard .dashboard_side_menu li .buttons_style {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: #f2474d;
+  font-size: 19px;
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 0px 8px 10px -6px #a75a5a;
+}
+.dashboard .dashboard_side_menu li .buttons_style:hover {
+  color: white;
+  background-color: #ff5c5c;
+  border: 1px solid white;
+  box-shadow: none;
 }
 
 .payment main .container {

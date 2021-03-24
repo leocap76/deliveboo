@@ -881,7 +881,6 @@ header .ham1.active .bottom {
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
 }
 .dashboard main #dashboard_index_center .dashboard_card {
   width: 50%;
@@ -908,6 +907,9 @@ header .ham1.active .bottom {
 }
 .dashboard main #dashboard_index_center .dashboard_card.orders_list .circle_price {
   font-size: 10px;
+}
+.dashboard main #dashboard_index_center .dashboard_card.chart_restaurant {
+  overflow-y: auto;
 }
 .dashboard .dashboard_side_menu {
   position: absolute;

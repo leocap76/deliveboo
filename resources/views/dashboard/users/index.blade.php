@@ -135,9 +135,9 @@
               {{-- !terza card --}}
 
              {{-- quarta card --}}
-             <div class="dashboard_card">
+             <div id="chart" class="dashboard_card chart_restaurant">
 
-              <canvas id="myChart" width="400" height="400"></canvas>
+              <canvas id="myChart" width="400" height="200"></canvas>
              </div>
              {{-- !quarta card --}}
             </div>

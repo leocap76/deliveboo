@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class PaymentController extends Controller
 {
@@ -50,6 +51,12 @@ class PaymentController extends Controller
         if ($result->success) {
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
+
+            $order = new Order();
+            $data =  $request->all();
+            $data['user_id'] = (int)$data['user_id'];
+            $order->fill($data);
+            $order->save();
     
             return view('shop.payment.checkout')->with('success_message', 'Il pagamento è stato effettuato. L\'id è:'. $transaction->id);
         } else {

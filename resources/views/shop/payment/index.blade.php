@@ -41,46 +41,37 @@
 
                 <div class="left">
                     <h1>Pagamento</h1>
-                    {{-- <form action="{{ route('shop.payment.checkout') }}" method="post">
-                        @csrf
-                        @method('POST')
-                        <label for="name">Nome: </label>
-                        <input type="text" placeholder="Inserisci il tuo nome" id="name">
-
-                        <label for="lastname">Cognome: </label>
-                        <input type="text" placeholder="Inserisci il tuo cognome" id="lastname">
-
-                        <label for="address">Indirizzo: </label>
-                        <input type="text" placeholder="Inserisci il tuo indirizzo" id="address">
-
-                        <label for="mail">Email: </label>
-                        <input type="text" placeholder="Inserisci la tua email" id="mail">
-
-                        <label for="number">Numero di telefono: </label>
-                        <input type="text" placeholder="Inserisci il tuo numero telefonico" id="number"> --}}
-
-                        {{-- <input type="text" placeholder="prezzo"> --}}
-                        {{-- 
-                        <div>
-
-                            <input type="submit" value="Aquista" class="btn">
-                            
-
-                            <a href="{{ url()->previous() }}" class="btn">Torna indietro</a>
-                        </div>
-
-                    </form> --}}
-
                     {{-- FORM GIA CREATO --}}
 
                     <div class="content">
                         <form id="payment-form" action="{{ route('shop.payment.checkout') }}" method="post">
                             @csrf
                             @method('POST')
+
+                            <label for="name">Nome e cognome: </label>
+                            <input type="text" name="name" placeholder="Inserisci il tuo nome e cognome" id="name" required>
+
+                            <label for="address">Indirizzo: </label>
+                            <input type="text" name="address" placeholder="Inserisci il tuo indirizzo" id="address" required>
+
+                            <label for="mail">Email: </label>
+                            <input type="text" name="email" placeholder="Inserisci la tua email" id="mail" required>
+
+                            <label for="mail">Tempo di consegna: </label>
+                            <input type="time" name="time" id="mail" required>
+
+
+                            <label for="comment">Commento: </label>
+                            <textarea id="comment" name="comment" rows="10" placeholder="Inserisci un commento"></textarea>
+
+                            <input id="restaurant_id" name="user_id" type="hidden" min="1" :value="restaurant_id" readonly>
+                            <input id="plates" name="arrPlates" type="hidden" min="1" :value="plates" readonly>
+
                             <section>
                                 <label for="amount">
                                     <div class="input-wrapper amount-wrapper">
-                                        <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" :value="parseFloat(tot_price).toFixed(2)" readonly>
+                                        <input id="amount" name="amount" type="hidden" min="1" :value="parseFloat(tot_price).toFixed(2)" readonly>
+                                        <input id="amount" name="price" type="hidden" min="1" :value="parseFloat(tot_price).toFixed(2)" readonly>
                                     </div>
                                 </label>
         
@@ -90,7 +81,12 @@
                             </section>
         
                             <input id="nonce" name="payment_method_nonce" type="hidden" />
-                            <button class="button" type="submit"><span>Test Transaction</span></button>
+
+                            <div>
+                                <button class="button btn btn-primary" type="submit"><span>Acquista</span></button>
+                                <a href="{{ url()->previous() }}" class="btn">Torna indietro</a>
+                            </div>
+                            
                         </form>
                     </div>
                     
@@ -151,6 +147,7 @@
                         return;
                     }
                     // Add the nonce to the form and submit
+
                     document.querySelector('#nonce').value = payload.nonce;
                     form.submit();
                     });

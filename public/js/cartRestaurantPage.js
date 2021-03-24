@@ -14127,9 +14127,20 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       "description": "",
       "ingredients": "",
       "img": ""
-    }
+    },
+    restaurant_id: 0
   },
-  mounted: function mounted() {// var prova = JSON.parse(localStorage.getItem('plates'));
+  mounted: function mounted() {
+    // var prova = JSON.parse(localStorage.getItem('plates'));
+    this.restaurant_id = restaurant_id_js;
+
+    if (localStorage.getItem('tot_price') != undefined && this.restaurant_id == localStorage.getItem('restaurant_id')) {
+      this.tot_price = parseFloat(localStorage.getItem('tot_price')).toFixed(2);
+      this.delivery = parseFloat(localStorage.getItem('delivery')).toFixed(2);
+      this.cart_plates = JSON.parse(localStorage.getItem('plates'));
+    }
+
+    this.tot_price = parseFloat(this.tot_price);
   },
   methods: {
     close_box: function close_box() {
@@ -14145,13 +14156,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.plate.ingredients = ingredients;
       this.plate.img = img;
     },
-    push_plate: function push_plate(name, price) {
+    push_plate: function push_plate(name, price, restaurant_id) {
       var _this = this;
 
       var box = document.getElementById('box');
       box.style.display = 'none';
       var isNew = true;
-      this.tot_price = this.delivery;
+      this.tot_price = parseFloat(this.delivery);
       this.cart_plates.forEach(function (item) {
         if (item.name == name) {
           item.amount++;
@@ -14180,10 +14191,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           li.classList.add('price_animation');
         }, 100);
       }, 100);
-    },
-    plate_remove: function plate_remove(index) {
-      this.tot_price -= this.cart_plates[index].price;
-      this.cart_plates.splice(index, 1);
+      localStorage.setItem('tot_price', this.tot_price);
+      localStorage.setItem('delivery', this.delivery);
+      localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+      localStorage.setItem('restaurant_id', this.restaurant_id);
     },
     plate_minus: function plate_minus(index) {
       this.cart_plates[index].amount--;
@@ -14199,6 +14210,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       setTimeout(function () {
         li.classList.add('price_animation');
       }, 100);
+      localStorage.setItem('tot_price', this.tot_price);
+      localStorage.setItem('delivery', this.delivery);
+      localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+      localStorage.setItem('restaurant_id', this.restaurant_id);
     },
     plate_plus: function plate_plus(index) {
       this.cart_plates[index].amount++;
@@ -14209,11 +14224,16 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       setTimeout(function () {
         li.classList.add('price_animation');
       }, 100);
+      localStorage.setItem('tot_price', this.tot_price);
+      localStorage.setItem('delivery', this.delivery);
+      localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+      localStorage.setItem('restaurant_id', this.restaurant_id);
     },
     save: function save() {
       localStorage.setItem('tot_price', this.tot_price);
       localStorage.setItem('delivery', this.delivery);
       localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+      localStorage.setItem('restaurant_id', this.restaurant_id);
     }
   }
 });

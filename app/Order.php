@@ -6,7 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    public function plates(){
-        return $this->belongsToMany('App\Plate');
+
+    protected $fillable = [
+        'user_id',
+        'price',
+        'arrPlates',
+        'comment',
+        'time',
+        'address',
+        'name',
+        'email'
+
+    ];
+
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 }

@@ -24,6 +24,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  overflow-x: hidden;
 }
 body ul {
   list-style: none;
@@ -91,6 +92,9 @@ body .clearfix:after {
 header {
   background-color: #f2474d;
 }
+header #hamurger_menu_container {
+  display: none;
+}
 header .header_container {
   display: flex;
   align-items: center;
@@ -121,15 +125,104 @@ header .header_buttons:hover {
   border: 1px solid white;
   box-shadow: none;
 }
+header .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+header .hamRotate.active {
+  transform: rotate(45deg);
+}
+header .hamRotate180.active {
+  transform: rotate(180deg);
+}
+header .line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: white;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+header .ham1 .top {
+  stroke-dasharray: 40 139;
+}
+header .ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+header .ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+header .ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
 
+.closed {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  header #hamurger_menu_container {
+    display: block;
+  }
+  header #header_buttons_section {
+    display: none;
+  }
+  header .header_buttons {
+    display: block;
+  }
+
+  .closed {
+    display: none;
+  }
+
+  .open {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    background-color: #f76969;
+    z-index: 999;
+    border-radius: 5px;
+    box-shadow: 0px 8px 10px -8px #888888;
+  }
+
+  #dropdown_menu .header_buttons {
+    display: block;
+    width: 100%;
+    color: #f2474d;
+    font-size: 19px;
+    padding: 5px 20px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    box-shadow: 0px 8px 10px -6px #a75a5a;
+    transition: all 0.4s;
+  }
+  #dropdown_menu .header_buttons:hover {
+    color: white;
+    background-color: #ff5c5c;
+    border: 1px solid white;
+    box-shadow: none;
+  }
+}
 .homepage #jumbotron {
   position: relative;
+  z-index: 0;
   height: 650px;
-  background-image: url("../img/sfondo-header.png");
+  width: 100%;
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  z-index: 0;
 }
 .homepage #jumbotron .container {
   height: 100%;
@@ -257,6 +350,9 @@ header .header_buttons:hover {
 .homepage #categories h2 {
   padding: 20px 0;
 }
+.homepage #categories .categories_choose_category_title {
+  display: none;
+}
 .homepage #categories .cards {
   display: flex;
   justify-content: space-around;
@@ -276,7 +372,7 @@ header .header_buttons:hover {
   height: 250px;
   align-self: center;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 5px;
   font-size: 18px;
   overflow: hidden;
   /* Center slide text vertically */
@@ -308,7 +404,6 @@ header .header_buttons:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 2;
-  border-radius: 50%;
   transition: all 0.3s;
 }
 .homepage #categories .cards .swiper-slide:hover::after {
@@ -324,7 +419,7 @@ header .header_buttons:hover {
   overflow: hidden;
   padding: 0;
   transition: all 1s;
-  background-color: #0EC5BF;
+  background-color: #d9fff8;
 }
 .homepage #restaurants_homepage.visible_restaurants {
   max-height: 9000px;
@@ -333,14 +428,20 @@ header .header_buttons:hover {
 .homepage #restaurants_homepage .container {
   position: relative;
 }
+.homepage #restaurants_homepage .container .restaurants_lg_title {
+  display: block;
+}
+.homepage #restaurants_homepage .container .restaurants_xs_title {
+  display: none;
+}
 .homepage #restaurants_homepage .container .section-closer {
   position: absolute;
   top: 0;
   right: 15px;
   font-size: 40px;
   cursor: pointer;
-  color: #eff1f3;
   transition: all 0.3s;
+  color: #f2474d;
 }
 .homepage #restaurants_homepage .container .section-closer:hover {
   color: #212529;
@@ -407,20 +508,57 @@ header .header_buttons:hover {
 @media screen and (max-width: 767px) {
   .homepage h2 {
     text-align: center;
-    font-size: 30px;
+    font-size: 26px;
+  }
+  .homepage #jumbotron {
+    height: 500px;
+    background-image: url("../img/sfondoresponsive.jpg");
+    background-position: bottom;
+    background-size: cover;
+  }
+  .homepage #jumbotron .container {
+    padding-top: 30px;
   }
   .homepage #jumbotron .container h1 {
     text-align: center;
+    font-size: 30px;
+    padding: 0 50px;
+    margin-bottom: 20px;
   }
   .homepage #jumbotron .container .search_container {
     width: 90%;
     margin: auto;
+    padding: 20px;
+  }
+  .homepage #jumbotron .container .search_container .input_search_title {
+    font-size: 14px;
   }
   .homepage #jumbotron .container .search_container .restaurant-times {
     display: none;
   }
-  .homepage #restaurants_homepage h2 {
+  .homepage #categories {
+    padding: 0;
+  }
+  .homepage #categories h2 {
+    padding-bottom: 0;
+  }
+  .homepage #categories .categories_choose_category_title {
+    display: block;
+  }
+  .homepage #categories .categories_click_category_title {
+    display: none;
+  }
+  .homepage #restaurants_homepage .container h2 {
     text-align: left;
+  }
+  .homepage #restaurants_homepage .container h2.restaurants_lg_title {
+    display: none;
+  }
+  .homepage #restaurants_homepage .container h2.restaurants_xs_title {
+    display: block;
+  }
+  .homepage #restaurants_homepage .container .section-closer {
+    font-size: 22px;
   }
   .homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
     width: 100%;
@@ -428,6 +566,26 @@ header .header_buttons:hover {
   .homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card:nth-of-type(3n + 2) {
     margin-left: 0;
     margin-right: 0;
+  }
+  .homepage #tutorial_card_section {
+    padding: 0;
+  }
+  .homepage #tutorial_card_section h2 {
+    padding-top: 10px;
+  }
+  .homepage #tutorial_card_section .tutorial_cards_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+  .homepage #tutorial_card_section .tutorial_cards_container .tutorial_card {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .homepage #jumbotron {
+    background-image: url("../img/sfondo-header.png");
   }
 }
 .restaurant_page main {
@@ -952,6 +1110,9 @@ footer .footer_bottom .footer_bottom_right ul li:nth-child(5) a:hover .fab {
 }
 
 @media screen and (max-width: 767px) {
+  footer .footer_top h4 {
+    font-size: 18px;
+  }
   footer .footer_top .items {
     width: 100%;
   }

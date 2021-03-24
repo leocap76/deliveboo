@@ -15,6 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->float('price', 6,2);
             $table->text('arrPlates');
             $table->text('comment');
@@ -23,6 +24,11 @@ class CreateOrdersTable extends Migration
             $table->string('name', 50);
             $table->string('email', 60);            
             $table->timestamps();
+
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users');
+
         });
     }
 

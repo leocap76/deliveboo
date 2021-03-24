@@ -54,13 +54,9 @@ class PaymentController extends Controller
 
             $order = new Order();
             $data =  $request->all();
+            $data['user_id'] = (int)$data['user_id'];
             $order->fill($data);
             $order->save();
-
-            $data["order"]['order_id'] = $order->id;
-            $data["order"]['user_id'] = $data['user_id'];
-
-            $order->users()->attach($data["order"]);
     
             return view('shop.payment.checkout')->with('success_message', 'Il pagamento è stato effettuato. L\'id è:'. $transaction->id);
         } else {

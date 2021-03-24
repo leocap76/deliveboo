@@ -8,6 +8,7 @@ class Order extends Model
 {
 
     protected $fillable = [
+        'user_id',
         'price',
         'arrPlates',
         'comment',
@@ -18,7 +19,7 @@ class Order extends Model
 
     ];
 
-    public function users(){
-        return $this->belongsToMany('App\User');
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 }

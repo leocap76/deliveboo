@@ -186,7 +186,6 @@ header .ham1.active .bottom {
     flex-direction: column;
     flex-wrap: wrap;
     position: absolute;
-    width: 150px;
     right: 0;
     padding: 20px;
     background-color: #f76969;
@@ -194,9 +193,26 @@ header .ham1.active .bottom {
     border-radius: 5px;
     box-shadow: 0px 8px 10px -8px #888888;
   }
-  .open a {
-    margin: 20px 0;
-    border-bottom: 1px solid #ddd;
+
+  #dropdown_menu .header_buttons {
+    display: block;
+    width: 100%;
+    color: #f2474d;
+    font-size: 19px;
+    padding: 5px 20px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    box-shadow: 0px 8px 10px -6px #a75a5a;
+    transition: all 0.4s;
+  }
+  #dropdown_menu .header_buttons:hover {
+    color: white;
+    background-color: #ff5c5c;
+    border: 1px solid white;
+    box-shadow: none;
   }
 }
 .homepage #jumbotron {
@@ -413,10 +429,10 @@ header .ham1.active .bottom {
   position: relative;
 }
 .homepage #restaurants_homepage .container .restaurants_lg_title {
-  display: none;
+  display: block;
 }
 .homepage #restaurants_homepage .container .restaurants_xs_title {
-  display: block;
+  display: none;
 }
 .homepage #restaurants_homepage .container .section-closer {
   position: absolute;
@@ -424,8 +440,8 @@ header .ham1.active .bottom {
   right: 15px;
   font-size: 40px;
   cursor: pointer;
-  color: #eff1f3;
   transition: all 0.3s;
+  color: #f2474d;
 }
 .homepage #restaurants_homepage .container .section-closer:hover {
   color: #212529;
@@ -543,7 +559,6 @@ header .ham1.active .bottom {
   }
   .homepage #restaurants_homepage .container .section-closer {
     font-size: 22px;
-    color: #f2474d;
   }
   .homepage #restaurants_homepage .restaurants_homepage_container .restaurants_homepage_card {
     width: 100%;

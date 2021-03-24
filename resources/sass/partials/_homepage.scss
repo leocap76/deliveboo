@@ -206,10 +206,10 @@
           position: relative;
 
           .restaurants_lg_title {
-            display: none;
+            display: block;
           }
           .restaurants_xs_title {
-            display: block;
+            display: none;
           }
 
           .section-closer {
@@ -218,8 +218,8 @@
             right: 15px;
             font-size: 40px;
             cursor: pointer;
-            color: lighten(#212529, 80%);
             transition: all 0.3s;
+            color: $delivebooColor;
             &:hover {
               color: #212529;
             }
@@ -362,7 +362,6 @@
         }
         .section-closer {
           font-size: 22px;
-          color: $delivebooColor;
         }
       }
 

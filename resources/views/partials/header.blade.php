@@ -30,7 +30,7 @@
                                 <form action="{{ route('logout') }}" method="POST">
                                     @csrf
                                     <button type="submit" class="header_buttons">Logout</button>
-                                    <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Pannello di controllo</a>
+                                    <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Dashboard</a>
                                 </form>
                             @else
                                 <a href="{{ route('login') }}" class="header_buttons">Accedi</a>
@@ -41,11 +41,6 @@
                             @endauth
                         </div>
                     @endif
-                @elseif(Route::currentRouteName() == 'dashboard.users.index')
-                    <div class="top-right links">
-                        <a href="{{ route('dashboard.plates.index') }}" class="header_buttons">Vai ai piatti</a>
-                        <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>
-                    </div>
                 @elseif(Route::currentRouteName() == 'dashboard.plates.index' || Route::currentRouteName() == 'dashboard.plates.create')
                     <div class="top-right links">
                         <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Vai alle informazioni</a>
@@ -69,7 +64,7 @@
                 @csrf
                 <button type="submit" class="header_buttons">Logout</button>
             </form>
-            <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Pannello di controllo</a>
+            <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Dashboard</a>
         @else
             <a href="{{ route('login') }}" class="header_buttons">Accedi</a>
 
@@ -82,7 +77,7 @@
         
     @elseif(Route::currentRouteName() == 'dashboard.plates.index' || Route::currentRouteName() == 'dashboard.plates.create')
         
-        <a href="{{ route('dashboard.users.index') }}" class="header_buttons">informazioni</a>
+        <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Informazioni</a>
          <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
     
      @elseif(Route::currentRouteName() == 'shop.restaurant' || Route::currentRouteName() == 'shop.payment.index' || Route::currentRouteName() == 'shop.payment.checkout' || Route::currentRouteName() == 'login' || Route::currentRouteName() == 'register' || Route::currentRouteName() == 'dashboard.users.index' )

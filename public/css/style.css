@@ -617,10 +617,10 @@ header .header_buttons:hover {
   left: 0;
   width: 375px;
   height: calc(100% - 392px);
-  background-color: #A6F9F6;
+  background-color: #ffc966b9;
 }
 .dashboard .dashboard_side_menu li {
-  border-bottom: 1px solid #0dc6bf;
+  border-bottom: 1px solid rgba(153, 99, 0, 0.7254901961);
   padding: 30px 50px;
 }
 .dashboard .dashboard_side_menu li .buttons_style {

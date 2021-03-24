@@ -844,9 +844,6 @@ header .ham1.active .bottom {
     transform: scale(1);
   }
 }
-.dashboard {
-  position: relative;
-}
 @media screen and (max-width: 1000px) {
   .restaurant_page main #shop_restaurant_bottom .container .plates_container {
     margin-top: 10px;
@@ -871,6 +868,9 @@ header .ham1.active .bottom {
     width: 90%;
   }
 }
+.dashboard {
+  position: relative;
+}
 .dashboard main {
   width: calc(100% - 375px);
   height: 800px;
@@ -881,6 +881,7 @@ header .ham1.active .bottom {
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
 }
 .dashboard main #dashboard_index_center .dashboard_card {
   width: 50%;
@@ -894,12 +895,19 @@ header .ham1.active .bottom {
 .dashboard main #dashboard_index_center .dashboard_card.info_restaurant h2 {
   margin: 20px 0;
 }
-.dashboard main #dashboard_index_center .dashboard_card.restaurant img {
+.dashboard main #dashboard_index_center .dashboard_card.img_restaurant img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
+}
+.dashboard main #dashboard_index_center .dashboard_card.orders_list {
+  overflow-y: auto;
+  padding-left: 40px;
+}
+.dashboard main #dashboard_index_center .dashboard_card.orders_list .circle_price {
+  font-size: 10px;
 }
 .dashboard .dashboard_side_menu {
   position: absolute;

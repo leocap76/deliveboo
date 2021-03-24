@@ -32,7 +32,9 @@ class UserController extends Controller
     {
         $user = User::where('id', Auth::id())->first();
 
-        return view('dashboard.users.index', compact('user'));
+        $orders = $user->orders;
+
+        return view('dashboard.users.index', compact('user', 'orders'));
     }
 
     /**

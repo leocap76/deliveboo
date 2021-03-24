@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\InfoRestaurant;
 use App\Category;
 use App\User;
+use App\Order;
+
+
 
 class RestaurantController extends Controller
 {
@@ -38,4 +41,10 @@ class RestaurantController extends Controller
         return response()->json($restaurant_all);
     }
 
+    public function restaurantOrders($id){
+        $user = Order::where('user_id', $id)->get();
+        
+        return response()->json($user);
+
+    }
 }

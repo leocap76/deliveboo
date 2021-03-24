@@ -48,25 +48,30 @@
                             @csrf
                             @method('POST')
 
-                            <label for="name">Nome: </label>
-                            <input type="text" placeholder="Inserisci il tuo nome" id="name" required>
-
-                            <label for="lastname">Cognome: </label>
-                            <input type="text" placeholder="Inserisci il tuo cognome" id="lastname" required>
+                            <label for="name">Nome e cognome: </label>
+                            <input type="text" name="name" placeholder="Inserisci il tuo nome e cognome" id="name" required>
 
                             <label for="address">Indirizzo: </label>
-                            <input type="text" placeholder="Inserisci il tuo indirizzo" id="address" required>
+                            <input type="text" name="address" placeholder="Inserisci il tuo indirizzo" id="address" required>
 
                             <label for="mail">Email: </label>
-                            <input type="text" placeholder="Inserisci la tua email" id="mail" required>
+                            <input type="text" name="email" placeholder="Inserisci la tua email" id="mail" required>
 
-                            <label for="number">Numero di telefono: </label>
-                            <input type="text" placeholder="Inserisci il tuo numero telefonico" id="number" required>
+                            <label for="mail">Tempo di consegna: </label>
+                            <input type="time" name="time" id="mail" required>
+
+
+                            <label for="comment">Commento: </label>
+                            <textarea id="comment" name="comment" rows="10" placeholder="Inserisci un commento"></textarea>
+
+                            <input id="restaurant_id" name="user_id" type="hidden" min="1" :value="restaurant_id" readonly>
+                            <input id="plates" name="arrPlates" type="hidden" min="1" :value="plates" readonly>
 
                             <section>
                                 <label for="amount">
                                     <div class="input-wrapper amount-wrapper">
-                                        <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" :value="parseFloat(tot_price).toFixed(2)" readonly>
+                                        <input id="amount" name="amount" type="hidden" min="1" :value="parseFloat(tot_price).toFixed(2)" readonly>
+                                        <input id="amount" name="price" type="hidden" min="1" :value="parseFloat(tot_price).toFixed(2)" readonly>
                                     </div>
                                 </label>
         
@@ -142,10 +147,6 @@
                         return;
                     }
                     // Add the nonce to the form and submit
-
-                    localStorage.removeItem('tot_price');
-                    localStorage.removeItem('delivery');
-                    localStorage.removeItem('plates');
 
                     document.querySelector('#nonce').value = payload.nonce;
                     form.submit();

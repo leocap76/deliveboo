@@ -43,7 +43,7 @@
             <p>@{{ plate.ingredients }}</p>
     
             <h3>Descrizione: </h3>
-            <p>@{{ plate.description }}€</p>
+            <p>@{{ plate.description }}</p>
 
             <h3>Prezzo: </h3>
             <p>@{{ plate.price }}€</p>
@@ -117,8 +117,6 @@
                   <div class="cart_left_div">
                     <i class="fas fa-minus-circle" @click="plate_minus(index)"></i> <span>@{{ item.amount }}</span> <i class="fas fa-plus-circle" @click="plate_plus(index)"></i>
                   </div>
-
-                  {{-- <i class="fas fa-trash" @click="plate_remove(index)"></i> --}}
 
                   <div class="cart_middle_div">
                     @{{ item.name }}

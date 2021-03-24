@@ -14141,7 +14141,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     }
 
     this.tot_price = parseFloat(this.tot_price);
-    console.log(this.tot_price);
   },
   methods: {
     close_box: function close_box() {
@@ -14163,7 +14162,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       var box = document.getElementById('box');
       box.style.display = 'none';
       var isNew = true;
-      this.tot_price = this.delivery;
+      this.tot_price = parseFloat(this.delivery);
       this.cart_plates.forEach(function (item) {
         if (item.name == name) {
           item.amount++;
@@ -14192,10 +14191,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           li.classList.add('price_animation');
         }, 100);
       }, 100);
-    },
-    plate_remove: function plate_remove(index) {
-      this.tot_price -= this.cart_plates[index].price;
-      this.cart_plates.splice(index, 1);
+      localStorage.setItem('tot_price', this.tot_price);
+      localStorage.setItem('delivery', this.delivery);
+      localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+      localStorage.setItem('restaurant_id', this.restaurant_id);
     },
     plate_minus: function plate_minus(index) {
       this.cart_plates[index].amount--;
@@ -14211,6 +14210,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       setTimeout(function () {
         li.classList.add('price_animation');
       }, 100);
+      localStorage.setItem('tot_price', this.tot_price);
+      localStorage.setItem('delivery', this.delivery);
+      localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+      localStorage.setItem('restaurant_id', this.restaurant_id);
     },
     plate_plus: function plate_plus(index) {
       this.cart_plates[index].amount++;
@@ -14221,6 +14224,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       setTimeout(function () {
         li.classList.add('price_animation');
       }, 100);
+      localStorage.setItem('tot_price', this.tot_price);
+      localStorage.setItem('delivery', this.delivery);
+      localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+      localStorage.setItem('restaurant_id', this.restaurant_id);
     },
     save: function save() {
       localStorage.setItem('tot_price', this.tot_price);

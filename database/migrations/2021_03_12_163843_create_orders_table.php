@@ -16,6 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->float('price', 6,2);
+            $table->text('arrPlates');
             $table->text('comment');
             $table->time('time');
             $table->string('address');

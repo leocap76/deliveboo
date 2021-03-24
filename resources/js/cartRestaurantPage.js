@@ -28,8 +28,6 @@ var app = new Vue(
       }
 
       this.tot_price = parseFloat(this.tot_price);
-
-      console.log(this.tot_price);
     },
 
     methods: {
@@ -52,8 +50,7 @@ var app = new Vue(
         box.style.display = 'none';
         let isNew = true;
 
-        this.tot_price = this.delivery;
-        
+        this.tot_price = parseFloat(this.delivery);
 
         this.cart_plates.forEach((item) => {
 
@@ -79,12 +76,12 @@ var app = new Vue(
           li.classList.remove('price_animation');
           setTimeout(function(){ li.classList.add('price_animation'); }, 100);
         }, 100);
-        
-      },
 
-      plate_remove: function(index){
-        this.tot_price -= this.cart_plates[index].price;
-        this.cart_plates.splice(index,1);
+        localStorage.setItem('tot_price', this.tot_price);
+        localStorage.setItem('delivery', this.delivery);
+        localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+        localStorage.setItem('restaurant_id', this.restaurant_id);
+        
       },
       plate_minus: function(index){
         this.cart_plates[index].amount--;
@@ -97,6 +94,11 @@ var app = new Vue(
         var li = document.getElementById('item_plate');
         li.classList.remove('price_animation');
         setTimeout(function(){ li.classList.add('price_animation'); }, 100);
+
+        localStorage.setItem('tot_price', this.tot_price);
+        localStorage.setItem('delivery', this.delivery);
+        localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+        localStorage.setItem('restaurant_id', this.restaurant_id);
       },
       plate_plus: function(index){
         this.cart_plates[index].amount++;
@@ -106,6 +108,12 @@ var app = new Vue(
         var li = document.getElementById('item_plate');
         li.classList.remove('price_animation');
         setTimeout(function(){ li.classList.add('price_animation'); }, 100);
+
+        localStorage.setItem('tot_price', this.tot_price);
+        localStorage.setItem('delivery', this.delivery);
+        localStorage.setItem('plates', JSON.stringify(this.cart_plates));
+        localStorage.setItem('restaurant_id', this.restaurant_id);
+
       },
       save: function () {
         localStorage.setItem('tot_price', this.tot_price);

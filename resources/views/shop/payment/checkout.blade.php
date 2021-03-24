@@ -32,6 +32,13 @@
     </main>
 
     @include('partials.footer')
+
+    <script>
+      localStorage.removeItem('tot_price');
+      localStorage.removeItem('delivery');
+      localStorage.removeItem('plates');
+      localStorage.removeItem('restaurant_id');
+    </script>
     
   </body>
 </html>

@@ -20,7 +20,7 @@
         <title>@yield('title')</title>
 
     </head>
-    <body class="dashboard">
+    <body class="dashboard @yield('page')">
 
         @include('partials.header')
 

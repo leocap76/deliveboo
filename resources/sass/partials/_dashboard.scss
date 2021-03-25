@@ -5,70 +5,73 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+  }
+  
+}
 
-    #dashboard_index_center {
-      display: flex;
-      flex-wrap: wrap;
-      width: 80%;
-      height: calc(100vh - 392px);
+.user_index {
+  #dashboard_index_center {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    height: calc(100vh - 392px);
 
-      .dashboard_card {
-        width: calc(50% - 20px);
-        height: calc(50% - 20px);
-        padding: 10px;
-        border-radius: 5px;
-        margin: 10px;
-        background: #ddd;
+    .dashboard_card {
+      width: calc(50% - 20px);
+      height: calc(50% - 20px);
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px;
+      background: #ddd;
 
-        &.info_restaurant {
-          overflow-y: auto;
-          padding-left: 40px;
+      &.info_restaurant {
+        overflow-y: auto;
+        padding-left: 40px;
 
-          h2 {
-            margin: 20px 0;
-          }
+        h2 {
+          margin: 20px 0;
         }
-        &.img_restaurant {
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-          }
+      }
+      &.img_restaurant {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 5px;
         }
-        &.orders_list{
-          overflow-y: auto;
-          padding-left: 40px;
+      }
+      &.orders_list{
+        overflow-y: auto;
+        padding-left: 40px;
 
-          .circle_price{
-            font-size: 10px;
-            
-          }
+        .circle_price{
+          font-size: 10px;
+          
         }
+      }
 
-        &.chart_restaurant {
-          overflow-y: auto;
-          padding-top: 50px;
-          canvas {
-						width: 100%;             
-          }
+      &.chart_restaurant {
+        overflow-y: auto;
+        padding-top: 50px;
+        canvas {
+          width: 100%;             
         }
       }
     }
+  }
 
-    #dashboard_orders {
-      height: 100%;
+  #dashboard_orders {
+    height: 100%;
 
-      .dashboard_orders_top {
-        height: 40%;
-        padding: 20px;
-        overflow-y: auto;
-        border-bottom: 2px solid black;
-      }
+    .dashboard_orders_top {
+      height: 40%;
+      padding: 20px;
+      overflow-y: auto;
+      border-bottom: 2px solid black;
+    }
 
-      .dashboard_orders_bottom {
-        height: 60%;
-      }
+    .dashboard_orders_bottom {
+      height: 60%;
     }
   }
 
@@ -77,10 +80,10 @@
     height: calc(100vh - 392px);
     overflow-y: auto;
     background-color: $secondColorUser;
-
+  
     li {
       padding: 30px 50px;
-
+  
       &:not(:last-of-type) {
         border-bottom: 1px solid darken($secondColorUser, 40%);
       }
@@ -91,6 +94,57 @@
     }
   }
 }
+
+.plates_index {
+  main {
+    height: calc(100vh - 392px);
+
+    .container-fluid {
+      padding: 15px;
+      width: 80%;
+      height: calc(100vh - 392px);
+      overflow-y: auto;
+      .plates_bottom {
+        display: flex;
+        flex-wrap: wrap;
+        .plate {
+          margin-left: 50px;
+          img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+      }
+      form {
+        display: flex;
+        .btn {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .dashboard_side_menu {
+      width: 20%;
+      height: calc(100vh - 392px);
+      overflow-y: auto;
+      background-color: $secondColorUser;
+    
+      li {
+        padding: 30px 50px;
+    
+        &:not(:last-of-type) {
+          border-bottom: 1px solid darken($secondColorUser, 40%);
+        }
+        
+        .buttons_style {
+          @include deliveboo_buttons;
+        }
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width: 1280px) {
   .dashboard {

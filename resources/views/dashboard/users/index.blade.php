@@ -9,6 +9,10 @@
     Benvenuto - {{ $user->name }}
 @endsection
 
+@section('page')
+    user_index
+@endsection
+
 @section('main')
     
 <div id="dashboard_index_center">

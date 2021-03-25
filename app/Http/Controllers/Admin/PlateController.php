@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Plate;
+use App\User;
 
 class PlateController extends Controller
 {
@@ -25,8 +26,11 @@ class PlateController extends Controller
      */
     public function index()
     {
+        $user = User::where('id', Auth::id())->first();
+
         $plates = Plate::where('user_id', Auth::id())->get();
-        return view('dashboard.plates.index', compact('plates'));
+        
+        return view('dashboard.plates.index', compact('user', 'plates'));
     }
 
     /**

@@ -64,11 +64,27 @@
               margin-bottom: 10px;
               background-color: white;
               border-radius: 5px;
-              cursor: pointer;
 
               .shop_card_plates_left {
                 width: 70%;
                 padding: 0 10px;
+
+                i.fas {
+                  cursor: pointer;
+                  transition: color 0.4s;
+
+                  &.fa-info-circle {
+                    font-size: 16px;
+
+                    &:hover {
+                      color: rgb(73, 6, 197);
+                    }
+                  }
+
+                  &.fa-plus-circle:hover {
+                    color: $secondColorClient;
+                  }
+                }
               }
 
               .shop_card_plates_right {
@@ -216,7 +232,7 @@
       z-index: 1;
       .shop_restaurant_box {
         position: absolute;
-        top: 40%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 40%;
@@ -237,7 +253,9 @@
           background-color: #ddd;
           border-radius: 0 0 5px 5px;
           img {
-            width: 100px;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
             border-radius: 5px;
             margin-bottom: 10px;
           }

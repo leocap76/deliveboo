@@ -652,11 +652,23 @@ header .ham1.active .bottom {
   margin-bottom: 10px;
   background-color: white;
   border-radius: 5px;
-  cursor: pointer;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left {
   width: 70%;
   padding: 0 10px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas {
+  cursor: pointer;
+  transition: color 0.4s;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-info-circle {
+  font-size: 16px;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-info-circle:hover {
+  color: #4906c5;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-plus-circle:hover {
+  color: #0EC5BF;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_right {
   width: 30%;
@@ -782,7 +794,7 @@ header .ham1.active .bottom {
 }
 .restaurant_page .shop_box_container .shop_restaurant_box {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
@@ -805,7 +817,10 @@ header .ham1.active .bottom {
   border-radius: 0 0 5px 5px;
 }
 .restaurant_page .shop_box_container .shop_restaurant_box .bottom img {
-  width: 100px;
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
   margin-bottom: 10px;
 }

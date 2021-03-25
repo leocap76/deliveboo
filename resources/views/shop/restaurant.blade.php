@@ -80,13 +80,15 @@
 
         <div class="container">
           <div class="plates_container">
+
             @foreach ($plates as $plate)
               @if ($plate->available == 1)
-                <div class="shop_card_plates" @click="open_box('{{ $plate->name }}', {{ $plate->price }}, '{{ $plate->description }}', '{{ $plate->ingredients }}', '{{ $plate->img_path }}' )" >
+                <div class="shop_card_plates" >
                   <div class="shop_card_plates_left">
                     <h3 class="ellipsis">{{ $plate->name }}</h3>
                     <p class="ellipsis"> {{ $plate->ingredients }}</p>
-                    <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
+                    <h5> {{  number_format($plate->price,2,",",".") }}€ <i class="fas fa-plus-circle" @click="push_plate('{{ $plate->name }}', {{ $plate->price }})"></i></h5>
+                    <i class="fas fa-info-circle" @click="open_box('{{ $plate->name }}', {{ $plate->price }}, '{{ $plate->description }}', '{{ $plate->ingredients }}', '{{ $plate->img_path }}' )"></i>
                   </div>
                   <div class="shop_card_plates_right">
                     <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">
@@ -97,7 +99,8 @@
                   <div class="shop_card_plates_left">
                     <h3 class="ellipsis">{{ $plate->name }}</h3>
                     <p class="ellipsis"> {{ $plate->ingredients }}</p>
-                    <h5> {{  number_format($plate->price,2,",",".") }}€</h5>
+                    <h5> {{  number_format($plate->price,2,",",".") }}€ </h5>
+
                   </div>
                   <div class="shop_card_plates_right">
                     <img src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}">

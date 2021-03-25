@@ -1047,6 +1047,46 @@ header .ham1.active .bottom {
   color: springgreen;
 }
 
+.user_orders main {
+  height: calc(100vh - 392px);
+}
+.user_orders main #dashboard_orders {
+  width: 80%;
+  padding: 15px;
+  overflow-y: auto;
+}
+.user_orders main .dashboard_side_menu {
+  width: 20%;
+  height: calc(100vh - 392px);
+  overflow-y: auto;
+  background-color: #ffc966b9;
+}
+.user_orders main .dashboard_side_menu li {
+  padding: 30px 50px;
+}
+.user_orders main .dashboard_side_menu li:not(:last-of-type) {
+  border-bottom: 1px solid rgba(153, 99, 0, 0.7254901961);
+}
+.user_orders main .dashboard_side_menu li .buttons_style {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: #f2474d;
+  font-size: 19px;
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: 0px 8px 10px -6px #a75a5a;
+  transition: all 0.4s;
+}
+.user_orders main .dashboard_side_menu li .buttons_style:hover {
+  color: white;
+  background-color: #ff5c5c;
+  border: 1px solid white;
+  box-shadow: none;
+}
+
 @media screen and (max-width: 1280px) {
   .dashboard .dashboard_side_menu {
     display: none;

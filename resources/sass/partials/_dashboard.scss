@@ -168,6 +168,34 @@
   }
 }
 
+.user_orders {
+  main {
+    height: calc(100vh - 392px);
+    #dashboard_orders {
+      width: 80%;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .dashboard_side_menu {
+      width: 20%;
+      height: calc(100vh - 392px);
+      overflow-y: auto;
+      background-color: $secondColorUser;
+    
+      li {
+        padding: 30px 50px;
+    
+        &:not(:last-of-type) {
+          border-bottom: 1px solid darken($secondColorUser, 40%);
+        }
+        
+        .buttons_style {
+          @include deliveboo_buttons;
+        }
+      }
+    } 
+  }
+}
 
 @media screen and (max-width: 1280px) {
   .dashboard {

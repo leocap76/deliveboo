@@ -1264,6 +1264,10 @@ header .ham1.active .bottom {
   border-radius: 5px;
   color: white;
 }
+.checkout main .container img {
+  width: 200px;
+  margin: 20px 0;
+}
 
 @media screen and (max-width: 767px) {
   main .container h1 {

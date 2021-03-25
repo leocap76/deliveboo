@@ -26,7 +26,8 @@
     
     <main>
       <div class="container">
-        <h1>Transazione avvenuta con successo</h1>
+        <h1>Transazione avvenuta con successo!</h1>
+        <img src="{{ asset('img/pagamento.png') }}" alt="">
         <a href="{{ url('/') }}">Torna alla homepage</a>
       </div>
     </main>

@@ -1123,7 +1123,12 @@ header .ham1.active .bottom {
   display: flex;
   flex-direction: column;
 }
-.payment main .container .left form input[type=text] {
+.payment main .container .left form label {
+  margin-top: 10px;
+}
+.payment main .container .left form input[type=text],
+.payment main .container .left form input[type=time],
+.payment main .container .left form textarea {
   padding: 15px;
   border-radius: 5px;
   border: none;
@@ -1132,25 +1137,26 @@ header .ham1.active .bottom {
 }
 .payment main .container .left form input[type=submit],
 .payment main .container .left form a {
-  margin-top: 10px;
   background-color: #0EC5BF;
   color: white;
 }
 .payment main .container .right {
   width: 30%;
 }
-.payment main .shop_cart {
+.payment .shop_cart {
   position: sticky;
   top: 0;
   min-height: 150px;
+  margin-top: 94px;
   padding: 15px;
+  border: 2px solid #0EC5BF;
   border-radius: 5px;
   background-color: white;
 }
-.payment main .shop_cart .shop_cart_empty_button {
+.payment .shop_cart .shop_cart_empty_button {
   cursor: not-allowed;
 }
-.payment main .shop_cart .shop_cart_empty_button .shop_cart_button {
+.payment .shop_cart .shop_cart_empty_button .shop_cart_button {
   display: inline-block;
   color: white;
   width: 100%;
@@ -1161,31 +1167,31 @@ header .ham1.active .bottom {
   border-radius: 5px;
   pointer-events: none;
 }
-.payment main .shop_cart .shop_cart_empty_content {
+.payment .shop_cart .shop_cart_empty_content {
   text-align: center;
   font-size: 16px;
   color: #E2E5E5;
   padding-top: 30px;
 }
-.payment main .shop_cart #shop_cart_top {
+.payment .shop_cart #shop_cart_top {
   border-bottom: 1px solid #E0E8E8;
 }
-.payment main .shop_cart #shop_cart_top .title_top {
+.payment .shop_cart #shop_cart_top .title_top {
   font-weight: bold;
 }
-.payment main .shop_cart #shop_cart_bottom {
+.payment .shop_cart #shop_cart_bottom {
   padding-top: 15px;
 }
-.payment main .shop_cart #shop_cart_bottom #shop_cart_bottom_delivery {
+.payment .shop_cart #shop_cart_bottom #shop_cart_bottom_delivery {
   display: flex;
   justify-content: space-between;
 }
-.payment main .shop_cart #shop_cart_bottom #shop_cart_bottom_total {
+.payment .shop_cart #shop_cart_bottom #shop_cart_bottom_total {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
 }
-.payment main .shop_cart #shop_cart_bottom #shop_cart_bottom_total #item_plate {
+.payment .shop_cart #shop_cart_bottom #shop_cart_bottom_total #item_plate {
   display: inline-block;
 }
 

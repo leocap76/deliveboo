@@ -62,7 +62,7 @@
 
 
                             <label for="comment">Commento: </label>
-                            <textarea id="comment" name="comment" rows="10" placeholder="Inserisci un commento"></textarea>
+                            <textarea id="comment" name="comment" rows="10" placeholder="Inserisci un commento" required></textarea>
 
                             <input id="restaurant_id" name="user_id" type="hidden" min="1" :value="restaurant_id" readonly>
                             <input id="plates" name="arrPlates" type="hidden" min="1" :value="plates" readonly>
@@ -82,7 +82,7 @@
         
                             <input id="nonce" name="payment_method_nonce" type="hidden" />
 
-                            <div>
+                            <div class="buttons">
                                 <button class="button btn btn-primary" type="submit"><span>Acquista</span></button>
                                 <a href="{{ url()->previous() }}" class="btn">Torna indietro</a>
                             </div>

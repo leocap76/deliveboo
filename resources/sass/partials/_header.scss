@@ -21,22 +21,9 @@ header {
   }
 
   .header_buttons {
-    display: inline-block;
-    color: $delivebooColor;
-    font-size: 19px;
+    @include deliveboo_buttons;
+    width: fit-content;
     margin-left: 20px;
-    padding: 5px 20px;
-    background-color:white;
-    border-radius: 5px;
-    border: 1px solid white;
-    box-shadow: 0px 8px 10px -6px #a75a5a;
-    transition: all 0.4s;
-    &:hover {
-      color: white;
-      background-color:  #ff5c5c;
-      border: 1px solid white;
-      box-shadow: none;
-    }
   }
 
   @include hamburger_dropdown;

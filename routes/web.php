@@ -31,6 +31,7 @@ Route::prefix('dashboard')
 
         Route::resource('users', 'UserController');
         Route::resource('plates', 'PlateController');
+        Route::get('orders', 'OrderController@index')->name('orders');
 
     });
 

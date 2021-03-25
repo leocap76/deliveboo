@@ -112,15 +112,20 @@ header .header_container .header_left .logo_img {
 }
 header .header_buttons {
   display: inline-block;
+  width: 100%;
+  text-align: center;
   color: #f2474d;
   font-size: 19px;
-  margin-left: 20px;
   padding: 5px 20px;
   background-color: white;
   border-radius: 5px;
   border: 1px solid white;
   box-shadow: 0px 8px 10px -6px #a75a5a;
   transition: all 0.4s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 20px;
 }
 header .header_buttons:hover {
   color: white;
@@ -883,9 +888,12 @@ header .ham1.active .bottom {
   height: 100%;
 }
 .dashboard main #dashboard_index_center .dashboard_card {
-  width: 50%;
-  height: 50%;
+  width: calc(50% - 20px);
+  height: calc(50% - 20px);
   padding: 10px;
+  background: lightgreen;
+  border-radius: 5px;
+  margin: 10px;
 }
 .dashboard main #dashboard_index_center .dashboard_card.info_restaurant {
   overflow-y: auto;
@@ -910,6 +918,23 @@ header .ham1.active .bottom {
 }
 .dashboard main #dashboard_index_center .dashboard_card.chart_restaurant {
   overflow-y: auto;
+  padding-top: 50px;
+}
+.dashboard main #dashboard_index_center .dashboard_card.chart_restaurant canvas {
+  width: 100%;
+  height: 100%;
+}
+.dashboard main #dashboard_orders {
+  height: 100%;
+}
+.dashboard main #dashboard_orders .dashboard_orders_top {
+  height: 40%;
+  padding: 20px;
+  overflow-y: auto;
+  border-bottom: 2px solid black;
+}
+.dashboard main #dashboard_orders .dashboard_orders_bottom {
+  height: 60%;
 }
 .dashboard .dashboard_side_menu {
   position: absolute;
@@ -933,6 +958,7 @@ header .ham1.active .bottom {
   border-radius: 5px;
   border: 1px solid white;
   box-shadow: 0px 8px 10px -6px #a75a5a;
+  transition: all 0.4s;
 }
 .dashboard .dashboard_side_menu li .buttons_style:hover {
   color: white;
@@ -1135,7 +1161,7 @@ footer .footer_bottom .footer_bottom_right ul li a .fab {
   width: 100%;
   height: 100%;
   display: block;
-  background: linear-gradient(0deg, #fff, #ddd);
+  background: linear-gradient(0deg, #fff, #1b1616);
   border-radius: 50%;
   line-height: calc(30px - 12px);
   font-size: 10px;

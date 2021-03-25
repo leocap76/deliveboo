@@ -41,7 +41,7 @@
                             @endauth
                         </div>
                     @endif
-                @elseif(Route::currentRouteName() == 'dashboard.plates.index' || Route::currentRouteName() == 'dashboard.plates.create')
+                @elseif(Route::currentRouteName() == 'dashboard.plates.index' || Route::currentRouteName() == 'dashboard.plates.create' || Route::currentRouteName() == 'dashboard.orders')
                     <div class="top-right links">
                         <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Vai alle informazioni</a>
                         <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>

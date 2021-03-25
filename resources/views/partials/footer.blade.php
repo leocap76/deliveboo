@@ -9,11 +9,21 @@
           <div class="items">
               <h4>TEAM</h4>
               <ul>
-                  <li><a href="https://github.com/stefanof707" target="_blank">Stefano Franchini</a></li>
-                  <li><a href="https://github.com/alessio-source" target="_blank">Alessio Pancia</a></li>
-                  <li><a href="https://github.com/alexsircu" target="_blank">Alex Sircu</a></li>
-                  <li><a href="https://github.com/mariotota" target="_blank">Mario Tota</a></li>
-                  <li><a href="https://github.com/leocap76" target="_blank">Leonardo Capogna</a></li>
+                    <li>
+                      <a href="https://github.com/stefanof707" target="_blank">Stefano Franchini</a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/alessio-source" target="_blank">Alessio Pancia</a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/alexsircu" target="_blank">Alex Sircu</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/leocap76" target="_blank">Leonardo Capogna</a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/mariotota" target="_blank">Mario Tota</a>
+                    </li>
               </ul>
           </div>
           <div class="items">
@@ -21,7 +31,6 @@
               <ul>
                   <li>tel: +39 3663140799</li>
                   <li>deliveboo.info@email.com</li>
-
               </ul>
               
           </div>

@@ -5,16 +5,18 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+  
   }
   
 }
 
 .user_index {
   #dashboard_index_center {
+    overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-    height: calc(100vh - 392px);
+    height: calc(100vh - 100px);
 
     .dashboard_card {
       width: calc(50% - 20px);
@@ -77,7 +79,7 @@
 
   .dashboard_side_menu {
     width: 20%;
-    height: calc(100vh - 392px);
+    height: calc(100vh - 100px);
     overflow-y: auto;
     background-color: $secondColorUser;
   
@@ -97,12 +99,13 @@
 
 .plates_index {
   main {
-    height: calc(100vh - 392px);
+
+    height: calc(100vh - 100px);
 
     .container-fluid {
       padding: 15px;
       width: 80%;
-      height: calc(100vh - 392px);
+      height: calc(100vh - 100px);
       overflow-y: auto;
       .plates_bottom {
         display: flex;
@@ -126,7 +129,7 @@
 
     .dashboard_side_menu {
       width: 20%;
-      height: calc(100vh - 392px);
+      height: calc(100vh - 100px);
       overflow-y: auto;
       background-color: $secondColorUser;
     
@@ -170,7 +173,7 @@
 
 .user_orders {
   main {
-    height: calc(100vh - 392px);
+    height: calc(100vh - 100px);
     #dashboard_orders {
       width: 80%;
       padding: 15px;
@@ -178,7 +181,7 @@
     }
     .dashboard_side_menu {
       width: 20%;
-      height: calc(100vh - 392px);
+      height: calc(100vh - 100px);
       overflow-y: auto;
       background-color: $secondColorUser;
     

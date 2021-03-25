@@ -888,10 +888,11 @@ header .ham1.active .bottom {
 }
 
 .user_index #dashboard_index_center {
+  overflow-y: auto;
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  height: calc(100vh - 392px);
+  height: calc(100vh - 100px);
 }
 .user_index #dashboard_index_center .dashboard_card {
   width: calc(50% - 20px);
@@ -943,7 +944,7 @@ header .ham1.active .bottom {
 }
 .user_index .dashboard_side_menu {
   width: 20%;
-  height: calc(100vh - 392px);
+  height: calc(100vh - 100px);
   overflow-y: auto;
   background-color: #ffc966b9;
 }
@@ -974,12 +975,12 @@ header .ham1.active .bottom {
 }
 
 .plates_index main {
-  height: calc(100vh - 392px);
+  height: calc(100vh - 100px);
 }
 .plates_index main .container-fluid {
   padding: 15px;
   width: 80%;
-  height: calc(100vh - 392px);
+  height: calc(100vh - 100px);
   overflow-y: auto;
 }
 .plates_index main .container-fluid .plates_bottom {
@@ -1003,7 +1004,7 @@ header .ham1.active .bottom {
 }
 .plates_index main .dashboard_side_menu {
   width: 20%;
-  height: calc(100vh - 392px);
+  height: calc(100vh - 100px);
   overflow-y: auto;
   background-color: #ffc966b9;
 }
@@ -1053,7 +1054,7 @@ header .ham1.active .bottom {
 }
 
 .user_orders main {
-  height: calc(100vh - 392px);
+  height: calc(100vh - 100px);
 }
 .user_orders main #dashboard_orders {
   width: 80%;
@@ -1062,7 +1063,7 @@ header .ham1.active .bottom {
 }
 .user_orders main .dashboard_side_menu {
   width: 20%;
-  height: calc(100vh - 392px);
+  height: calc(100vh - 100px);
   overflow-y: auto;
   background-color: #ffc966b9;
 }

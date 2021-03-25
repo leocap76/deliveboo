@@ -42,6 +42,12 @@
                         </div>
                     @endif
                 @endif
+
+                @if (Route::currentRouteName() == 'shop.restaurant' || Route::currentRouteName() == 'shop.payment.index' )
+                    
+                    <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
+
+                @endif
             </section>
             
         </div>
@@ -70,13 +76,56 @@
             
         @endif
         
-    @elseif(Route::currentRouteName() == 'dashboard.plates.index' || Route::currentRouteName() == 'dashboard.plates.create')
+    @elseif(Route::currentRouteName() == 'dashboard.plates.create')
         
         <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Informazioni</a>
-         <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
+        <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
     
-     @elseif(Route::currentRouteName() == 'shop.restaurant' || Route::currentRouteName() == 'shop.payment.index' || Route::currentRouteName() == 'shop.payment.checkout' || Route::currentRouteName() == 'login' || Route::currentRouteName() == 'register' || Route::currentRouteName() == 'dashboard.users.index' )
+    @elseif(Route::currentRouteName() == 'shop.restaurant' || Route::currentRouteName() == 'shop.payment.index' || Route::currentRouteName() == 'shop.payment.checkout' || Route::currentRouteName() == 'login' || Route::currentRouteName() == 'register')
+    
+        <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
+
+    {{-- dentro la dashboard --}}
+    @elseif(Route::currentRouteName() == 'dashboard.users.index' )
         
-         <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
+        <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>
+        <a href="{{ route('dashboard.users.edit', $user->id) }}" class="header_buttons">Modifica il tuo ristorante</a>
+        <a href="{{ route('dashboard.plates.index') }}" class="header_buttons">Visualizza i tuoi piatti</a>
+        <a href="{{ route('dashboard.orders') }}" class="header_buttons">Visualizza i tuoi ordini</a>
+
+    {{-- /dentro la dashboard --}}
+    {{-- /dentro lista piatti --}}
+    @elseif(Route::currentRouteName() == 'dashboard.plates.index') 
+        
+        <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>
+        <a href="{{ route('dashboard.plates.create') }}" class="header_buttons">Crea un piatto</a>
+        <a href="{{ route('dashboard.orders') }}" class="header_buttons">Visualizza i tuoi ordini</a>
+        <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Visualizza il tuo ristorante</a>
+
+    {{-- /dentro lista piatti --}}
+    {{-- /dentro lista ordini --}}
+    @elseif(Route::currentRouteName() == 'dashboard.orders')
+
+        <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>
+        <a href="{{ route('dashboard.plates.index') }}" class="header_buttons">Visualizza i tuoi piatti</a>
+        <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Visualizza il tuo ristorante</a>
+            
+    {{-- /dentro lista ordini --}}
+
+    @elseif(Route::currentRouteName() == 'dashboard.users.edit')
+
+        <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>
+        <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Torna indietro</a>  
+
+    @elseif(Route::currentRouteName() == 'dashboard.plates.edit' || Route::currentRouteName() == 'dashboard.plates.create' || Route::currentRouteName() == 'dashboard.plates.show')
+
+        <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>
+        <a href="{{ route('dashboard.plates.index') }}" class="header_buttons">Torna indietro</a>
+
+            
+    
     @endif
+    
+
+
 </section>

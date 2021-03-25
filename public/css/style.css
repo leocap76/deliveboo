@@ -198,7 +198,7 @@ header .ham1.active .bottom {
     padding: 20px;
     background-color: #f76969;
     z-index: 999;
-    border-radius: 5px;
+    border-radius: 5px 0 5px 5px;
     box-shadow: 0px 8px 10px -8px #888888;
   }
 
@@ -1126,7 +1126,7 @@ header .ham1.active .bottom {
   padding: 20px;
   background-color: #f76969;
   z-index: 999;
-  border-radius: 5px;
+  border-radius: 5px 0 5px 5px;
   box-shadow: 0px 8px 10px -8px #888888;
 }
 
@@ -1188,7 +1188,7 @@ header .ham1.active .bottom {
   position: sticky;
   top: 0;
   min-height: 150px;
-  margin-top: 94px;
+  margin-top: 104px;
   padding: 15px;
   border: 2px solid #0EC5BF;
   border-radius: 5px;

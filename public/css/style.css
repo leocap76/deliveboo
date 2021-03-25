@@ -877,23 +877,23 @@ header .ham1.active .bottom {
   position: relative;
 }
 .dashboard main {
-  width: calc(100% - 375px);
-  height: 800px;
-  margin-left: 375px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .dashboard main #dashboard_index_center {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: calc(100vh - 392px);
 }
 .dashboard main #dashboard_index_center .dashboard_card {
   width: calc(50% - 20px);
   height: calc(50% - 20px);
   padding: 10px;
-  background: lightgreen;
   border-radius: 5px;
   margin: 10px;
+  background: #ddd;
 }
 .dashboard main #dashboard_index_center .dashboard_card.info_restaurant {
   overflow-y: auto;
@@ -922,7 +922,6 @@ header .ham1.active .bottom {
 }
 .dashboard main #dashboard_index_center .dashboard_card.chart_restaurant canvas {
   width: 100%;
-  height: 100%;
 }
 .dashboard main #dashboard_orders {
   height: 100%;
@@ -937,15 +936,16 @@ header .ham1.active .bottom {
   height: 60%;
 }
 .dashboard .dashboard_side_menu {
-  position: absolute;
-  left: 0;
-  width: 375px;
-  height: calc(100% - 392px);
+  width: 20%;
+  height: calc(100vh - 392px);
+  overflow-y: auto;
   background-color: #ffc966b9;
 }
 .dashboard .dashboard_side_menu li {
-  border-bottom: 1px solid rgba(153, 99, 0, 0.7254901961);
   padding: 30px 50px;
+}
+.dashboard .dashboard_side_menu li:not(:last-of-type) {
+  border-bottom: 1px solid rgba(153, 99, 0, 0.7254901961);
 }
 .dashboard .dashboard_side_menu li .buttons_style {
   display: inline-block;
@@ -967,6 +967,24 @@ header .ham1.active .bottom {
   box-shadow: none;
 }
 
+@media screen and (max-width: 1280px) {
+  .dashboard .dashboard_side_menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .dashboard main #dashboard_index_center {
+    width: 100%;
+    height: 100%;
+  }
+  .dashboard main #dashboard_index_center .dashboard_card {
+    width: 100%;
+    height: 100%;
+  }
+  .dashboard main #dashboard_index_center .dashboard_card.orders_list {
+    height: 300px;
+  }
+}
 .payment main .container {
   display: flex;
   flex-wrap: wrap;

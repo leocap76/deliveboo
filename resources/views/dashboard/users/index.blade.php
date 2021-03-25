@@ -25,9 +25,9 @@
 
         @include('partials.header')
 
-        @include('partials.sidebar')
-
         <main>
+
+            @include('partials.sidebar')
   
             <div id="dashboard_index_center">
               {{-- prima card --}}

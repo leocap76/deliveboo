@@ -9,6 +9,10 @@
     </li>
 
     <li>
+      <a href="{{ route('dashboard.users.index') }}" class="buttons_style">Visualizza il tuo ristorante</a>
+    </li>
+
+    <li>
       <a href="{{ route('dashboard.users.edit', $user->id) }}" class="buttons_style">Modifica il tuo ristorante</a>
     </li>
 

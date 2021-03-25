@@ -145,6 +145,29 @@
   }
 }
 
+.plate_edit {
+  main {
+    padding: $verticalPaddingSections 0;
+    margin-bottom: 50px;
+    img {
+      margin-top: 10px;
+      width: 200px;
+    }
+  }
+}
+
+.plate_show {
+  main {
+    padding: $verticalPaddingSections 0;
+    .fa-check {
+      padding: 5px;
+      border-radius: 5px;
+      background-color: steelblue;
+      color: springgreen;
+    }
+  }
+}
+
 
 @media screen and (max-width: 1280px) {
   .dashboard {

@@ -13,7 +13,7 @@
 
   <title>Modifica - {{ $plate->name }}</title>
 </head>
-<body class="dashboard">
+<body class="dashboard plate_edit">
 
   @include('partials.header')
 

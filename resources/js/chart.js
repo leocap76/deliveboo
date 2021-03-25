@@ -3,7 +3,9 @@ import Vue from 'vue';
 
 let app = new Vue({
     el: "#chart",
-
+    data: {
+        delivery: 2.5,
+    },
 
     mounted: function() {
 
@@ -22,6 +24,7 @@ let app = new Vue({
                 orders.forEach((element) => {
 
                     if ( i == parseInt(element.created_at.substr(5, 2)) ) {
+                        element.price -= this.delivery;
                         ordersSum += element.price; 
                     }
 

@@ -14117,7 +14117,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: "#chart",
+  data: {
+    delivery: 2.5
+  },
   mounted: function mounted() {
+    var _this = this;
+
     axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/orders/".concat(userId)).then(function (response) {
       console.log(response.data);
       var ordersPerMonth = [];
@@ -14127,6 +14132,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
         var ordersSum = 0;
         orders.forEach(function (element) {
           if (i == parseInt(element.created_at.substr(5, 2))) {
+            element.price -= _this.delivery;
             ordersSum += element.price;
           }
         });

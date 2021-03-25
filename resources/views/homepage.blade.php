@@ -146,7 +146,7 @@
                         </div>
                         <div class="tutorial_card">
                             {{-- <h3>Buon appetito!</h3> --}}
-                            <img src="{{ asset('img/buonappetito6000 copia.png') }}" alt="">
+                            <img src="{{ asset('img/buonappetito6000copia.png') }}" alt="">
                             
                         </div>
                     </div>

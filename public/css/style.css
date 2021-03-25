@@ -395,6 +395,7 @@ header .ham1.active .bottom {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  box-shadow: 0 15px 10px #777;
 }
 .homepage #categories .cards .swiper-slide span {
   position: relative;
@@ -940,7 +941,6 @@ header .ham1.active .bottom {
 }
 .user_index #dashboard_index_center .dashboard_card.chart_restaurant {
   overflow-y: auto;
-  padding-top: 50px;
 }
 .user_index #dashboard_index_center .dashboard_card.chart_restaurant canvas {
   width: 100%;

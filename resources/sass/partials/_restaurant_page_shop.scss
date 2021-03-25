@@ -14,7 +14,6 @@
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          // padding: $verticalPaddingSections;
           
           .left{
             width: 70%;
@@ -48,7 +47,6 @@
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          flex-wrap: wrap-reverse;
   
           .plates_container{
             display: flex;
@@ -272,6 +270,7 @@
     main {
       #shop_restaurant_bottom{
         .container {
+          flex-wrap: wrap-reverse;
           .plates_container{
             margin-top: 10px;
             width: 100%;
@@ -290,6 +289,7 @@
     main {
       #shop_restaurant_bottom{
         .container {
+          flex-wrap: wrap-reverse;
           .plates_container{
             margin-top: 10px;
             width: 100%;

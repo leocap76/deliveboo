@@ -636,7 +636,6 @@ header .ham1.active .bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap-reverse;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container {
   display: flex;
@@ -850,6 +849,9 @@ header .ham1.active .bottom {
   }
 }
 @media screen and (max-width: 1000px) {
+  .restaurant_page main #shop_restaurant_bottom .container {
+    flex-wrap: wrap-reverse;
+  }
   .restaurant_page main #shop_restaurant_bottom .container .plates_container {
     margin-top: 10px;
     width: 100%;
@@ -859,6 +861,9 @@ header .ham1.active .bottom {
   }
 }
 @media screen and (max-width: 767px) {
+  .restaurant_page main #shop_restaurant_bottom .container {
+    flex-wrap: wrap-reverse;
+  }
   .restaurant_page main #shop_restaurant_bottom .container .plates_container {
     margin-top: 10px;
     width: 100%;

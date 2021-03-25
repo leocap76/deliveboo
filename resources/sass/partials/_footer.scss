@@ -60,8 +60,8 @@ footer{
       
       ul li a {
         position: relative;
-        width:30px;
-        height:30px;
+        width:35px;
+        height:35px;
         display:block;
         text-align:center;
         margin:0 10px;
@@ -83,10 +83,10 @@ footer{
         width: 100%;
         height:100%;
         display:block;
-        background: linear-gradient(0deg, #fff, rgb(27, 22, 22));
+        background: linear-gradient(0deg, #fff, rgb(119, 119, 119));
         border-radius: 50%;
-        line-height: calc(30px - 12px);
-        font-size:10px;
+        line-height: calc(35px - 13px);
+        font-size:16px;
         color: #262626;
         transition: .5s;
       }

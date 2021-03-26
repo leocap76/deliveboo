@@ -62,7 +62,7 @@
 
 
                             <label for="comment">Commento: </label>
-                            <textarea id="comment" name="comment" rows="10" placeholder="Inserisci un commento" required></textarea>
+                            <textarea id="comment" name="comment" rows="10" placeholder="Inserisci un commento"></textarea>
 
                             <input id="restaurant_id" name="user_id" type="hidden" min="1" :value="restaurant_id" readonly>
                             <input id="plates" name="arrPlates" type="hidden" min="1" :value="plates" readonly>

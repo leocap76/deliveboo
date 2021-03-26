@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->float('price', 6,2);
             $table->text('arrPlates');
-            $table->text('comment');
+            $table->text('comment')->nullable();
             $table->time('time');
             $table->string('address');
             $table->string('name', 50);

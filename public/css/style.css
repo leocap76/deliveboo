@@ -992,29 +992,33 @@ header .ham1.active .bottom {
 .plates_index main {
   height: calc(100vh - 100px);
 }
-.plates_index main .container-fluid {
-  padding: 15px;
-  width: 80%;
-  height: calc(100vh - 100px);
-  overflow-y: auto;
-}
-.plates_index main .container-fluid .plates_bottom {
+.plates_index main .plates_bottom {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 80%;
+  height: calc(100vh - 100px);
+  padding: 15px;
+  overflow-y: auto;
 }
-.plates_index main .container-fluid .plates_bottom .plate {
-  margin-left: 50px;
+.plates_index main .plates_bottom .plate {
+  width: calc(100% / 4 - 30px);
+  margin: 15px;
 }
-.plates_index main .container-fluid .plates_bottom .plate img {
-  width: 150px;
+.plates_index main .plates_bottom .plate img {
+  width: 100%;
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
-.plates_index main .container-fluid form {
+.plates_index main form {
   display: flex;
+  flex-wrap: wrap;
 }
-.plates_index main .container-fluid form .btn {
+.plates_index main form .btn {
   margin-right: 10px;
 }
 .plates_index main .dashboard_side_menu {
@@ -1118,6 +1122,14 @@ header .ham1.active .bottom {
   .dashboard header .closed {
     display: none;
   }
+
+  .plates_index main .plates_bottom {
+    width: 100%;
+    align-content: flex-start;
+  }
+  .plates_index main .plates_bottom .plate {
+    width: calc(100% / 2 - 30px);
+  }
 }
 @media screen and (max-width: 767px) {
   .dashboard main #dashboard_index_center {
@@ -1130,6 +1142,14 @@ header .ham1.active .bottom {
   }
   .dashboard main #dashboard_index_center .dashboard_card.orders_list {
     height: 300px;
+  }
+
+  .plates_index main .plates_bottom {
+    justify-content: center;
+    width: 100%;
+  }
+  .plates_index main .plates_bottom .plate {
+    width: 100%;
   }
 }
 .open {

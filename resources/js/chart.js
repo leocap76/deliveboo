@@ -41,7 +41,7 @@ let app = new Vue({
                 data: {
                     labels: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'],
                     datasets: [{
-                        label: 'Vendite totali',
+                        label: 'Guadagni',
                         data: ordersPerMonth, 
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',

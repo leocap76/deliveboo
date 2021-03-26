@@ -57,12 +57,12 @@
                             <label for="mail">Email: </label>
                             <input type="text" name="email" placeholder="Inserisci la tua email" id="mail" required>
 
-                            <label for="mail">Tempo di consegna: </label>
+                            <label for="mail">Orario di consegna: </label>
                             <input type="time" name="time" id="mail" required>
 
 
                             <label for="comment">Commento: </label>
-                            <textarea id="comment" name="comment" rows="10" placeholder="Inserisci un commento"></textarea>
+                            <textarea id="comment" name="comment" rows="5" placeholder="Inserisci un commento" required style="resize: none;"></textarea>
 
                             <input id="restaurant_id" name="user_id" type="hidden" min="1" :value="restaurant_id" readonly>
                             <input id="plates" name="arrPlates" type="hidden" min="1" :value="plates" readonly>

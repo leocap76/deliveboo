@@ -663,13 +663,17 @@ header .ham1.active .bottom {
   transition: color 0.4s;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-info-circle {
+  color: #54c954;
   font-size: 16px;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-info-circle:hover {
-  color: #4906c5;
+  color: #95cc87;
+}
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-plus-circle {
+  color: #8ab34d;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-plus-circle:hover {
-  color: #0EC5BF;
+  color: #9ac98e;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_right {
   width: 30%;
@@ -1390,7 +1394,7 @@ footer .footer_bottom .footer_bottom_right ul li a .fab {
   width: 100%;
   height: 100%;
   display: block;
-  background: linear-gradient(0deg, #fff, #777777);
+  background: linear-gradient(0deg, #fff, #a5a3a3);
   border-radius: 50%;
   line-height: calc(35px - 13px);
   font-size: 16px;

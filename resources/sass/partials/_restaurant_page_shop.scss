@@ -74,15 +74,20 @@
                   transition: color 0.4s;
 
                   &.fa-info-circle {
+                    color:rgb(84, 201, 84);
                     font-size: 16px;
 
                     &:hover {
-                      color: rgb(73, 6, 197);
+                      color: rgb(149, 204, 135);
                     }
                   }
 
-                  &.fa-plus-circle:hover {
-                    color: $secondColorClient;
+                  &.fa-plus-circle {
+                    color: rgb(138, 179, 77);
+                    
+                    &:hover {
+                      color: rgb(154, 201, 142);
+                    }
                   }
                 }
               }

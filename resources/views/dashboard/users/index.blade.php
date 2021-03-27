@@ -19,11 +19,24 @@
     {{-- prima card --}}
     <div class="dashboard_card info_restaurant">
       <h2>{{ $user->infoRestaurant->name }}</h2>
-      <h3><i class="fas fa-map-marked-alt"></i> {{ $user->infoRestaurant->address }}</h3>
-      <h5><i class="fas fa-info-circle"></i> {{ $user->infoRestaurant->description }}</h5>
-      <p>Orario apertura: {{ $user->infoRestaurant->opening_time }}</p>
-      <p>Orario Chiusura: {{ $user->infoRestaurant->closing_time }}</p>
-      <p>Partita IVA: {{ $user->infoRestaurant->PIVA }}</p>
+      <ul>
+        <li>
+          <i class="fas fa-map-marked-alt"></i>
+          {{ $user->infoRestaurant->address }}
+        </li>
+        <li>
+          <i class="fas fa-info-circle"></i> 
+          {{ $user->infoRestaurant->description }}
+        </li>
+        <li>
+          <i class="fas fa-clock"></i>
+          {{  substr($user->infoRestaurant->opening_time, -8, 5) }} - {{  substr($user->infoRestaurant->closing_time, -8, 5) }}
+        </li>
+        <li>
+          <i class="fas fa-id-card"></i>
+          {{ $user->infoRestaurant->PIVA }}
+        </li>
+      </ul>
     </div>
     {{-- !prima card --}}
 

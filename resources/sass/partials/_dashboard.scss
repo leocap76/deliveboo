@@ -28,12 +28,34 @@
 
       &.info_restaurant {
         overflow-y: auto;
-        padding-left: 40px;
-
+        padding-left: 30px;
         h2 {
-          margin: 20px 0;
+          margin-bottom: 20px;
         }
+
+        li {
+          font-weight: 700;
+          margin-bottom: 10px;
+
+          i {
+            margin-right: 5px;
+            &.fa-map-marked-alt {
+              color: #3b3be9;
+            }
+            &.fa-info-circle {
+              color: #00aa00;
+            }
+            &.fa-clock {
+              color: $delivebooColor;
+            }
+            &.fa-id-card {
+              color: #e45b00;
+            }
+          }
+        }
+
       }
+
       &.img_restaurant {
         img {
           width: 100%;

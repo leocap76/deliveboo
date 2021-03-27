@@ -924,10 +924,29 @@ header .ham1.active .bottom {
 }
 .user_index #dashboard_index_center .dashboard_card.info_restaurant {
   overflow-y: auto;
-  padding-left: 40px;
+  padding-left: 30px;
 }
 .user_index #dashboard_index_center .dashboard_card.info_restaurant h2 {
-  margin: 20px 0;
+  margin-bottom: 20px;
+}
+.user_index #dashboard_index_center .dashboard_card.info_restaurant li {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.user_index #dashboard_index_center .dashboard_card.info_restaurant li i {
+  margin-right: 5px;
+}
+.user_index #dashboard_index_center .dashboard_card.info_restaurant li i.fa-map-marked-alt {
+  color: #3b3be9;
+}
+.user_index #dashboard_index_center .dashboard_card.info_restaurant li i.fa-info-circle {
+  color: #00aa00;
+}
+.user_index #dashboard_index_center .dashboard_card.info_restaurant li i.fa-clock {
+  color: #f2474d;
+}
+.user_index #dashboard_index_center .dashboard_card.info_restaurant li i.fa-id-card {
+  color: #e45b00;
 }
 .user_index #dashboard_index_center .dashboard_card.img_restaurant img {
   width: 100%;

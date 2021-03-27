@@ -21,7 +21,7 @@
       <h2>{{ $user->infoRestaurant->name }}</h2>
       <ul>
         <li>
-          <i class="fas fa-map-marked-alt"></i>
+          <i class="fas fa-map-marker-alt"></i>
           {{ $user->infoRestaurant->address }}
         </li>
         <li>
@@ -35,6 +35,11 @@
         <li>
           <i class="fas fa-id-card"></i>
           {{ $user->infoRestaurant->PIVA }}
+        </li>
+        <li>
+          @foreach ($user->categories as $category)
+              <span style="color:{{ $category->color }}" class="mr-1">#{{ $category->name }}</span>
+          @endforeach
         </li>
       </ul>
     </div>

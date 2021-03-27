@@ -17,40 +17,50 @@
     flex-wrap: wrap;
     width: 80%;
     height: calc(100vh - 100px);
+    background-color: white;
+    // background: lighten($secondColorUser, 25%);
 
     .dashboard_card {
       width: calc(50% - 20px);
       height: calc(50% - 20px);
       padding: 10px;
+      border: 2px solid $secondColorUser;
       border-radius: 5px;
       margin: 10px;
-      background: #ddd;
+      background-color: white;
 
       &.info_restaurant {
         overflow-y: auto;
         padding-left: 30px;
+        padding-right: 30px;
+        
         h2 {
-          margin-bottom: 20px;
+          padding-bottom: 28px;
+          margin-bottom: 40px;
+          border-bottom: 1px solid $secondColorUser;
+          text-align: center;
         }
 
         li {
           font-weight: 700;
-          margin-bottom: 10px;
+          margin-bottom: 15px;
+          font-size: 20px;
 
           i {
             margin-right: 5px;
-            &.fa-map-marked-alt {
-              color: #3b3be9;
-            }
-            &.fa-info-circle {
-              color: #00aa00;
-            }
-            &.fa-clock {
-              color: $delivebooColor;
-            }
-            &.fa-id-card {
-              color: #e45b00;
-            }
+            color: $secondColorUser;
+            // &.fa-map-marker-alt {
+            //   color: #3b3be9;
+            // }
+            // &.fa-info-circle {
+            //   color: #00aa00;
+            // }
+            // &.fa-clock {
+            //   color: $delivebooColor;
+            // }
+            // &.fa-id-card {
+            //   color: #e45b00;
+            // }
           }
         }
 
@@ -67,6 +77,8 @@
       &.orders_list{
         overflow-y: auto;
         padding-left: 40px;
+        text-align: center;
+
 
         .circle_price{
           font-size: 10px;

@@ -913,40 +913,36 @@ header .ham1.active .bottom {
   flex-wrap: wrap;
   width: 80%;
   height: calc(100vh - 100px);
+  background-color: white;
 }
 .user_index #dashboard_index_center .dashboard_card {
   width: calc(50% - 20px);
   height: calc(50% - 20px);
   padding: 10px;
+  border: 2px solid #ffc966b9;
   border-radius: 5px;
   margin: 10px;
-  background: #ddd;
+  background-color: white;
 }
 .user_index #dashboard_index_center .dashboard_card.info_restaurant {
   overflow-y: auto;
   padding-left: 30px;
+  padding-right: 30px;
 }
 .user_index #dashboard_index_center .dashboard_card.info_restaurant h2 {
-  margin-bottom: 20px;
+  padding-bottom: 28px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ffc966b9;
+  text-align: center;
 }
 .user_index #dashboard_index_center .dashboard_card.info_restaurant li {
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 .user_index #dashboard_index_center .dashboard_card.info_restaurant li i {
   margin-right: 5px;
-}
-.user_index #dashboard_index_center .dashboard_card.info_restaurant li i.fa-map-marked-alt {
-  color: #3b3be9;
-}
-.user_index #dashboard_index_center .dashboard_card.info_restaurant li i.fa-info-circle {
-  color: #00aa00;
-}
-.user_index #dashboard_index_center .dashboard_card.info_restaurant li i.fa-clock {
-  color: #f2474d;
-}
-.user_index #dashboard_index_center .dashboard_card.info_restaurant li i.fa-id-card {
-  color: #e45b00;
+  color: #ffc966b9;
 }
 .user_index #dashboard_index_center .dashboard_card.img_restaurant img {
   width: 100%;
@@ -958,6 +954,7 @@ header .ham1.active .bottom {
 .user_index #dashboard_index_center .dashboard_card.orders_list {
   overflow-y: auto;
   padding-left: 40px;
+  text-align: center;
 }
 .user_index #dashboard_index_center .dashboard_card.orders_list .circle_price {
   font-size: 10px;

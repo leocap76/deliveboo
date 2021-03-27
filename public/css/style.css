@@ -818,7 +818,7 @@ header .ham1.active .bottom {
 }
 .restaurant_page .shop_box_container .shop_restaurant_box .bottom {
   padding: 15px;
-  background-color: #ddd;
+  background-color: white;
   border-radius: 0 0 5px 5px;
 }
 .restaurant_page .shop_box_container .shop_restaurant_box .bottom img {

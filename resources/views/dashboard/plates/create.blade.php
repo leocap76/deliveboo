@@ -87,6 +87,7 @@
     
   
         <button type="submit" class="btn btn-success">Crea piatto</button>
+        <a href="{{ route('dashboard.plates.index') }}" class="btn btn-success">Torna indietro</a>
   
       </form>
     </div>

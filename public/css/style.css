@@ -924,23 +924,25 @@ header .ham1.active .bottom {
   margin: 10px;
   background-color: white;
 }
+.user_index #dashboard_index_center .dashboard_card h2 {
+  padding-bottom: 28px;
+  border-bottom: 1px solid #ffc966b9;
+  text-align: center;
+}
 .user_index #dashboard_index_center .dashboard_card.info_restaurant {
   overflow-y: auto;
   padding-left: 30px;
   padding-right: 30px;
 }
-.user_index #dashboard_index_center .dashboard_card.info_restaurant h2 {
-  padding-bottom: 28px;
-  margin-bottom: 40px;
-  border-bottom: 1px solid #ffc966b9;
-  text-align: center;
+.user_index #dashboard_index_center .dashboard_card.info_restaurant ul {
+  margin-top: 40px;
 }
-.user_index #dashboard_index_center .dashboard_card.info_restaurant li {
+.user_index #dashboard_index_center .dashboard_card.info_restaurant ul li {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 20px;
 }
-.user_index #dashboard_index_center .dashboard_card.info_restaurant li i {
+.user_index #dashboard_index_center .dashboard_card.info_restaurant ul li i {
   margin-right: 5px;
   color: #ffc966b9;
 }
@@ -954,7 +956,29 @@ header .ham1.active .bottom {
 .user_index #dashboard_index_center .dashboard_card.orders_list {
   overflow-y: auto;
   padding-left: 40px;
-  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.user_index #dashboard_index_center .dashboard_card.orders_list .orders_card {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #ffc966b9;
+}
+.user_index #dashboard_index_center .dashboard_card.orders_list .orders_card h4 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ffc966b9;
+}
+.user_index #dashboard_index_center .dashboard_card.orders_list .orders_card p {
+  font-size: 17px;
+}
+.user_index #dashboard_index_center .dashboard_card.orders_list .orders_card .orders_card_total_price {
+  display: flex;
+  justify-content: space-between;
+}
+.user_index #dashboard_index_center .dashboard_card.orders_list .orders_card .orders_card_total_price .price_span {
+  margin-right: 40px;
 }
 .user_index #dashboard_index_center .dashboard_card.orders_list .circle_price {
   font-size: 10px;

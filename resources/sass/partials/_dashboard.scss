@@ -29,41 +29,43 @@
       margin: 10px;
       background-color: white;
 
+      h2 {
+        padding-bottom: 28px;
+        border-bottom: 1px solid $secondColorUser;
+        text-align: center;
+      }
+
       &.info_restaurant {
         overflow-y: auto;
         padding-left: 30px;
         padding-right: 30px;
-        
-        h2 {
-          padding-bottom: 28px;
-          margin-bottom: 40px;
-          border-bottom: 1px solid $secondColorUser;
-          text-align: center;
-        }
 
-        li {
-          font-weight: 700;
-          margin-bottom: 15px;
-          font-size: 20px;
-
-          i {
-            margin-right: 5px;
-            color: $secondColorUser;
-            // &.fa-map-marker-alt {
-            //   color: #3b3be9;
-            // }
-            // &.fa-info-circle {
-            //   color: #00aa00;
-            // }
-            // &.fa-clock {
-            //   color: $delivebooColor;
-            // }
-            // &.fa-id-card {
-            //   color: #e45b00;
-            // }
+        ul {
+          margin-top: 40px;
+          
+          li {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 20px;
+  
+            i {
+              margin-right: 5px;
+              color: $secondColorUser;
+              // &.fa-map-marker-alt {
+              //   color: #3b3be9;
+              // }
+              // &.fa-info-circle {
+              //   color: #00aa00;
+              // }
+              // &.fa-clock {
+              //   color: $delivebooColor;
+              // }
+              // &.fa-id-card {
+              //   color: #e45b00;
+              // }
+            }
           }
         }
-
       }
 
       &.img_restaurant {
@@ -77,8 +79,35 @@
       &.orders_list{
         overflow-y: auto;
         padding-left: 40px;
-        text-align: center;
+        // text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
 
+        .orders_card {
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          margin-bottom: 5px;
+          background-color: $secondColorUser;
+
+          h4 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid $secondColorUser;
+          }
+
+          p {
+            font-size: 17px;
+          }
+
+          .orders_card_total_price {
+            display: flex;
+            justify-content: space-between;
+            
+            .price_span {
+              margin-right: 40px;
+            }
+          }
+        }
 
         .circle_price{
           font-size: 10px;

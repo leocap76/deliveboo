@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\InfoRestaurant;
 use App\Category;
+use App\Order;
 
 class UserController extends Controller
 {
@@ -32,7 +33,11 @@ class UserController extends Controller
     {
         $user = User::where('id', Auth::id())->first();
 
-        $orders = $user->orders;
+        // $orders = $user->orders;
+        $orders = Order::where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->limit(3)
+            ->get();
 
         return view('dashboard.users.index', compact('user', 'orders'));
     }

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     
-    <title>Transazione - Successo</title>
+    <title>Pagina non trovata</title>
   </head>
   <body>
 
@@ -26,6 +26,7 @@
       body{
         background-color: white;
       }
+
       .fundo{
         animation: scales 3s alternate  infinite;
         transform-origin: center;
@@ -89,6 +90,7 @@
         width: auto;
         max-width: 460px;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
       }
@@ -108,8 +110,18 @@
           fill: transparent;
           stroke-dashoffset:  -200;
         }
-        
-        
+      }
+
+      .homepage-btn-error {
+        padding: 15px;
+        background-color: #f2474d;
+        border-radius: 5px;
+        color: white;
+        margin: 20px 0;
+      }
+
+      .homepage-btn-error:hover {
+        color: white;
       }
     </style>
 
@@ -160,9 +172,11 @@
                 </g>
             </g>
         </svg>
-         
-          
-        </div>
+        
+        <a href="{{ url('/') }}" class="homepage-btn-error">Torna alla homepage</a>
+        
+      </div>
+      
     </main>
     
   </body>

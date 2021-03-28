@@ -76,7 +76,7 @@
 
             <section id="categories">
                 <div class="container">
-                    <h2 class="categories_click_category_title">Clicca su una categoria per vedere i ristoranti di deliveboo</h2> <!-- Visibile sopra i 676px -->
+                    <h2 class="categories_click_category_title">Clicca su una categoria per vedere i ristoranti di Deliveboo</h2> <!-- Visibile sopra i 676px -->
                     <h2 class="categories_choose_category_title">Scegli una categoria</h2> <!-- Visibile sotto i 676px -->
 
                     <div class="cards">

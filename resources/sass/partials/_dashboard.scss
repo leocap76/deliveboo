@@ -18,20 +18,19 @@
     width: 80%;
     height: calc(100vh - 100px);
     background-color: white;
-    // background: lighten($secondColorUser, 25%);
 
     .dashboard_card {
       width: calc(50% - 20px);
       height: calc(50% - 20px);
       padding: 10px;
-      border: 2px solid $secondColorUser;
+      border: 2px solid $secondColorClient;
       border-radius: 5px;
       margin: 10px;
       background-color: white;
 
       h2 {
         padding-bottom: 28px;
-        border-bottom: 1px solid $secondColorUser;
+        border-bottom: 1px solid $secondColorClient;
         text-align: center;
       }
 
@@ -50,19 +49,7 @@
   
             i {
               margin-right: 5px;
-              color: $secondColorUser;
-              // &.fa-map-marker-alt {
-              //   color: #3b3be9;
-              // }
-              // &.fa-info-circle {
-              //   color: #00aa00;
-              // }
-              // &.fa-clock {
-              //   color: $delivebooColor;
-              // }
-              // &.fa-id-card {
-              //   color: #e45b00;
-              // }
+              color: $secondColorClient;
             }
           }
         }
@@ -79,7 +66,6 @@
       &.orders_list{
         overflow-y: auto;
         padding-left: 40px;
-        // text-align: center;
         padding-left: 30px;
         padding-right: 30px;
 
@@ -89,11 +75,11 @@
           padding: 10px;
           margin-bottom: 5px;
           color: white;
-          background-color: $secondColorUser;
+          background-color: $secondColorClient;
 
           h4 {
             padding-bottom: 5px;
-            border-bottom: 1px solid $secondColorUser;
+            border-bottom: 1px solid $secondColorClient;
           }
 
           p {
@@ -144,18 +130,36 @@
     width: 20%;
     height: calc(100vh - 100px);
     overflow-y: auto;
-    background-color: $secondColorUser;
+    background-color: $secondColorClient;
   
     li {
       padding: 30px 50px;
+      h3 {
+        color: white;
+        font-size: 2em;
+      }
   
       &:not(:last-of-type) {
-        border-bottom: 1px solid darken($secondColorUser, 40%);
+        border-bottom: 1px solid darken($secondColorClient, 10%);
       }
       
       .buttons_style {
-        @include deliveboo_buttons;
+        @include deliveboo_buttons_side;
       }
+    }
+  }
+}
+
+.restaurant_edit {
+  main {
+    padding: 50px 0;
+    img {
+      margin-top: 10px;
+      width: 300px;
+    }
+    .btn {
+      background-color: $secondColorClient;
+      border: 0;
     }
   }
 }
@@ -167,7 +171,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-content: flex-start;
       width: 80%;
       height: calc(100vh - 100px);
       padding: 15px;
@@ -175,11 +179,34 @@
       .plate {
         width: calc(100% / 4 - 30px);
         margin: 15px;
+        border: 1px solid $secondColorClient;
+        .scroll {
+          height: 150px;
+          overflow-y: auto;
+          margin-bottom: 10px;
+          .hover_content {
+            display: none;
+          }
+        }
+        &:hover {
+          .scroll {
+            .hover_content{
+              display: block;
+            }
+          }
+        }
         img {
           width: 100%;
           height: 150px;
           object-fit: cover;
           object-position: center;
+        }
+        .btn:not(:last-child) {
+          background-color: $secondColorClient;
+          border: none;
+        }
+        .btn {
+          font-weight: 600;
         }
       }
     }
@@ -195,17 +222,21 @@
       width: 20%;
       height: calc(100vh - 100px);
       overflow-y: auto;
-      background-color: $secondColorUser;
+      background-color: $secondColorClient;
     
       li {
         padding: 30px 50px;
+        h3 {
+          color: white;
+          font-size: 2em;
+        }
     
         &:not(:last-of-type) {
-          border-bottom: 1px solid darken($secondColorUser, 40%);
+          border-bottom: 1px solid darken($secondColorClient, 10%);
         }
         
         .buttons_style {
-          @include deliveboo_buttons;
+          @include deliveboo_buttons_side;
         }
       }
     }
@@ -220,6 +251,10 @@
       margin-top: 10px;
       width: 200px;
     }
+    .btn {
+      background-color: $secondColorClient;
+      border: 0;
+    }
   }
 }
 
@@ -229,8 +264,16 @@
     .fa-check {
       padding: 5px;
       border-radius: 5px;
-      background-color: steelblue;
-      color: springgreen;
+      font-size: 2em;
+      color: $secondColorClient ;
+    }
+    img {
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    .btn {
+      background-color: $secondColorClient;
+      border: 0;
     }
   }
 }
@@ -243,25 +286,21 @@
       display: flex;
       width: 80%;
       height: 100%;
-      // padding: 15px;
       overflow-y: auto;
       
       .dashboard_orders_left {
         width: 50%;
         padding: 50px;
-        border-right: 2px solid $secondColorUser;
+        border-right: 2px solid $secondColorClient;
         overflow-y: auto;
 
         .orders_card {
           display: flex;
           width: 100%;
-          // height: 280px;
           margin-bottom: 20px;
           border: 1px solid;
           border-radius: 5px;
-          border: 2px solid $secondColorUser;
-          // overflow-y: auto;
-
+          border: 2px solid $secondColorClient;
           .orders_card_left {
             width: 50%;
             padding: 10px 15px;
@@ -278,14 +317,11 @@
 
           .orders_card_right {
             width: 50%;
-            // max-height: 100%;
             padding: 5px;
-            // background-color: darkcyan;
 
             ul {
               display: flex;
               flex-wrap: wrap;
-              // height: 100%;
               
               li {
                 width: calc(100% / 2 - 10px);
@@ -316,17 +352,13 @@
         .dashboard_orders_right_top {
           width: 100%;
           height: 50%;
-          border-bottom: 2px solid $secondColorUser;
-          // border: 2px solid $secondColorUser;
-          // border-radius: 5px;
-          // background-color: darkcyan;
+          border-bottom: 2px solid $secondColorClient;
         }
   
         .dashboard_orders_right_bottom {
           width: 100%;
           height: 50%;
           padding-top: 50px;
-          // background-color: darkkhaki;
         }
       }
     }
@@ -334,17 +366,21 @@
       width: 20%;
       height: calc(100vh - 100px);
       overflow-y: auto;
-      background-color: $secondColorUser;
+      background-color: $secondColorClient;
     
       li {
         padding: 30px 50px;
+        h3 {
+          color: white;
+          font-size: 2em;
+        }
     
         &:not(:last-of-type) {
-          border-bottom: 1px solid darken($secondColorUser, 40%);
+          border-bottom: 1px solid darken($secondColorClient, 10%);
         }
         
         .buttons_style {
-          @include deliveboo_buttons;
+          @include deliveboo_buttons_side;
         }
       }
     } 
@@ -378,7 +414,6 @@
     main {
       .plates_bottom {
         width: 100%;
-        align-content: flex-start;
         .plate {
           width: calc(100% / 2 - 30px);
         }
@@ -416,7 +451,7 @@
           width: 100%;
 
           .dashboard_orders_right_bottom {
-            border-bottom: 2px solid $secondColorUser;
+            border-bottom: 2px solid $secondColorClient;
           }
         }
       }
@@ -504,6 +539,14 @@
             }
           }
         }
+      }
+    }
+  }
+  .restaurant_edit {
+    main {
+      img {
+        display: block;
+        margin: 10px auto;
       }
     }
   }

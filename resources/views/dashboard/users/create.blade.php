@@ -16,7 +16,7 @@
 
   <title>Crea un ristorante</title>
 </head>
-<body class="dashboard">
+<body class="dashboard user_create">
 
   @include('partials.header')
 
@@ -86,6 +86,7 @@
   
     
         <button type="submit" class="btn btn-success">Crea Ristorante</button>
+        {{-- <a href="{{ route('register') }}" class="btn btn-success">Torna indietro</a> --}}
     
       </form>
     </div>

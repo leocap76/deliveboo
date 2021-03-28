@@ -150,13 +150,21 @@
   }
 }
 
-.restaurant_edit {
+.restaurant_edit, .user_create {
   main {
     background-color: $secondColorUser;
-    color: white;
+    // color: white;
 
     .container {
       padding: 50px 0;
+
+      h2 {
+        color: white;
+      }
+
+      label {
+        color: white;
+      }
 
       input, textarea {
         background-color: $cardPrimaryColorUser;
@@ -499,10 +507,16 @@
     }
   }
 
-  .restaurant_edit {
+  .restaurant_edit, .user_create {
     main {
       padding-left: 10px;
       padding-right: 10px;
+
+      .container {
+        h2 {
+          text-align: center;
+        }
+      }
     }
   }
 

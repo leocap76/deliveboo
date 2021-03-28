@@ -658,22 +658,26 @@ header .ham1.active .bottom {
   width: 70%;
   padding: 0 10px;
 }
+.restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left h5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas {
   cursor: pointer;
-  transition: color 0.4s;
+  transition: color 0.2s;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-info-circle {
-  color: #54c954;
-  font-size: 16px;
+  color: #0EC5BF;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-info-circle:hover {
-  color: #95cc87;
+  color: #0cada8;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-plus-circle {
-  color: #8ab34d;
+  color: #0EC5BF;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_left i.fas.fa-plus-circle:hover {
-  color: #9ac98e;
+  color: #0cada8;
 }
 .restaurant_page main #shop_restaurant_bottom .container .plates_container .shop_card_plates .shop_card_plates_right {
   width: 30%;
@@ -743,6 +747,7 @@ header .ham1.active .bottom {
   text-align: center;
   padding: 10px;
   border-radius: 5px;
+  transition: background-color 0.2s;
 }
 .restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top .shop_cart_button:hover {
   color: white;
@@ -760,6 +765,7 @@ header .ham1.active .bottom {
 }
 .restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_left_div .fas {
   color: #0EC5BF;
+  cursor: pointer;
 }
 .restaurant_page main #shop_restaurant_bottom .container .shop_cart #shop_cart_top ul .cart_left_div span {
   padding: 0 5px;
@@ -1038,21 +1044,26 @@ header .ham1.active .bottom {
   border: 0;
 }
 
-.restaurant_edit main {
+.restaurant_edit main, .user_create main {
   background-color: #26272b;
-  color: white;
 }
-.restaurant_edit main .container {
+.restaurant_edit main .container, .user_create main .container {
   padding: 50px 0;
 }
-.restaurant_edit main .container input, .restaurant_edit main .container textarea {
+.restaurant_edit main .container h2, .user_create main .container h2 {
+  color: white;
+}
+.restaurant_edit main .container label, .user_create main .container label {
+  color: white;
+}
+.restaurant_edit main .container input, .restaurant_edit main .container textarea, .user_create main .container input, .user_create main .container textarea {
   background-color: #bebfc5;
 }
-.restaurant_edit main .container img {
+.restaurant_edit main .container img, .user_create main .container img {
   margin-top: 10px;
   width: 300px;
 }
-.restaurant_edit main .container .btn {
+.restaurant_edit main .container .btn, .user_create main .container .btn {
   background-color: #0EC5BF;
   border: 0;
 }
@@ -1345,9 +1356,12 @@ header .ham1.active .bottom {
     margin-right: 0;
   }
 
-  .restaurant_edit main {
+  .restaurant_edit main, .user_create main {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .restaurant_edit main .container h2, .user_create main .container h2 {
+    text-align: center;
   }
 
   .plates_index main .plates_bottom {

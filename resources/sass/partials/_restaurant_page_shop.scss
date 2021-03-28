@@ -69,24 +69,29 @@
                 width: 70%;
                 padding: 0 10px;
 
+                h5 {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                }
+
                 i.fas {
                   cursor: pointer;
-                  transition: color 0.4s;
+                  transition: color 0.2s;
 
                   &.fa-info-circle {
-                    color:rgb(84, 201, 84);
-                    font-size: 16px;
+                    color: $secondColorClient;
 
                     &:hover {
-                      color: rgb(149, 204, 135);
+                      color: darken($secondColorClient, 5%);
                     }
                   }
 
                   &.fa-plus-circle {
-                    color: rgb(138, 179, 77);
+                    color: $secondColorClient;
                     
                     &:hover {
-                      color: rgb(154, 201, 142);
+                      color: darken($secondColorClient, 5%);
                     }
                   }
                 }
@@ -170,6 +175,7 @@
                 text-align: center;
                 padding: 10px;
                 border-radius: 5px;
+                transition: background-color 0.2s;
     
                 &:hover {
                   color: white;
@@ -189,6 +195,7 @@
     
                   .fas {
                     color: #0EC5BF;
+                    cursor: pointer;
                   }
                   span {
                     padding: 0 5px;

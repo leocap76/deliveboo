@@ -21,9 +21,6 @@
                     <li>
                         <a href="https://github.com/leocap76" target="_blank">Leonardo Capogna</a>
                     </li>
-                    <li>
-                      <a href="https://github.com/mariotota" target="_blank">Mario Tota</a>
-                    </li>
               </ul>
           </div>
           <div class="items">

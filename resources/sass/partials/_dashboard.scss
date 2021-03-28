@@ -88,6 +88,7 @@
           border-radius: 5px;
           padding: 10px;
           margin-bottom: 5px;
+          color: white;
           background-color: $secondColorUser;
 
           h4 {
@@ -254,17 +255,19 @@
         .orders_card {
           display: flex;
           width: 100%;
-          height: 280px;
+          // height: 280px;
           margin-bottom: 20px;
           border: 1px solid;
           border-radius: 5px;
           border: 2px solid $secondColorUser;
+          // overflow-y: auto;
 
           .orders_card_left {
             width: 50%;
             padding: 10px 15px;
             font-size: 16px;
             font-weight: 700;
+            word-break: break-all;
 
             p {
               span {
@@ -275,8 +278,7 @@
 
           .orders_card_right {
             width: 50%;
-            max-height: 100%;
-            overflow-y: auto;
+            // max-height: 100%;
             padding: 5px;
             // background-color: darkcyan;
 
@@ -323,6 +325,7 @@
         .dashboard_orders_right_bottom {
           width: 100%;
           height: 50%;
+          padding-top: 50px;
           // background-color: darkkhaki;
         }
       }
@@ -365,6 +368,10 @@
         display: none;
       }
     }
+
+    #dashboard_index_center {
+      width: 100%;
+    }
   }
 
   .plates_index {
@@ -374,6 +381,43 @@
         align-content: flex-start;
         .plate {
           width: calc(100% / 2 - 30px);
+        }
+      }
+    }
+  }
+
+  .user_orders {
+    .dashboard_side_menu {
+      display: none;
+    }
+
+    main {
+      #dashboard_orders {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .user_orders {
+    main {
+      height: auto;
+
+      #dashboard_orders {
+        flex-direction: column;
+        .dashboard_orders_left {
+          width: 100%;
+          height: 350px;
+          overflow-y: auto;
+          border: 0;
+        }
+        .dashboard_orders_right {
+          width: 100%;
+
+          .dashboard_orders_right_bottom {
+            border-bottom: 2px solid $secondColorUser;
+          }
         }
       }
     }
@@ -414,6 +458,51 @@
         width: 100%;
         .plate {
           width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .user_orders {
+
+    main {
+
+      #dashboard_orders {
+
+        .dashboard_orders_left {
+
+          .orders_card {
+
+            .orders_card_left {
+              width: 60%;
+            }
+
+            .orders_card_right {
+              width: 40%;
+
+              ul {
+                
+                li {
+                  width: calc(100% - 10px);
+                  margin: 5px;
+  
+                  img {
+                    width: 100%;
+                    height: 100px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                  }
+  
+                  p {
+                    margin: 0;
+                    margin-bottom: 10px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

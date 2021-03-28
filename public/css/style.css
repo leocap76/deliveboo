@@ -964,6 +964,7 @@ header .ham1.active .bottom {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 5px;
+  color: white;
   background-color: darkcyan;
 }
 .user_index #dashboard_index_center .dashboard_card.orders_list .orders_card h4 {
@@ -1134,7 +1135,6 @@ header .ham1.active .bottom {
 .user_orders main #dashboard_orders .dashboard_orders_left .orders_card {
   display: flex;
   width: 100%;
-  height: 280px;
   margin-bottom: 20px;
   border: 1px solid;
   border-radius: 5px;
@@ -1145,14 +1145,13 @@ header .ham1.active .bottom {
   padding: 10px 15px;
   font-size: 16px;
   font-weight: 700;
+  word-break: break-all;
 }
 .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_left p span {
   color: #f2474d;
 }
 .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right {
   width: 50%;
-  max-height: 100%;
-  overflow-y: auto;
   padding: 5px;
 }
 .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul {
@@ -1186,6 +1185,7 @@ header .ham1.active .bottom {
 .user_orders main #dashboard_orders .dashboard_orders_right .dashboard_orders_right_bottom {
   width: 100%;
   height: 50%;
+  padding-top: 50px;
 }
 .user_orders main .dashboard_side_menu {
   width: 20%;
@@ -1229,6 +1229,9 @@ header .ham1.active .bottom {
   .dashboard header .closed {
     display: none;
   }
+  .dashboard #dashboard_index_center {
+    width: 100%;
+  }
 
   .plates_index main .plates_bottom {
     width: 100%;
@@ -1236,6 +1239,33 @@ header .ham1.active .bottom {
   }
   .plates_index main .plates_bottom .plate {
     width: calc(100% / 2 - 30px);
+  }
+
+  .user_orders .dashboard_side_menu {
+    display: none;
+  }
+  .user_orders main #dashboard_orders {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .user_orders main {
+    height: auto;
+  }
+  .user_orders main #dashboard_orders {
+    flex-direction: column;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left {
+    width: 100%;
+    height: 350px;
+    overflow-y: auto;
+    border: 0;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_right {
+    width: 100%;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_right .dashboard_orders_right_bottom {
+    border-bottom: 2px solid darkcyan;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1260,6 +1290,29 @@ header .ham1.active .bottom {
   }
   .plates_index main .plates_bottom .plate {
     width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_left {
+    width: 60%;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right {
+    width: 40%;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul li {
+    width: calc(100% - 10px);
+    margin: 5px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul li img {
+    width: 100%;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 5px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul li p {
+    margin: 0;
+    margin-bottom: 10px;
   }
 }
 .open {

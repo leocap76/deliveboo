@@ -64,7 +64,7 @@ Ordini - {{ $user->name }}
       </div>
 
       <div class="dashboard_orders_right_bottom">
-        <canvas id="platesMostUsed"></canvas>
+        <canvas id="myChart"></canvas>
       </div>
       
     </div>

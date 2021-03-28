@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,7 @@
 
   <main>
     <div class="container">
+      <h1>Crea un nuovo piatto</h1>
     
       @if ($errors->any())
         <div class="alert alert-danger">

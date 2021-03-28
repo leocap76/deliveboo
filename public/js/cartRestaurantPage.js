@@ -14131,7 +14131,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     restaurant_id: 0
   },
   mounted: function mounted() {
-    // var prova = JSON.parse(localStorage.getItem('plates'));
     this.restaurant_id = restaurant_id_js;
 
     if (localStorage.getItem('tot_price') != undefined && this.restaurant_id == localStorage.getItem('restaurant_id')) {

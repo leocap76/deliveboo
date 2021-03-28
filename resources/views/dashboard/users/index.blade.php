@@ -61,13 +61,8 @@
         @foreach ($orders as $order)
         <li class="orders_card">
            <h4>{{ $order->name }}</h4>
-           {{-- <p><i class="fas fa-map-marked-alt"></i> {{ $order->address }}</p> --}}
            <p class="orders_card_total_price"><span>Prezzo totale: </span><span class="price_span">{{ number_format($order->price,2,",",".") }}€</span></p>
            <p>Email: {{ $order->email }}</p>
-           {{-- @foreach (json_decode($order->arrPlates) as $plate)
-              <h4><i class="fas fa-utensils"></i> {{ $plate->name }} x{{ $plate->amount }} <i class="far fa-circle circle_price"></i> {{ $plate->price }}€</h4>
-           @endforeach --}}
-
 
         </li> 
         @endforeach

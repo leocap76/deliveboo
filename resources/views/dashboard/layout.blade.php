@@ -32,10 +32,6 @@
 
         </main>
 
-    {{-- footer --}}
-    {{-- @include('partials.footer') --}}
-    {{-- !footer --}}
-
     @yield('script')
 
     </body>

@@ -19,7 +19,6 @@ var app = new Vue(
     },   
 
     mounted: function(){
-      // var prova = JSON.parse(localStorage.getItem('plates'));
       this.restaurant_id = restaurant_id_js;
       if(localStorage.getItem('tot_price') != undefined && this.restaurant_id == localStorage.getItem('restaurant_id')) {
         this.tot_price = parseFloat(localStorage.getItem('tot_price')).toFixed(2);

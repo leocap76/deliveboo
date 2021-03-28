@@ -78,19 +78,7 @@ class PlateController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    public function show($slug)
-    {
-        $plate = Plate::where('slug', $slug)->first();
-        return view('dashboard.plates.show', compact('plate'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     */ 
     public function edit(Plate $plate)
     {
         return view('dashboard.plates.edit', compact('plate'));

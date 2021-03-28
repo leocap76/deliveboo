@@ -14,7 +14,7 @@
 
   <title>Modifica - {{ $infoRestaurant->name }}</title>
 </head>
-<body class="dashboard">
+<body class="dashboard restaurant_edit">
 
   @include('partials.header')
 
@@ -56,7 +56,7 @@
           <label for="img_path">Immagine del ristorante</label>
           <input type="file" id="img_path" name="img_path" accept="image/*">
           <div>
-            <img src="{{ asset('storage/' . $infoRestaurant->img_path) }}" alt="{{ $infoRestaurant->name }}">
+            <img src="{{ ( str_contains($user->infoRestaurant->img_path, 'images/') ) ? asset('storage/' . $user->infoRestaurant->img_path) : $user->infoRestaurant->img_path }}" alt="{{ $user->infoRestaurant->name }}">
           </div>
         </div>
   

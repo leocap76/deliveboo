@@ -19,11 +19,29 @@
     {{-- prima card --}}
     <div class="dashboard_card info_restaurant">
       <h2>{{ $user->infoRestaurant->name }}</h2>
-      <h3><i class="fas fa-map-marked-alt"></i> {{ $user->infoRestaurant->address }}</h3>
-      <h5><i class="fas fa-info-circle"></i> {{ $user->infoRestaurant->description }}</h5>
-      <p>Orario apertura: {{ $user->infoRestaurant->opening_time }}</p>
-      <p>Orario Chiusura: {{ $user->infoRestaurant->closing_time }}</p>
-      <p>Partita IVA: {{ $user->infoRestaurant->PIVA }}</p>
+      <ul>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          {{ $user->infoRestaurant->address }}
+        </li>
+        <li>
+          <i class="fas fa-info-circle"></i> 
+          {{ $user->infoRestaurant->description }}
+        </li>
+        <li>
+          <i class="fas fa-clock"></i>
+          {{  substr($user->infoRestaurant->opening_time, -8, 5) }} - {{  substr($user->infoRestaurant->closing_time, -8, 5) }}
+        </li>
+        <li>
+          <i class="fas fa-id-card"></i>
+          {{ $user->infoRestaurant->PIVA }}
+        </li>
+        <li>
+          @foreach ($user->categories as $category)
+              <span style="color:{{ $category->color }}" class="mr-1">#{{ $category->name }}</span>
+          @endforeach
+        </li>
+      </ul>
     </div>
     {{-- !prima card --}}
 
@@ -35,23 +53,23 @@
 
     {{-- terza card --}}
     <div class="dashboard_card orders_list">
+
+      <h2>Ultimi ordini</h2>
+
       <ul>
 
         @foreach ($orders as $order)
-        <li>
-           <h3>{{ $order->name }}</h3>
-           <p><i class="fas fa-map-marked-alt"></i> {{ $order->address }}</p>
-           <p><i class="fas fa-comment-alt"></i> {{ $order->comment }}</p>
-           <p><i class="fas fa-envelope"></i> {{ $order->email }}</p>
-           <p><i class="fas fa-clock"></i> {{ $order->time }}</p>
-           @foreach (json_decode($order->arrPlates) as $plate)
+        <li class="orders_card">
+           <h4>{{ $order->name }}</h4>
+           {{-- <p><i class="fas fa-map-marked-alt"></i> {{ $order->address }}</p> --}}
+           <p class="orders_card_total_price"><span>Prezzo totale: </span><span class="price_span">{{ number_format($order->price,2,",",".") }}€</span></p>
+           <p>Email: {{ $order->email }}</p>
+           {{-- @foreach (json_decode($order->arrPlates) as $plate)
               <h4><i class="fas fa-utensils"></i> {{ $plate->name }} x{{ $plate->amount }} <i class="far fa-circle circle_price"></i> {{ $plate->price }}€</h4>
-           @endforeach
+           @endforeach --}}
 
-           <h4>Prezzo totale: {{ $order->price }}€</h4>
 
         </li> 
-        <hr>
         @endforeach
 
       </ul>

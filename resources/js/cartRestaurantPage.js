@@ -45,7 +45,7 @@ var app = new Vue(
         this.plate.ingredients = ingredients;
         this.plate.img = img;
       },
-      push_plate: function(name,price,restaurant_id){
+      push_plate: function(name, price, img_path){
         var box = document.getElementById('box');
         box.style.display = 'none';
         let isNew = true;
@@ -66,7 +66,7 @@ var app = new Vue(
 
         if(isNew) {
 
-          this.cart_plates.push({ 'name': name, 'price': price, 'original_price': price, 'amount' : 1}); 
+          this.cart_plates.push({ 'name': name, 'price': price, 'original_price': price, 'amount' : 1, 'img_path': img_path }); 
           this.tot_price += price;
           
         }

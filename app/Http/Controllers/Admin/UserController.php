@@ -35,7 +35,7 @@ class UserController extends Controller
 
         // $orders = $user->orders;
         $orders = Order::where('user_id', Auth::id())
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
             ->limit(3)
             ->get();
 

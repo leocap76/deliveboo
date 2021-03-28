@@ -47,7 +47,7 @@
 
             <h3>Prezzo: </h3>
             <p>@{{ plate.price }}€</p>
-            <button class="button_shop" @click="push_plate(plate.name, plate.price)">Aggiungi alla cassa <i class="fas fa-cart-plus"></i></button>
+            <button class="button_shop" @click="push_plate(plate.name, plate.price, plate.img_path)">Aggiungi alla cassa <i class="fas fa-cart-plus"></i></button>
             <button class="button_shop" @click="close_box()">Chiudi</button>
           </div>
 
@@ -87,7 +87,7 @@
                   <div class="shop_card_plates_left">
                     <h3 class="ellipsis">{{ $plate->name }}</h3>
                     <p class="ellipsis"> {{ $plate->ingredients }}</p>
-                    <h5> {{  number_format($plate->price,2,",",".") }}€ <i class="fas fa-plus-circle" @click="push_plate('{{ $plate->name }}', {{ $plate->price }})"></i></h5>
+                    <h5> {{  number_format($plate->price,2,",",".") }}€ <i class="fas fa-plus-circle" @click="push_plate('{{ $plate->name }}', {{ $plate->price }}, '{{ $plate->img_path }}')"></i></h5>
                     <i class="fas fa-info-circle" @click="open_box('{{ $plate->name }}', {{ $plate->price }}, '{{ $plate->description }}', '{{ $plate->ingredients }}', '{{ $plate->img_path }}' )"></i>
                   </div>
                   <div class="shop_card_plates_right">

@@ -14156,7 +14156,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
       this.plate.ingredients = ingredients;
       this.plate.img = img;
     },
-    push_plate: function push_plate(name, price, restaurant_id) {
+    push_plate: function push_plate(name, price, img_path) {
       var _this = this;
 
       var box = document.getElementById('box');
@@ -14179,7 +14179,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
           'name': name,
           'price': price,
           'original_price': price,
-          'amount': 1
+          'amount': 1,
+          'img_path': img_path
         });
         this.tot_price += price;
       }

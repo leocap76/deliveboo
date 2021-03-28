@@ -14125,7 +14125,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
 
     //prima richiesta per grafico vendite/guadagni
     axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/orders/".concat(userId)).then(function (response) {
-      console.log(response.data);
       var ordersPerMonth = [];
       var orders = response.data;
 
@@ -14168,7 +14167,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
     }); //grafico per numero ordini
 
     axios__WEBPACK_IMPORTED_MODULE_0___default().get("http://127.0.0.1:8000/api/orders/".concat(userId)).then(function (response) {
-      console.log(response.data);
       var ordersPerMonth = [];
       var orders = response.data;
 

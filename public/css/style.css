@@ -1531,6 +1531,23 @@ header .ham1.active .bottom {
     text-align: center;
   }
 }
+.login_register main {
+  height: calc(100vh - 392px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_register main .card-header {
+  background-color: #f2474d;
+  color: white;
+  font-weight: 600;
+}
+.login_register main .btn {
+  background-color: #0EC5BF;
+  border: 0;
+  margin-right: 10px;
+}
+
 footer {
   background-color: #26272b;
   color: #737373;

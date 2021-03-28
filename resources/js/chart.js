@@ -13,7 +13,6 @@ let app = new Vue({
         axios
         .get(`http://127.0.0.1:8000/api/orders/${userId}`)
         .then((response) => {
-            console.log(response.data);
 
             let ordersPerMonth = [];
             let orders = response.data; 
@@ -76,7 +75,6 @@ let app = new Vue({
         axios
         .get(`http://127.0.0.1:8000/api/orders/${userId}`)
         .then((response) => {
-            console.log(response.data);
 
             let ordersPerMonth = [];
             let orders = response.data; 

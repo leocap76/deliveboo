@@ -1,0 +1,18 @@
+.login_register {
+    main {
+        height: calc(100vh - 392px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .card-header {
+            background-color: $delivebooColor;
+            color: white;
+            font-weight: 600;
+        }
+        .btn {
+            background-color: $secondColorClient;
+            border: 0;
+            margin-right: 10px;
+        }
+    }
+}

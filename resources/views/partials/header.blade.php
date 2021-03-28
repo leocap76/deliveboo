@@ -43,7 +43,7 @@
                     @endif
                 @endif
 
-                @if (Route::currentRouteName() == 'shop.restaurant' || Route::currentRouteName() == 'shop.payment.index' )
+                @if (Route::currentRouteName() == 'shop.restaurant' || Route::currentRouteName() == 'shop.payment.index')
                     
                     <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
 
@@ -81,7 +81,7 @@
         <a href="{{ route('dashboard.users.index') }}" class="header_buttons">Informazioni</a>
         <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
     
-    @elseif(Route::currentRouteName() == 'shop.restaurant' || Route::currentRouteName() == 'shop.payment.index' || Route::currentRouteName() == 'shop.payment.checkout' || Route::currentRouteName() == 'login' || Route::currentRouteName() == 'register')
+    @elseif(Route::currentRouteName() == 'shop.restaurant' || Route::currentRouteName() == 'shop.payment.index' || Route::currentRouteName() == 'shop.payment.checkout' || Route::currentRouteName() == 'login' || Route::currentRouteName() == 'register' || Route::currentRouteName() == 'home')
     
         <a href="{{ url('/') }}" class="header_buttons">Homepage</a>
 
@@ -120,12 +120,8 @@
     @elseif(Route::currentRouteName() == 'dashboard.plates.edit' || Route::currentRouteName() == 'dashboard.plates.create' || Route::currentRouteName() == 'dashboard.plates.show')
 
         <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>
-        <a href="{{ route('dashboard.plates.index') }}" class="header_buttons">Torna indietro</a>
-
-            
+        <a href="{{ route('dashboard.plates.index') }}" class="header_buttons">Torna indietro</a>            
     
     @endif
-    
-
 
 </section>

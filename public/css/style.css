@@ -913,20 +913,20 @@ header .ham1.active .bottom {
   flex-wrap: wrap;
   width: 80%;
   height: calc(100vh - 100px);
-  background-color: white;
+  background-color: #4a4c54;
 }
 .user_index #dashboard_index_center .dashboard_card {
   width: calc(50% - 20px);
   height: calc(50% - 20px);
   padding: 10px;
-  border: 2px solid #0EC5BF;
+  border: 2px solid #26272b;
   border-radius: 5px;
   margin: 10px;
-  background-color: white;
+  background-color: #bebfc5;
 }
 .user_index #dashboard_index_center .dashboard_card h2 {
   padding-bottom: 28px;
-  border-bottom: 1px solid #0EC5BF;
+  border-bottom: 1px solid #26272b;
   text-align: center;
 }
 .user_index #dashboard_index_center .dashboard_card.info_restaurant {
@@ -944,7 +944,7 @@ header .ham1.active .bottom {
 }
 .user_index #dashboard_index_center .dashboard_card.info_restaurant ul li i {
   margin-right: 5px;
-  color: #0EC5BF;
+  color: #26272b;
 }
 .user_index #dashboard_index_center .dashboard_card.img_restaurant img {
   width: 100%;
@@ -965,11 +965,11 @@ header .ham1.active .bottom {
   padding: 10px;
   margin-bottom: 5px;
   color: white;
-  background-color: #0EC5BF;
+  background-color: #4a4c54;
 }
 .user_index #dashboard_index_center .dashboard_card.orders_list .orders_card h4 {
   padding-bottom: 5px;
-  border-bottom: 1px solid #0EC5BF;
+  border-bottom: 1px solid #26272b;
 }
 .user_index #dashboard_index_center .dashboard_card.orders_list .orders_card p {
   font-size: 17px;
@@ -1006,17 +1006,17 @@ header .ham1.active .bottom {
   width: 20%;
   height: calc(100vh - 100px);
   overflow-y: auto;
-  background-color: #0EC5BF;
+  background-color: #26272b;
 }
 .user_index .dashboard_side_menu li {
   padding: 30px 50px;
 }
+.user_index .dashboard_side_menu li:not(:last-of-type) {
+  border-bottom: 1px solid #0e0e10;
+}
 .user_index .dashboard_side_menu li h3 {
   color: white;
   font-size: 2em;
-}
-.user_index .dashboard_side_menu li:not(:last-of-type) {
-  border-bottom: 1px solid #0b9591;
 }
 .user_index .dashboard_side_menu li .buttons_style {
   display: inline-block;
@@ -1039,19 +1039,27 @@ header .ham1.active .bottom {
 }
 
 .restaurant_edit main {
+  background-color: #26272b;
+  color: white;
+}
+.restaurant_edit main .container {
   padding: 50px 0;
 }
-.restaurant_edit main img {
+.restaurant_edit main .container input, .restaurant_edit main .container textarea {
+  background-color: #bebfc5;
+}
+.restaurant_edit main .container img {
   margin-top: 10px;
   width: 300px;
 }
-.restaurant_edit main .btn {
+.restaurant_edit main .container .btn {
   background-color: #0EC5BF;
   border: 0;
 }
 
 .plates_index main {
   height: calc(100vh - 100px);
+  background-color: #4a4c54;
 }
 .plates_index main .plates_bottom {
   display: flex;
@@ -1066,7 +1074,7 @@ header .ham1.active .bottom {
 .plates_index main .plates_bottom .plate {
   width: calc(100% / 4 - 30px);
   margin: 15px;
-  border: 1px solid #0EC5BF;
+  border: 1px solid #26272b;
 }
 .plates_index main .plates_bottom .plate .scroll {
   height: 150px;
@@ -1105,7 +1113,7 @@ header .ham1.active .bottom {
   width: 20%;
   height: calc(100vh - 100px);
   overflow-y: auto;
-  background-color: #0EC5BF;
+  background-color: #26272b;
 }
 .plates_index main .dashboard_side_menu li {
   padding: 30px 50px;
@@ -1115,7 +1123,7 @@ header .ham1.active .bottom {
   font-size: 2em;
 }
 .plates_index main .dashboard_side_menu li:not(:last-of-type) {
-  border-bottom: 1px solid #0b9591;
+  border-bottom: 1px solid #0e0e10;
 }
 .plates_index main .dashboard_side_menu li .buttons_style {
   display: inline-block;
@@ -1137,33 +1145,22 @@ header .ham1.active .bottom {
   border: 0;
 }
 
-.plate_edit main {
-  padding: 40px 0 0;
-  margin-bottom: 50px;
+.plate_edit, .plate_create {
+  background-color: #26272b;
 }
-.plate_edit main img {
+.plate_edit main, .plate_create main {
+  padding: 40px 0 0;
+  padding-bottom: 50px;
+  color: white;
+}
+.plate_edit main input, .plate_edit main textarea, .plate_create main input, .plate_create main textarea {
+  background-color: #bebfc5;
+}
+.plate_edit main img, .plate_create main img {
   margin-top: 10px;
   width: 200px;
 }
-.plate_edit main .btn {
-  background-color: #0EC5BF;
-  border: 0;
-}
-
-.plate_show main {
-  padding: 40px 0 0;
-}
-.plate_show main .fa-check {
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 2em;
-  color: #0EC5BF;
-}
-.plate_show main img {
-  border-radius: 5px;
-  margin: 20px 0;
-}
-.plate_show main .btn {
+.plate_edit main .btn, .plate_create main .btn {
   background-color: #0EC5BF;
   border: 0;
 }
@@ -1175,13 +1172,19 @@ header .ham1.active .bottom {
   display: flex;
   width: 80%;
   height: 100%;
+  background-color: #4a4c54;
   overflow-y: auto;
 }
 .user_orders main #dashboard_orders .dashboard_orders_left {
   width: 50%;
-  padding: 50px;
-  border-right: 2px solid #0EC5BF;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-right: 2px solid #26272b;
   overflow-y: auto;
+}
+.user_orders main #dashboard_orders .dashboard_orders_left h2 {
+  color: white;
 }
 .user_orders main #dashboard_orders .dashboard_orders_left .orders_card {
   display: flex;
@@ -1189,7 +1192,8 @@ header .ham1.active .bottom {
   margin-bottom: 20px;
   border: 1px solid;
   border-radius: 5px;
-  border: 2px solid #0EC5BF;
+  border: 2px solid #26272b;
+  background-color: #bebfc5;
 }
 .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_left {
   width: 50%;
@@ -1231,18 +1235,21 @@ header .ham1.active .bottom {
 .user_orders main #dashboard_orders .dashboard_orders_right .dashboard_orders_right_top {
   width: 100%;
   height: 50%;
-  border-bottom: 2px solid #0EC5BF;
+  border-radius: 5px;
+  background-color: #bebfc5;
 }
 .user_orders main #dashboard_orders .dashboard_orders_right .dashboard_orders_right_bottom {
   width: 100%;
   height: 50%;
-  padding-top: 50px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #bebfc5;
 }
 .user_orders main .dashboard_side_menu {
   width: 20%;
   height: calc(100vh - 100px);
   overflow-y: auto;
-  background-color: #0EC5BF;
+  background-color: #26272b;
 }
 .user_orders main .dashboard_side_menu li {
   padding: 30px 50px;
@@ -1252,7 +1259,7 @@ header .ham1.active .bottom {
   font-size: 2em;
 }
 .user_orders main .dashboard_side_menu li:not(:last-of-type) {
-  border-bottom: 1px solid #0b9591;
+  border-bottom: 1px solid #0e0e10;
 }
 .user_orders main .dashboard_side_menu li .buttons_style {
   display: inline-block;
@@ -1319,7 +1326,7 @@ header .ham1.active .bottom {
     width: 100%;
   }
   .user_orders main #dashboard_orders .dashboard_orders_right .dashboard_orders_right_bottom {
-    border-bottom: 2px solid #0EC5BF;
+    border-bottom: 2px solid #26272b;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1338,6 +1345,11 @@ header .ham1.active .bottom {
     margin-right: 0;
   }
 
+  .restaurant_edit main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .plates_index main .plates_bottom {
     justify-content: center;
     width: 100%;
@@ -1347,19 +1359,32 @@ header .ham1.active .bottom {
   }
 }
 @media screen and (max-width: 550px) {
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card {
+    display: flex;
+    flex-direction: column;
+  }
   .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_left {
-    width: 60%;
+    width: 100%;
+    font-size: 14px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_left p {
+    margin: 5px;
   }
   .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right {
-    width: 40%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul {
+    display: flex;
   }
   .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul li {
-    width: calc(100% - 10px);
+    width: calc(100% / 2 - 10px);
     margin: 5px;
   }
   .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul li img {
     width: 100%;
-    height: 100px;
+    height: 80px;
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 5px;
@@ -1532,7 +1557,7 @@ header .ham1.active .bottom {
   }
 }
 .login_register main {
-  height: calc(100vh - 392px);
+  height: calc(100vh - 369px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1548,6 +1573,13 @@ header .ham1.active .bottom {
   margin-right: 10px;
 }
 
+@media screen and (max-width: 767px) {
+  .login_register main {
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
 footer {
   background-color: #26272b;
   color: #737373;

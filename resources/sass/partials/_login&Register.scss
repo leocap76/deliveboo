@@ -1,9 +1,10 @@
 .login_register {
     main {
-        height: calc(100vh - 392px);
+        height: calc(100vh - 369px);
         display: flex;
         justify-content: center;
         align-items: center;
+
         .card-header {
             background-color: $delivebooColor;
             color: white;
@@ -13,6 +14,16 @@
             background-color: $secondColorClient;
             border: 0;
             margin-right: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .login_register {
+        main {
+            height: auto;
+            padding-top: 60px;
+            padding-bottom: 60px;
         }
     }
 }

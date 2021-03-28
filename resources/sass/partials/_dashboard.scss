@@ -17,20 +17,20 @@
     flex-wrap: wrap;
     width: 80%;
     height: calc(100vh - 100px);
-    background-color: white;
+    background-color: $cardSecondaryColorUser;
 
     .dashboard_card {
       width: calc(50% - 20px);
       height: calc(50% - 20px);
       padding: 10px;
-      border: 2px solid $secondColorClient;
+      border: 2px solid $secondColorUser;
       border-radius: 5px;
       margin: 10px;
-      background-color: white;
+      background-color: $cardPrimaryColorUser;
 
       h2 {
         padding-bottom: 28px;
-        border-bottom: 1px solid $secondColorClient;
+        border-bottom: 1px solid $secondColorUser;
         text-align: center;
       }
 
@@ -49,7 +49,7 @@
   
             i {
               margin-right: 5px;
-              color: $secondColorClient;
+              color: $secondColorUser;
             }
           }
         }
@@ -75,11 +75,11 @@
           padding: 10px;
           margin-bottom: 5px;
           color: white;
-          background-color: $secondColorClient;
+          background-color: $cardSecondaryColorUser;
 
           h4 {
             padding-bottom: 5px;
-            border-bottom: 1px solid $secondColorClient;
+            border-bottom: 1px solid $secondColorUser;
           }
 
           p {
@@ -130,19 +130,19 @@
     width: 20%;
     height: calc(100vh - 100px);
     overflow-y: auto;
-    background-color: $secondColorClient;
-  
+    background-color: $secondColorUser;
+
     li {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid darken($secondColorUser, 10%);
+      }
+
       padding: 30px 50px;
       h3 {
         color: white;
         font-size: 2em;
       }
-  
-      &:not(:last-of-type) {
-        border-bottom: 1px solid darken($secondColorClient, 10%);
-      }
-      
+
       .buttons_style {
         @include deliveboo_buttons_side;
       }
@@ -152,21 +152,33 @@
 
 .restaurant_edit {
   main {
-    padding: 50px 0;
-    img {
-      margin-top: 10px;
-      width: 300px;
-    }
-    .btn {
-      background-color: $secondColorClient;
-      border: 0;
-    }
+    background-color: $secondColorUser;
+    color: white;
+
+    .container {
+      padding: 50px 0;
+
+      input, textarea {
+        background-color: $cardPrimaryColorUser;
+      }
+
+      img {
+        margin-top: 10px;
+        width: 300px;
+      }
+      .btn {
+        background-color: $secondColorClient;
+        border: 0;
+      }
+    }  
   }
 }
 
 .plates_index {
   main {
-    height: calc(100vh - 100px); 
+    height: calc(100vh - 100px);
+    background-color: $cardSecondaryColorUser;    
+    
     .plates_bottom {
       display: flex;
       flex-wrap: wrap;
@@ -179,7 +191,7 @@
       .plate {
         width: calc(100% / 4 - 30px);
         margin: 15px;
-        border: 1px solid $secondColorClient;
+        border: 1px solid $secondColorUser;
         .scroll {
           height: 150px;
           overflow-y: auto;
@@ -222,7 +234,7 @@
       width: 20%;
       height: calc(100vh - 100px);
       overflow-y: auto;
-      background-color: $secondColorClient;
+      background-color: $secondColorUser;
     
       li {
         padding: 30px 50px;
@@ -232,7 +244,7 @@
         }
     
         &:not(:last-of-type) {
-          border-bottom: 1px solid darken($secondColorClient, 10%);
+          border-bottom: 1px solid darken($secondColorUser, 10%);
         }
         
         .buttons_style {
@@ -243,33 +255,21 @@
   }
 }
 
-.plate_edit {
+.plate_edit, .plate_create {
+  background-color: $secondColorUser;
+
   main {
     padding: $verticalPaddingSections 0;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
+    color: white;
+
+    input, textarea {
+      background-color: $cardPrimaryColorUser;
+    }
+
     img {
       margin-top: 10px;
       width: 200px;
-    }
-    .btn {
-      background-color: $secondColorClient;
-      border: 0;
-    }
-  }
-}
-
-.plate_show {
-  main {
-    padding: $verticalPaddingSections 0;
-    .fa-check {
-      padding: 5px;
-      border-radius: 5px;
-      font-size: 2em;
-      color: $secondColorClient ;
-    }
-    img {
-      border-radius: 5px;
-      margin: 20px 0;
     }
     .btn {
       background-color: $secondColorClient;
@@ -286,13 +286,20 @@
       display: flex;
       width: 80%;
       height: 100%;
+      background-color: $cardSecondaryColorUser;
       overflow-y: auto;
       
       .dashboard_orders_left {
         width: 50%;
-        padding: 50px;
-        border-right: 2px solid $secondColorClient;
+        padding-top: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        border-right: 2px solid $secondColorUser;
         overflow-y: auto;
+
+        h2 {
+          color: white;
+        }
 
         .orders_card {
           display: flex;
@@ -300,7 +307,9 @@
           margin-bottom: 20px;
           border: 1px solid;
           border-radius: 5px;
-          border: 2px solid $secondColorClient;
+          border: 2px solid $secondColorUser;
+          background-color: $cardPrimaryColorUser;
+
           .orders_card_left {
             width: 50%;
             padding: 10px 15px;
@@ -352,13 +361,17 @@
         .dashboard_orders_right_top {
           width: 100%;
           height: 50%;
-          border-bottom: 2px solid $secondColorClient;
+          // border-bottom: 2px solid $secondColorUser;
+          border-radius: 5px;
+          background-color: $cardPrimaryColorUser;
         }
   
         .dashboard_orders_right_bottom {
           width: 100%;
           height: 50%;
-          padding-top: 50px;
+          margin-top: 20px;
+          border-radius: 5px;
+          background-color: $cardPrimaryColorUser;
         }
       }
     }
@@ -366,7 +379,7 @@
       width: 20%;
       height: calc(100vh - 100px);
       overflow-y: auto;
-      background-color: $secondColorClient;
+      background-color: $secondColorUser;
     
       li {
         padding: 30px 50px;
@@ -376,7 +389,7 @@
         }
     
         &:not(:last-of-type) {
-          border-bottom: 1px solid darken($secondColorClient, 10%);
+          border-bottom: 1px solid darken($secondColorUser, 10%);
         }
         
         .buttons_style {
@@ -451,7 +464,7 @@
           width: 100%;
 
           .dashboard_orders_right_bottom {
-            border-bottom: 2px solid $secondColorClient;
+            border-bottom: 2px solid $secondColorUser;
           }
         }
       }
@@ -486,6 +499,13 @@
     }
   }
 
+  .restaurant_edit {
+    main {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
   .plates_index {
     main {
       .plates_bottom {
@@ -509,23 +529,33 @@
         .dashboard_orders_left {
 
           .orders_card {
+            display: flex;
+            flex-direction: column;
 
             .orders_card_left {
-              width: 60%;
+              width: 100%;
+              font-size: 14px;
+
+              p { 
+                margin: 5px;
+              }
             }
 
             .orders_card_right {
-              width: 40%;
+              width: 100%;
+              padding-left: 15px;
+              padding-right: 15px;
 
               ul {
-                
+                display: flex;
+
                 li {
-                  width: calc(100% - 10px);
+                  width: calc(100% / 2 - 10px);
                   margin: 5px;
   
                   img {
                     width: 100%;
-                    height: 100px;
+                    height: 80px;
                     object-fit: cover;
                     border-radius: 5px;
                   }

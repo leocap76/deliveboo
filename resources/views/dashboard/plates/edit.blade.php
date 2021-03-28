@@ -65,7 +65,7 @@
           </div>
         </div>
     
-        <div class="form-group">
+        {{-- <div class="form-group">
           <label for="vegan">Vegano</label>
           <input type="checkbox" id="vegan" name="vegan" value="1" @if($plate->vegan == 1) checked @endif>
         </div>
@@ -83,7 +83,7 @@
         <div class="form-group">
           <label for="glutenfree">Gluten free</label>
           <input type="checkbox" id="glutenfree" name="glutenfree" value="1" @if($plate->glutenfree == 1) checked @endif>
-        </div>
+        </div> --}}
     
         <div class="form-group">
           <label for="available">Disponibile</label>

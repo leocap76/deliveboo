@@ -34,7 +34,7 @@
 
 
     {{-- box name & password --}}
-    <main class="py-4">
+    <main>
         @yield('content')
     </main>
     {{-- !box name & password --}}

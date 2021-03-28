@@ -18,6 +18,10 @@ $shopRestaurantSmallText: #828585;
 
 $secondColorClient: #0EC5BF;
 
-$secondColorUser: darkcyan;
+$secondColorUser: #26272b;
+
+$cardPrimaryColorUser: lighten($secondColorUser, 60%);
+
+$cardSecondaryColorUser: lighten($secondColorUser, 15%);
 
 // darkcyan

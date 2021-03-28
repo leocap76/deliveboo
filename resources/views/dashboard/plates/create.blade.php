@@ -13,7 +13,7 @@
 
   <title>Creazione piatto</title>
 </head>
-<body class="dashboard">
+<body class="dashboard plate_create">
 
   @include('partials.header')
 
@@ -61,7 +61,7 @@
           <input type="file" id="img_path" name="img_path" accept="image/*" required>
         </div>
     
-        <div class="form-group">
+        {{-- <div class="form-group">
           <label for="vegan">Vegano</label>
           <input type="checkbox" id="vegan" name="vegan" value="1">
         </div>
@@ -79,7 +79,7 @@
         <div class="form-group">
           <label for="glutenfree">Gluten free</label>
           <input type="checkbox" id="glutenfree" name="glutenfree" value="1">
-        </div>
+        </div> --}}
     
         <div class="form-group">
           <label for="available">Disponibile</label>

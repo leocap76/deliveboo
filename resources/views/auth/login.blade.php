@@ -56,6 +56,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+                                <a href="{{ url('/') }}" class="btn btn-primary">Indietro</a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn-link" href="{{ route('password.request') }}">

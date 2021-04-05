@@ -30,6 +30,12 @@
   box-shadow: 0px 8px 10px -6px #a75a5a;
   transition: all 0.4s;
   border: 0;
+  &.active_side_btn {
+    color: $delivebooColor;
+    background-color:  white;
+    box-shadow: none;
+    border: 0;
+  }
   &:hover {
     color: $delivebooColor;
     background-color:  white;

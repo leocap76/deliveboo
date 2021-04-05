@@ -1037,6 +1037,12 @@ header .ham1.active .bottom {
   transition: all 0.4s;
   border: 0;
 }
+.user_index .dashboard_side_menu li .buttons_style.active_side_btn {
+  color: #f2474d;
+  background-color: white;
+  box-shadow: none;
+  border: 0;
+}
 .user_index .dashboard_side_menu li .buttons_style:hover {
   color: #f2474d;
   background-color: white;
@@ -1147,6 +1153,12 @@ header .ham1.active .bottom {
   border-radius: 5px;
   box-shadow: 0px 8px 10px -6px #a75a5a;
   transition: all 0.4s;
+  border: 0;
+}
+.plates_index main .dashboard_side_menu li .buttons_style.active_side_btn {
+  color: #f2474d;
+  background-color: white;
+  box-shadow: none;
   border: 0;
 }
 .plates_index main .dashboard_side_menu li .buttons_style:hover {
@@ -1283,6 +1295,12 @@ header .ham1.active .bottom {
   border-radius: 5px;
   box-shadow: 0px 8px 10px -6px #a75a5a;
   transition: all 0.4s;
+  border: 0;
+}
+.user_orders main .dashboard_side_menu li .buttons_style.active_side_btn {
+  color: #f2474d;
+  background-color: white;
+  box-shadow: none;
   border: 0;
 }
 .user_orders main .dashboard_side_menu li .buttons_style:hover {

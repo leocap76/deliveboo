@@ -89,6 +89,7 @@
     @elseif(Route::currentRouteName() == 'dashboard.users.index' )
         
         <a href="{{ url('/') }}" class="header_buttons">Vai alla homepage</a>
+        <a href="{{ route('dashboard.users.index') }}" class="header_buttons ">Visualizza il tuo ristorante</a>
         <a href="{{ route('dashboard.users.edit', $user->id) }}" class="header_buttons">Modifica il tuo ristorante</a>
         <a href="{{ route('dashboard.plates.index') }}" class="header_buttons">Visualizza i tuoi piatti</a>
         <a href="{{ route('dashboard.orders') }}" class="header_buttons">Visualizza i tuoi ordini</a>

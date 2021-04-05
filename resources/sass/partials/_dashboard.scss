@@ -185,7 +185,7 @@
 .plates_index {
   main {
     height: calc(100vh - 100px);
-    background-color: $cardSecondaryColorUser;    
+    background-color: $cardSecondaryColorUser;
     
     .plates_bottom {
       display: flex;
@@ -193,7 +193,7 @@
       justify-content: flex-start;
       align-content: flex-start;
       width: 80%;
-      height: calc(100vh - 100px);
+      height: 100%;
       padding: 15px;
       overflow-y: auto;
       .plate {
@@ -204,16 +204,6 @@
           height: 150px;
           overflow-y: auto;
           margin-bottom: 10px;
-          .hover_content {
-            display: none;
-          }
-        }
-        &:hover {
-          .scroll {
-            .hover_content{
-              display: block;
-            }
-          }
         }
         img {
           width: 100%;
@@ -405,6 +395,145 @@
         }
       }
     } 
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .dashboard {
+    main {
+      .dashboard_side_menu {
+        li {
+          padding: 20px 40px;
+          h3 {
+            color: white;
+            font-size: 1.5em;
+          }
+  
+          .buttons_style {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .user_index {
+    #dashboard_index_center {
+  
+      .dashboard_card {
+        h2 {
+          font-size: 30px;
+          padding-bottom: 10px;
+        }
+  
+        &.info_restaurant {
+          padding-left: 30px;
+          padding-right: 30px;
+  
+          ul {
+            margin-top: 10px;
+            
+            li {
+              margin-bottom: 10px;
+              font-size: 14px;
+    
+              i {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+  
+        &.orders_list{
+          overflow-y: auto;
+  
+          .orders_card {
+            margin-bottom: 5px;
+  
+            p {
+              font-size: 13px;
+            }
+  
+            .orders_card_total_price {
+              
+              .price_span {
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .user_orders {
+    main {
+      #dashboard_orders {
+        
+        .dashboard_orders_left {
+          padding-top: 10px;
+          padding-left: 30px;
+          padding-right: 30px;
+  
+          h2 {
+            font-size: 30px;
+          }
+  
+          .orders_card {
+            margin-bottom: 10px;
+  
+            .orders_card_left {
+              font-size: 13px;
+  
+              p {
+                margin-bottom: 10px;
+                span {
+                  color: $delivebooColor;
+                }
+              }
+            }
+  
+            .orders_card_right {
+              width: 50%;
+              padding: 5px;
+  
+              ul {
+                display: flex;
+                flex-wrap: wrap;
+                
+                li {
+                  width: calc(100% / 3 - 6px);
+                  margin: 3px;
+  
+                  img {
+                    width: 100%;
+                    height: 50px;
+                  }
+  
+                  p {
+                    margin: 0;
+                    font-size: 11px;
+                    line-height: 12px;
+                  }
+                }
+              }
+            }
+          }
+  
+        }
+  
+        .dashboard_orders_right {
+          width: 50%;
+          padding: 30px;
+  
+          .dashboard_orders_right_top,
+          .dashboard_orders_right_bottom {
+            padding: 10px;
+            overflow-y: auto;
+          }
+        }
+      }
+    }
   }
 }
 

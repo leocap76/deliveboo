@@ -9,15 +9,9 @@
 @endsection
 
 @section('main')  
-  @if (\Session::has('message'))
-    <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('message') !!}</li>
-        </ul>
-    </div>
-  @endif
 
-  <div class="plates_bottom">
+<div class="plates_bottom">
+
     @foreach ($plates as $plate)
         <div class="card plate"> 
           <img class="card-img-top" src="{{ ( str_contains($plate->img_path, 'images/') ) ? asset('storage/' . $plate->img_path) : $plate->img_path }}" alt="{{ $plate->name }}" alt="{{ $plate->name }}"> 
@@ -27,7 +21,7 @@
               <h5 class="card-title">{{ $plate->name }}</h5> 
               <p>{{ $plate->ingredients }}</p>
 
-              <div class="hover_content">
+              <div>
                 <p class="description">{{ $plate->description }}</p>
   
                 @if ($plate->vegan == 1)

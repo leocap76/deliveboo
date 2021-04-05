@@ -1084,7 +1084,7 @@ header .ham1.active .bottom {
   justify-content: flex-start;
   align-content: flex-start;
   width: 80%;
-  height: calc(100vh - 100px);
+  height: 100%;
   padding: 15px;
   overflow-y: auto;
 }
@@ -1097,12 +1097,6 @@ header .ham1.active .bottom {
   height: 150px;
   overflow-y: auto;
   margin-bottom: 10px;
-}
-.plates_index main .plates_bottom .plate .scroll .hover_content {
-  display: none;
-}
-.plates_index main .plates_bottom .plate:hover .scroll .hover_content {
-  display: block;
 }
 .plates_index main .plates_bottom .plate img {
   width: 100%;
@@ -1310,6 +1304,100 @@ header .ham1.active .bottom {
   border: 0;
 }
 
+@media screen and (max-width: 1400px) {
+  .dashboard main .dashboard_side_menu li {
+    padding: 20px 40px;
+  }
+  .dashboard main .dashboard_side_menu li h3 {
+    color: white;
+    font-size: 1.5em;
+  }
+  .dashboard main .dashboard_side_menu li .buttons_style {
+    font-size: 16px;
+  }
+
+  .user_index #dashboard_index_center .dashboard_card h2 {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+  .user_index #dashboard_index_center .dashboard_card.info_restaurant {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .user_index #dashboard_index_center .dashboard_card.info_restaurant ul {
+    margin-top: 10px;
+  }
+  .user_index #dashboard_index_center .dashboard_card.info_restaurant ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .user_index #dashboard_index_center .dashboard_card.info_restaurant ul li i {
+    margin-right: 5px;
+  }
+  .user_index #dashboard_index_center .dashboard_card.orders_list {
+    overflow-y: auto;
+  }
+  .user_index #dashboard_index_center .dashboard_card.orders_list .orders_card {
+    margin-bottom: 5px;
+  }
+  .user_index #dashboard_index_center .dashboard_card.orders_list .orders_card p {
+    font-size: 13px;
+  }
+  .user_index #dashboard_index_center .dashboard_card.orders_list .orders_card .orders_card_total_price .price_span {
+    margin-right: 20px;
+  }
+
+  .user_orders main #dashboard_orders .dashboard_orders_left {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left h2 {
+    font-size: 30px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card {
+    margin-bottom: 10px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_left {
+    font-size: 13px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_left p {
+    margin-bottom: 10px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_left p span {
+    color: #f2474d;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right {
+    width: 50%;
+    padding: 5px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul li {
+    width: calc(100% / 3 - 6px);
+    margin: 3px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul li img {
+    width: 100%;
+    height: 50px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_left .orders_card .orders_card_right ul li p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 12px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_right {
+    width: 50%;
+    padding: 30px;
+  }
+  .user_orders main #dashboard_orders .dashboard_orders_right .dashboard_orders_right_top,
+.user_orders main #dashboard_orders .dashboard_orders_right .dashboard_orders_right_bottom {
+    padding: 10px;
+    overflow-y: auto;
+  }
+}
 @media screen and (max-width: 1280px) {
   .dashboard .dashboard_side_menu {
     display: none;
